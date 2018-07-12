@@ -1,0 +1,94 @@
+<#include "header.html" />
+<!--会员-->
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        财务管理
+        <small>财富积分提现</small>
+      </h1>
+    </section>
+
+    <!-- Main content -->
+    <section class="content container-fluid">
+
+      <!--------------------------
+        | Your Page Content Here |
+        -------------------------->
+
+        <div class="row">
+          <div class="col-xs-12 col-md-11">
+            <div class="box box-danger">
+              <div class="box-header">
+                <!--<h3 class="box-title">财富积分提现</h3>-->
+              </div>
+              <!-- /.box-header -->
+              <div class="box-body ">
+                <form class="form-horizontal " role="form" id="encashForm"
+                      onkeydown="if(event.keyCode==13) return false;"  autocomplete="off" >
+                  <#if user.role == '2' >
+                    <input type="hidden" name="role" value="${user.role}" />
+                  </#if>
+                  <div class="form-group">
+                    <label  class="col-md-2 control-label">财富积分</label>
+                    <div class="col-md-4">
+                      <input type="number" class="form-control" disabled="disabled" name="cashCoin" value=${user.cashCoin?c}>
+                    </div>
+                  </div>
+                  <!--<input name="type" type="hidden" value="0">-->
+                  <div class="form-group">
+                    <label for="amount" class="col-md-2 input-required control-label ">提现金额</label>
+                    <div class="col-md-4">
+                      <input type="number" class="form-control" id="amount" name="amount"
+                             placeholder="提现金额" >
+                      <!--oninput="calculate();"-->
+                    </div>
+                    <!--<label  class=" control-label" style="color: red;">提现手续费8%</label>-->
+                  </div>
+                  <!--<div class="form-group">
+                    <label for="amount" class="col-md-2 control-label">收益</label>
+                    <div class="col-md-4">
+                      <input type="text" class="form-control" id="earnings" name="earnings" disabled="disabled" value="0">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="amount" class="col-md-2 control-label">购物积分</label>
+                    <div class="col-md-4">
+                      <input type="text" class="form-control" id="shopPoints" name="shopPoints" disabled="disabled" value="0">
+                    </div>
+                  </div>-->
+                  <hr>
+                  <div class="form-group">
+                    <label for="tradePassword"  class="col-md-2 control-label input-required">交易密码</label>
+                    <div class="col-md-4">
+                      <input type="password" class="form-control" id="tradePassword" name="tradePassword"  >
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-md-offset-2 col-md-4">
+                      <button type="submit" class="btn btn-info col-xs-4" onclick="submitForm();">确定</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+
+<!--<#include "tradeModal.html" />-->
+<#include "footer1.html" />
+
+<script type="text/javascript" src="/assets/myJs/encash.js"></script>
+<!--<script type="text/javascript" src="/assets/myJs/tradeModal.js"></script>-->
+
+<#include "footer2.html" />

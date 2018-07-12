@@ -1,0 +1,242 @@
+<#include "header.html" />
+<!--会员-->
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        个人中心
+        <small>我的信息</small>
+      </h1>
+    </section>
+
+    <!-- Main content -->
+    <section class="content container-fluid">
+
+      <!--------------------------
+        | Your Page Content Here |
+        -------------------------->
+
+        <div class="row">
+          <div class="col-xs-12 col-md-11">
+            <div class="box box-warning">
+              <div class="box-header">
+                <!--<h3 class="box-title">修改登录密码</h3>-->
+              </div>
+              <!-- /.box-header -->
+              <div class="box-body ">
+                <div class="clearfix" ><span class="myAlert" style="display: block"></span></div>
+                <div class="clearfix" ></div>
+                <form class="form-horizontal " role="form" id="myform" >
+                  <div class="form-group">
+                    <label  class="col-md-2 control-label">用户ID</label>
+                    <div class="col-md-4">
+                      <input type="text" class="form-control" disabled="true" name="uid" value="${user.uid}">
+                      <input type="hidden" name="id" value="${user.id?c}">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="name" class="col-md-2 control-label input-required">姓名</label>
+                    <div class="col-md-4">
+                      <input type="text" class="form-control" id="name" name="name" value="${user.name}"
+                             placeholder="姓名">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="phone" class="col-md-2 control-label input-required">电话</label>
+                    <div class="col-md-4">
+                      <input type="tel" class="form-control " id="phone" name="phone" value="${user.phone!''}"
+                             placeholder="电话">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="address" class="col-md-2 control-label input-required">地址</label>
+                    <div class="col-md-4">
+                      <textarea   class="form-control" id="address" name="address">${user.address!''}</textarea>
+                    </div>
+                  </div>
+                  <!--<div class="form-group">
+                    <label for="idNumber" class="col-md-2 control-label">身份证号</label>
+                    <div class="col-md-4">
+                      <input type="text" class="form-control" id="idNumber" name="idNumber"  value="${user.idNumber!''}"
+                             placeholder="身份证号">
+                    </div>
+                  </div>-->
+                  <div class="form-group">
+                    <label for="bankAccount" class="col-md-2 control-label input-required">银行账号</label>
+                    <div class="col-md-4">
+                      <input type="text" class="form-control " id="bankAccount" name="bankAccount" value="${user.bankAccount!''}"
+                             placeholder="银行账号">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="depositBank" class="col-md-2 control-label input-required">开户行</label>
+                    <div class="col-md-4">
+                      <input type="text" class="form-control" id="depositBank" name="depositBank"  value="${user.depositBank!''}"
+                             placeholder="开户行">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="accountHolder" class="col-md-2 control-label input-required">开户人</label>
+                    <div class="col-md-4">
+                      <input type="text" class="form-control" id="accountHolder" name="accountHolder" value="${user.accountHolder!''}"
+                             placeholder="开户人">
+                    </div>
+                  </div>
+
+
+                  <div class="form-group">
+                    <div class="col-md-offset-2 col-md-4">
+                      <button type="submit" class="btn btn-info col-xs-6" onclick="updateUser();">修改</button>
+                    </div>
+                  </div>
+                </form>
+
+              </div>
+              <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+
+<#include "footer1.html" />
+<script>
+    $('#myform').bootstrapValidator({
+        message: '输入错误',
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            /*uid: {
+                validators: {
+                    notEmpty: {
+                        message: '请输入用户ID'
+                    },
+                    remote: {
+                        url: '/isUidNotExist',
+                        delay: 1500,
+                        type: 'POST',
+                        message: '该用户ID已存在',
+                        data: {
+                            inputUid: function () {
+                                return $('input[name=uid]').val();
+                            }
+                        }
+                    }
+                }
+            },*/
+            name: {
+                validators: {
+                    notEmpty: {
+                        message: '请输入姓名'
+                    }
+                }
+            },
+            phone: {
+                validators: {
+                    notEmpty: {
+                        message: '请输入电话'
+                    },
+                    stringlength: {
+                        min: 11,
+                        max: 11,
+                        message: '请输入11位手机号码'
+                    },
+                    regexp: {
+                        regexp: /^1[0-9]{10}$/,
+                        message: '请输入正确的手机号码'
+                    }
+                }
+            },
+          /*email: {
+           validators: {
+           /!*notEmpty: {
+           message: '请输入邮箱'
+           },*!/
+           emailAddress:{
+           message:'请输入正确的邮箱地址'
+           }
+           }
+           },*/
+          /* idNumber: {
+           validators: {
+           /!*notEmpty: {
+           message: '请输入身份证号'
+           },*!/
+           regexp: {
+           message: '清输入正确的身份证号',
+           regexp: /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/
+           }
+           }
+           },*/
+            bankAccount: {
+                validators: {
+                    notEmpty: {
+                        message: '请输入银行卡号'
+                    }
+                }
+            },
+            depositBank: {
+                validators: {
+                    notEmpty: {
+                        message: '请输入开户银行'
+                    }
+                }
+            },
+            address: {
+                validators: {
+                    notEmpty: {
+                        message: '请输入地址'
+                    }
+                }
+            },
+            accountHolder: {
+                validators: {
+                    notEmpty: {
+                        message: '请输入开户人姓名'
+                    }
+                }
+            }
+        }
+    });
+    $('#myform').bootstrapValidator().on('success.form.bv', function (e) {
+        // 阻止默认事件提交
+        e.preventDefault();
+    });
+  function updateUser() {
+      $('#myform').data('bootstrapValidator').validate();
+      if(!$('#myform').data('bootstrapValidator').isValid()){
+          return ;
+      }
+      $.ajax({
+          url: 'member/'+ $('input[name=id]').val(),
+          type: 'put',
+          contentType: 'application/json',
+          dataType: "json",
+          data: JSON.stringify(getFormData($('#myform'))),
+          success: function (data) {
+              if(data.code == 0) {
+                  showSuccessAlert('修改信息成功!', 2);
+              }else {
+                  showErrorAlert('修改信息失败!', 2);
+              }
+          },
+          error: function (e) {
+              console.log(e.responseJSON.msg);
+              showErrorAlert('修改信息失败!' + e.responseJSON.msg, 2);
+          }
+      });
+  }
+</script>
+
+<#include "footer2.html" />

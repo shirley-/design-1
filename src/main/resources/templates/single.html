@@ -1,0 +1,191 @@
+
+<#include "header_shop_0.html" />
+	<div class="banner text-center">
+	  <div class="container">    
+			<h1>Sell or Advertise   <span class="segment-heading">    anything online </span> with Resale</h1>
+			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+			<a href="/post-ad.html">Post Free Ad</a>
+	  </div>
+	</div>
+	<!--single-page-->
+	<div class="single-page main-grid-border">
+		<div class="container">
+			<ol class="breadcrumb" style="margin-bottom: 5px;">
+
+				<li class="active"><a href="/category?type=${item.type.id?c}">${item.type.name}</a></li>
+				<li class="active">商品详情</li>
+			</ol>
+			<div class="product-desc">
+				<div class="col-md-7 product-view col-xs-12">
+					<h2>${item.name}</h2>
+					<!--<p> <i class="glyphicon glyphicon-map-marker"></i><a href="/#">state</a>, <a href="/#">city</a>| Added at 06:55 pm, Ad ID: 987654321</p>-->
+					<div class="flexslider">
+						<ul class="slides">
+							<#list item.img?split(";") as img>
+								<#if img!=''>
+									<li data-thumb="http://kml8888.com:880/${img}">
+										<img src="http://kml8888.com:880/${img}" />
+									</li>
+								</#if>
+							</#list>
+							<!--<li data-thumb="images/ss2.jpg">-->
+								<!--<img src="/images/ss2.jpg" />-->
+							<!--</li>-->
+							<!--<li data-thumb="images/ss3.jpg">-->
+								<!--<img src="/images/ss3.jpg" />-->
+							<!--</li>-->
+						</ul>
+					</div>
+					<!-- FlexSlider -->
+					  <script defer src="/js/jquery.flexslider.js"></script>
+					<link rel="stylesheet" href="/css/flexslider.css" type="text/css" media="screen" />
+
+						<script>
+					// Can also be used with $(document).ready()
+					$(window).load(function() {
+					  $('.flexslider').flexslider({
+						animation: "slide",
+						controlNav: "thumbnails"
+					  });
+					});
+					</script>
+					<!-- //FlexSlider -->
+					<div class="product-details">
+						<h4 class="" >商品分类 : <a style=" font-weight:bold; " href="/category?type=${item.type.id?c}">${item.type.name}</a></h4>
+						<h4>价格 : <strong>${item.price}购物积分</strong></h4>
+						<p><strong>说明 : </strong>
+						${item.description}
+						</p>
+					</div>
+				</div>
+				<div class="col-md-5 product-details-grid col-xs-12">
+					<div class="item-price col-xs-12">
+						<div class="product-price" style="border-bottom: 1px solid #eee;">
+							<p class="p-price">购物积分</p>
+							<h3 class="rate">${item.price}</h3>
+							<div class="clearfix"></div>
+						</div>
+						<!--<div class="condition">
+							<p class="p-price">Condition</p>
+							<h4>Good</h4>
+							<div class="clearfix"></div>
+						</div>-->
+						<div class="itemtype" style="border-top: 1px solid #eee;">
+							<p class="p-price">商品分类</p>
+							<h4>${item.type.name}</h4>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+					<div class=" col-xs-12 col-xs-offset-2" style="margin-top: 50px;">
+						<div class="quantity">
+							<div class="quantity-select">
+								<div class="entry value-minus">&nbsp;</div>
+								<!--<div class="entry value"><span class="span-1">1</span></div>-->
+								<input class="entry value" type="number" min="1" max="1000" step="1" name="num" value="1"
+									   style="color: #000; background: #fff; width: 55px; border: dodgerblue solid 0.5px; ">
+								<div class="entry value-plus active">&nbsp;</div>
+							</div>
+						</div>
+						<div class="clearfix" ></div>
+						<a href="javascript:void(0)" onclick="addToCart(${item.id?c}, $('input[name=num]').val());" style=" text-decoration: none;
+								color: #fff; border-radius: .25em;
+								font-size: 17px;
+								background-color: #d9534f; padding: 10px 20px;">加入购物车<i class="fa fa-shopping-cart"></i></a>
+					</div>
+				</div>
+			<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+	<!--//single-page-->
+<div class="modal fade" id="alertModalError" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+				<h4 class="modal-title" id="myModalLabelError">
+					提示：
+				</h4>
+			</div>
+			<div class="modal-body" style="    color: #a94442; background-color: #f2dede;  border-color: #ebccd1;">
+
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+				</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal -->
+</div>
+
+<div class="modal fade" id="alertModalSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+				<h4 class="modal-title" id="myModalLabelSuccess">
+					提示：
+				</h4>
+			</div>
+			<div class="modal-body" style="color: #3c763d; background-color: #dff0d8; border-color: #d6e9c6;">
+
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+				</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal -->
+</div>
+	<!--footer section start-->
+<#include "footer_shop.html" />
+        <!--footer section end-->
+<script>
+    function addToCart(goodsId, num) {
+        $.ajax({
+			url:"addToCart",
+			data: {"id": goodsId, "num": num},
+			type: "post",
+            dataType: "json",
+			success: function(result) {
+                showSuccessAlert("加入购物车成功!", 2);
+			},
+			error: function(e) {
+			    if(e.responseJSON.msg) {
+                    if(e.responseJSON.msg.indexOf("未登录")>-1) {
+                        showErrorAlert("未登录!", 2);
+                        window.location = "/login?next=/single?id=" + goodsId;
+                    }  else {
+                        showErrorAlert("加入购物车失败!", 2);
+                    }
+				}  else {
+                    showErrorAlert("加入购物车失败!", 2);
+                }
+			}
+		});
+	}
+
+</script>
+<!--quantity-->
+<script>
+    $('.value-plus').on('click', function(){
+//        var divUpd = $(this).parent().find('.value'), newVal = parseInt(divUpd.text(), 10)+1;
+        var divUpd = $(this).parent().find('.value'), newVal = parseInt(divUpd.val(), 10)+1;
+//        divUpd.text(newVal);
+        divUpd.val(newVal);
+    });
+
+    $('.value-minus').on('click', function(){
+//        var divUpd = $(this).parent().find('.value'), newVal = parseInt(divUpd.text(), 10)-1;
+        var divUpd = $(this).parent().find('.value'), newVal = parseInt(divUpd.val(), 10)-1;
+//        if(newVal>=1) divUpd.text(newVal);
+        if(newVal>=1) divUpd.val(newVal);
+    });
+</script>
+<!--quantity-->
+</body>
+</html>

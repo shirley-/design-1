@@ -1,0 +1,66 @@
+<#include "header.html" />
+<!--会员/管理员-->
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        通知
+        <small>浏览通知</small>
+      </h1>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-md-11">
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">通知正文</h3>
+              <div class="box-tools pull-right">
+                <#if user.role == "0" >
+                  <button type="button" class="btn btn-primary"><a href="noticePage" style="color: #fff;"><i class="fa fa-arrow-circle-left"></i>通知列表</a></button>
+                <#else>
+                  <button type="button" class="btn btn-primary"><a href="noticeListPage" style="color: #fff;"><i class="fa fa-arrow-circle-left"></i>通知列表</a></button>
+                </#if>
+              </div>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body ">
+              <div class="mailbox-read-info">
+                <h3>${notice.title}</h3>
+                <h5>来自：管理员
+                  <span class="mailbox-read-time pull-right">${notice.createdDate?string('yyyy-MM-dd HH:mm:ss')}</span></h5>
+              </div>
+              <!-- /.mailbox-read-info -->
+              <div class="mailbox-read-message" style="margin-bottom: 30px;">
+                ${notice.content}
+
+              </div>
+              <!-- /.mailbox-read-message -->
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /. box -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+
+<#include "footer1.html" />
+<script>
+    $(function () {
+        //Add text editor
+
+        $('#compose-textarea').wysihtml5();
+
+    });
+</script>
+<!--<script type="text/javascript" src="/assets/myJs/editNotice.js"></script>-->
+
+<#include "footer2.html" />

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zym.Design1.mydao.AdminTradeMapper">
+  <resultMap id="BaseResultMap" type="com.zym.Design1.entity.Trade">
+      <id column="id" jdbcType="BIGINT" property="id" />
+      <result column="order_date" jdbcType="TIMESTAMP" property="orderDate" />
+      <result column="trade_date" jdbcType="TIMESTAMP" property="tradeDate" />
+      <result column="buyer_id" jdbcType="INTEGER" property="buyerId" />
+      <result column="buyer_uid" jdbcType="VARCHAR" property="buyerUid" />
+      <result column="seller_id" jdbcType="INTEGER" property="sellerId" />
+      <result column="seller_uid" jdbcType="VARCHAR" property="sellerUid" />
+      <result column="vc_price" jdbcType="DECIMAL" property="vcPrice" />
+      <result column="amount" jdbcType="DECIMAL" property="amount" />
+      <result column="ecoin" jdbcType="DECIMAL" property="ecoin" />
+      <result column="state" jdbcType="CHAR" property="state" />
+      <result column="type" jdbcType="CHAR" property="type" />
+      <result column="last_modified_date" jdbcType="TIMESTAMP" property="lastModifiedDate" />
+      <result column="after_buyer" jdbcType="VARCHAR" property="afterBuyer" />
+      <result column="after_seller" jdbcType="VARCHAR" property="afterSeller" />
+      <result column="version" jdbcType="INTEGER" property="version" />
+      <result column="src_id" jdbcType="BIGINT" property="srcId" />
+      <result column="rule_id" jdbcType="INTEGER" property="ruleId" />
+  </resultMap>
+    <!--select * from trade  t where date_format(trade_date, '%Y-%m-%d')='2018-04-20'
+    and  ( state = '2' ) order by vc_price asc, order_date asc LIMIT 2-->
+
+    <select id="selectSoldTradeByDate" resultMap="BaseResultMap" >
+      SELECT * FROM trade t WHERE 1=1 and state = #{state}
+        <trim  >
+            <if test="searchDate != null and searchDate!=&apos;&apos;">
+            AND  date_format(trade_date, '%Y-%m-%d')= #{searchDate}
+            </if>
+            <if test="buyerUid != null and buyerUid!=&apos;&apos;">
+            AND    buyer_uid like #{buyerUid,jdbcType=VARCHAR}
+            </if>
+            <if test="sellerUid != null and sellerUid!=&apos;&apos;">
+             AND   seller_uid like #{sellerUid,jdbcType=VARCHAR}
+            </if>
+        </trim>
+      ORDER BY trade_date DESC, order_date DESC, vc_price DESC
+    </select>
+
+</mapper>

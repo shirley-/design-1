@@ -1,0 +1,255 @@
+<#include "header.html" />
+<!--管理员-->
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        商品管理
+        <small>新增商品</small>
+      </h1>
+    </section>
+
+    <!-- Main content -->
+    <section class="content container-fluid">
+
+      <!--------------------------
+        | Your Page Content Here |
+        -------------------------->
+
+        <div class="row">
+          <div class="col-md-11">
+            <div class="box box-primary">
+              <div class="box-header with-border">
+                <h3 class="box-title col-md-3">编辑商品信息</h3>
+                <#if item?? >
+                  <h4 class="box-title col-md-8">(商品先下架才能修改) &nbsp; <a href="/single?id=${item.id?c}">商品展示页面</a></h4>
+                </#if>
+              </div>
+              <!-- /.box-header -->
+              <form class="goodsAdd" >
+                <div class="box-body">
+                  <#if item?? >
+                    <input type="hidden" name="id" value="${item.id?c}">
+                  </#if>
+
+                  <div class="col-md-6">
+                    <div class="form-group  col-md-12">
+                      <label class="control-label input-required">商品名称</label>
+                      <#if item?? >
+                        <input class="form-control" placeholder="商品名称" name="name" value="${item.name!''}">
+                        <#else>
+                          <input class="form-control" placeholder="商品名称" name="name" >
+                      </#if>
+                    </div>
+                    <div class="form-group  col-md-12">
+                      <label class="control-label input-required">商品分类</label>
+                      <#if item?? >
+                        <#if goodsTypes ??>
+                          <select class="form-control col-md-6" name="type">
+                            <#list goodsTypes as type>
+                              <div class="form-group">
+                                <#if item.goodsType == type.id >
+                                  <option value="${type.id?c}" selected>${type.name}</option>
+                                  <#else>
+                                    <option value="${type.id?c}" >${type.name}</option>
+                                </#if>
+                              </div>
+                            </#list>
+                          </select>
+                        </#if>
+                        <#else>
+                          <#if goodsTypes ??>
+                            <select class="form-control col-md-6" name="type">
+                              <#list goodsTypes as type>
+                                <div class="form-group">
+                                  <option value="${type.id?c}" >${type.name}</option>
+                                </div>
+                              </#list>
+                            </select>
+                          </#if>
+                      </#if>
+                    </div>
+                    <div class="form-group  col-md-12">
+                      <label class="control-label input-required">商品价格 (购物积分)</label>
+                      <#if item?? >
+                        <input class="form-control" type="number" placeholder="价格" name="price" value="${item.price!''}">
+                        <#else>
+                          <input class="form-control" type="number" placeholder="价格" name="price" >
+                      </#if>
+                    </div>
+                    <div class="form-group  col-md-12">
+                      <label class="control-label input-required">展示图片</label>
+                      <#if item?? >
+                        <input class="form-control" type="text"  name="img" value="${item.img!''}">
+                        <#else>
+                          <input class="form-control" type="text"  name="img" >
+                      </#if>
+                    </div>
+                      <div class="form-group  col-md-12">
+                      <form enctype="multipart/form-data" id="uploadForm" >
+                        <div style="margin:20px 0;">
+                            <input  class="form-control" type="file" name="uploadImg" id="uploadImg" >
+                            <input type="button" id="uploadPicButton" value="上传" onclick="uploadImage()">
+                        </div>
+                      </form>
+                      </div>
+
+                    <div class="form-group  col-md-12">
+                      <label class="control-label ">商品描述</label>
+                      <textarea id="compose-textarea" class="form-control" style="height: 250px" name="description" ><#if item?? >${item.description!''}
+                        </#if>
+                      </textarea>
+                    </div>
+                  </div>
+                  <script defer src="/js/jquery.flexslider.js"></script>
+                  <link rel="stylesheet" href="/css/flexslider.css" type="text/css" media="screen" />
+
+                  <div class="col-md-6">
+                    <div class="col-md-12" id="imgDiv1" style="width:400px; height: 300px; margin-bottom: 30px;">
+                      <#if item??>
+                        <div class="flexslider">
+                          <ul class="slides">
+                            <#list item.img?split(";") as img>
+                              <#if img!=''>
+                                <li data-thumb="http://kml8888.com:880/${img}">
+                                  <img src="http://kml8888.com:880/${img}" />
+                                </li>
+                              </#if>
+                            </#list>
+                          </ul>
+                        </div>
+                        <!--<img src="http://kml8888.com:880/${item.img}" style="width:auto; height:auto; max-width:100%; max-height:100%;"/>-->
+                      </#if>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="col-md-12" id="imgDiv" style="width:400px; height: 300px;">
+                    </div>
+                  </div>
+                </div>
+                <!-- /.box-body -->
+                <div class="box-footer">
+                  <div class="pull-right">
+                    <button type="submit" class="btn btn-primary" onclick="addGoods();"><i class="fa fa-plus"></i> 保存</button>
+                  </div>
+                  <button type="reset" class="btn btn-default" onclick="$('form')[0].reset();"><i class="fa fa-times"></i> 清空</button>
+                </div>
+                <!-- /.box-footer -->
+              </form>
+            </div>
+            <!-- /. box -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+
+<#include "footer1.html" />
+<script>
+    $(function () {
+        //Add text editor
+        $('#compose-textarea').wysihtml5();
+        $('.flexslider').flexslider({
+            animation: "slide",
+            controlNav: "thumbnails"
+        });
+        //validator
+        $('form.goodsAdd').bootstrapValidator({
+            message: '输入错误',
+            feedbackIcons: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {
+                name: {
+                    validators: {
+                        notEmpty: {
+                            message: '请输入名称'
+                        }
+                    }
+                },
+                price: {
+                    validators: {
+                        notEmpty: {
+                            message: '请输入价格'
+                        }
+                    }
+                },
+                img: {
+                    validators: {
+                        notEmpty: {
+                            message: '请输入图片'
+                        }
+                    }
+                }
+            }
+        });
+        $('#infoForm').bootstrapValidator().on('success.form.bv', function(e) {
+            // 阻止默认事件提交
+            e.preventDefault();
+        });
+    });
+    function uploadImage(){
+        var pic = $('#uploadImg')[0].files[0];
+        if(!pic) {
+            return;
+        }
+        var fd = new FormData();
+        fd.append('file', pic);
+        $.ajax({
+            url: 'uploadImage',
+            type:"post",
+            // Form数据
+            data: fd,
+            cache: false,
+            contentType: false,
+            processData: false,
+            dataType: "json",
+            success:function(data){
+                if(data.code == 0){
+//                    console.log("上传成功后的文件路径为："+data.msg);
+                    var img = $("<img style='width: 100%; height: 100%;'/>");
+                    img.attr("src", "http://kml8888.com:880/"+data.msg);
+                    $("#imgDiv").append(img);
+                    $('input[name=img]').val($('input[name=img]').val() + data.msg + ';');
+                }else {
+                    alert("上传失败!");
+                }
+            },
+            error: function (e) {
+                alert("上传失败!");
+            }
+        });
+    }
+
+    function addGoods() {
+        $('form.goodsAdd').data('bootstrapValidator').validate();
+        if(!$('form.goodsAdd').data('bootstrapValidator').isValid()){
+            return ;
+        }
+        if(!$('input[name=name]').val() || !$('input[name=price]').val()) return false;
+        $.ajax({
+            url:"addGoods",
+            type:"post",
+            data: $('form.goodsAdd').serialize(),
+            dataType: "json",
+            success :function(result) {
+                if(result.code == '0') {
+                    showSuccessAlert("保存成功！");
+                }else {
+                    showErrorAlert("保存失败!", 2);
+                }
+            },
+            error: function(e) {
+                showErrorAlert("保存失败!", 2);
+            }
+        });
+    }
+</script>
+
+<#include "footer2.html" />

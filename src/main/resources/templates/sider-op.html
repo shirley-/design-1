@@ -1,0 +1,92 @@
+<!--管理员菜单-->
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar">
+
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+
+            <!-- Sidebar user panel (optional) -->
+            <div class="user-panel" style="height: 100px;">
+                <div class="pull-left image">
+                    <img src="/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                </div>
+                <div class="pull-left info">
+                    <p><i class="fa fa-check-circle text-success"></i> ${user.uid}</p>
+                    <p><i class="fa fa-star" style="color: gold"></i>会员b</p>
+                </div>
+            </div>
+
+            <!-- Sidebar Menu -->
+            <ul class="sidebar-menu" data-widget="tree">
+                <!--<li class="header">HEADER</li>-->
+                <!-- Optionally, you can add icons to the links -->
+                <!-- class="active" 当前展开-->
+
+
+                <#if  m?? && m=='memberManage'>
+                    <li class="treeview active">
+                        <#else>
+                    <li class="treeview ">
+                </#if>
+                <a href="#"><i class="fa fa-link"></i> <span>用户管理</span>
+                    <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+                </a>
+                <ul class="treeview-menu">
+                    <#if s?? && s=='memberList' >
+                        <li class="active"><a href="/op/memberManage?s=memberList" class="sub-menu"> <span>用户列表</span></a></li>
+                        <#else>
+                            <li><a href="/op/memberManage?s=memberList" class="sub-menu"> <span>用户列表</span></a></li>
+                    </#if>
+                    <#if s?? && s=='ecoinManage' >
+                        <li class="active"><a href="/op/memberManage?s=ecoinManage" class="sub-menu"> <span>电子币充值</span></a></li>
+                        <#else>
+                            <li><a href="/op/memberManage?s=ecoinManage" class="sub-menu"> <span>电子币充值</span></a></li>
+                    </#if>
+                </ul>
+                </li>
+
+                <!-- encash -->
+                <#if  m?? && m=='encashManage' && s?? && s=='encashApprovedList'>
+                    <li class="active"><a href="/op/encashManage?s=encashApprovedList"><i class="fa fa-link"></i> <span>提现同意列表</span></a></li>
+                <#else>
+                    <li><a href="/op/encashManage?s=encashApprovedList"><i class="fa fa-link"></i> <span>提现同意列表</span></a></li>
+                </#if>
+
+                </li>
+                <!-- my -->
+                <#if  m?? && m=='my'>
+                    <li class="treeview active">
+                        <#else>
+                    <li class="treeview ">
+                </#if>
+                <a href="#"><i class="fa fa-link"></i> <span>个人中心</span>
+                    <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+                </a>
+                <ul class="treeview-menu">
+                    <#if s?? && s=='myInfo' >
+                        <li class="active"><a href="/op/my?s=myInfo" class="sub-menu"> <span>基本信息</span></a></li>
+                        <#else>
+                            <li><a href="/op/my?s=myInfo" class="sub-menu"> <span>基本信息</span></a></li>
+                    </#if>
+                    <#if s?? && s=='changePwd' >
+                        <li class="active"><a href="/op/my?s=changePwd" class="sub-menu"> <span>修改密码</span></a></li>
+                        <#else>
+                            <li><a href="/op/my?s=changePwd" class="sub-menu"> <span>修改密码</span></a></li>
+                    </#if>
+                </ul>
+                </li>
+                <!-- notice -->
+                <#if  m?? && m=='notice'>
+                    <li class=" active">
+                    <a href="/op/noticeListPage"><i class="fa fa-link"></i> <span>会员公告</span></a></li>
+                <#else>
+                    <li><a href="/op/noticeListPage"><i class="fa fa-link"></i> <span>会员公告</span></a></li>
+                </#if>
+
+
+                <li><a href="/logout"><i class="fa fa-sign-out"></i> <span>退出登录</span></a></li>
+            </ul>
+            <!-- /.sidebar-menu -->
+        </section>
+        <!-- /.sidebar -->
+    </aside>

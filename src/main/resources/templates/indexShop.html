@@ -1,0 +1,216 @@
+<#include "header_shop_0.html" />
+<div class="main-banner banner text-center">
+    <div class="container">
+        <h1>Sell or Advertise <span class="segment-heading">    anything online </span> with Resale</h1>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+        <a href="post-ad.html">Post Free Ad</a>
+    </div>
+</div>
+<!-- content-starts-here -->
+<div class="content">
+    <div class="categories">
+        <div class="container">
+            <#list goodsTypes as type >
+                <#if type_index == 0||type_index == 5>
+                    <div class="col-md-2 focus-grid col-md-offset-1">
+                        <#else>
+                            <div class="col-md-2 focus-grid ">
+                </#if>
+                <a href="category?type=${type.id?c}">
+                    <div class="focus-border">
+                        <div class="focus-layout">
+                            <div class="focus-image"><i class="fa ${type.img!''}"></i></div>
+                            <h4 class="clrchg">${type.name}</h4>
+                        </div>
+                    </div>
+                </a>
+        </div>
+        </#list>
+        <div class="col-md-2 focus-grid">
+            <a href="category">
+                <div class="focus-border">
+                    <div class="focus-layout">
+                        <div class="focus-image"><i class="fa fa-dashboard "></i></div>
+                        <h4 class="clrchg">更多...</h4>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="trending-ads">
+        <div class="container">
+            <!-- slider -->
+            <div class="trend-ads">
+                <h2>热销商品</h2>
+                <#if hotSet ?? >
+                    <ul id="flexiselDemo3">
+                        <#list hotSet as set >
+                            <li>
+                                <#list set as item>
+                                    <div class="col-md-3 biseller-column">
+                                        <a href="single?id=${item.id?c}" target="_blank">
+                                            <#assign img = item.img?split(";") />
+                                            <img src="http://kml8888.com:880/${img[0]}" title="${item.name}"
+                                                 alt="${item.name}"/>
+                                            <span class="price">购物积分 ${item.price}</span>
+                                        </a>
+                                        <div class="ad-info">
+                                            <h5>${item.name}</h5>
+                                        </div>
+                                    </div>
+                                </#list>
+                            </li>
+                        </#list>
+                    </ul>
+                </#if>
+                <script type="text/javascript">
+                    $(window).load(function () {
+                        $("#flexiselDemo3").flexisel({
+                            visibleItems: 1,
+                            animationSpeed: 1000,
+                            autoPlay: false,
+                            autoPlaySpeed: 5000,
+                            pauseOnHover: true,
+                            enableResponsiveBreakpoints: true,
+                            responsiveBreakpoints: {
+                                portrait: {
+                                    changePoint: 480,
+                                    visibleItems: 1
+                                },
+                                landscape: {
+                                    changePoint: 640,
+                                    visibleItems: 1
+                                },
+                                tablet: {
+                                    changePoint: 768,
+                                    visibleItems: 1
+                                }
+                            }
+                        });
+
+                    });
+                </script>
+                <script type="text/javascript" src="js/jquery.flexisel.js"></script>
+            </div>
+        </div>
+        <!-- //slider -->
+    </div>
+    <div class="featured-ads ">
+        <h2 class="sear-head fer">猜你喜欢</h2>
+        <div class="container">
+            <#if hotList??>
+                <div class="col-md-12 col-xs-12">
+                    <#list hotList as item>
+                        <div class=" col-md-3 col-xs-6" style="margin-top: 15px">
+                            <div class="" style="height: 220px; background-color: white;
+							 padding: 10px; border:1px solid #e3e3e3; ;
+								box-shadow: 0 0 10px #e3e3e3;
+								-webkit-box-shadow: 0 0 10px #e3e3e3;
+								-moz-box-shadow: 0 0 10px #e3e3e3;
+								box-shadow: 0 0 10px #e3e3e3;">
+                                <a href="/single?id=${item.id?c}" target="_blank" style="">
+                                    <div class="" style="text-align: center; vertical-align: middle; margin-top: 25px;">
+                                        <#assign img = item.img?split(";") />
+                                        <img src="http://kml8888.com:880/${img[0]}" title="${item.name}"
+                                             alt="${item.name}"
+                                             style=" height: auto; width: auto;  max-height: 130px;"/>
+                                    </div>
+                                    <div class="featured-ad-right" style="width:90%;">
+                                        <h4 style="margin: 5px ;  text-decoration: none; color: lightseagreen;">
+                                            ${item.name}</h4>
+                                        <!--<p>购物积分${item.price}</p>-->
+                                        <span class="price2">购物积分 ${item.price}</span>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </a>
+                            </div>
+                        </div>
+                    </#list>
+                </div>
+            </#if>
+
+        </div>
+        <div class="clearfix"></div>
+    </div>
+
+</div>
+
+<!--footer section start-->
+<div class="mod-footer">
+    <div class="mod-service">
+        <div class="container">
+            <ul class="mod_service_list">
+                <li class="mod_service_item">
+                    <div class="mod_service_unit">
+                        <h5 class="mod_service_tit mod_service_duo">多</h5>
+                        <p class="mod_service_txt">品类齐全，轻松购物</p>
+                    </div>
+                </li>
+                <li class="mod_service_item">
+                    <div class="mod_service_unit">
+                        <h5 class="mod_service_tit mod_service_kuai">快</h5>
+                        <p class="mod_service_txt">多仓直发，极速配送</p>
+                    </div>
+                </li>
+                <li class="mod_service_item">
+                    <div class="mod_service_unit">
+                        <h5 class="mod_service_tit mod_service_hao">好</h5>
+                        <p class="mod_service_txt">正品行货，精致服务</p>
+                    </div>
+                </li>
+                <li class="mod_service_item">
+                    <div class="mod_service_unit">
+                        <h5 class="mod_service_tit mod_service_sheng">省</h5>
+                        <p class="mod_service_txt">天天低价，畅选无忧</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="mod-help container">
+        <div class="col-md-10 col-md-offset-1 clearfix">
+
+            <dl class="help-nav">
+                <dt>新手上路</dt>
+                <dd><a href="javascript:" title="售后流程">售后流程</a></dd>
+                <dd><a href="javascript:" title="购物流程">购物流程</a></dd>
+                <dd><a href="javascript:" title="订购方式">订购方式</a></dd>
+            </dl>
+            <dl class="help-nav">
+                <dt>配送与支付</dt>
+                <dd><a href="javascript:" title="货到付款区域">货到付款区域</a></dd>
+                <dd><a href="javascript:" title="配送支付智能查询">配送支付智能查询</a></dd>
+                <dd><a href="javascript:" title="支付方式说明">支付方式说明</a></dd>
+            </dl>
+            <dl class="help-nav">
+                <dt>会员中心</dt>
+                <dd><a href="javascript:" title="资金管理">资金管理</a></dd>
+                <dd><a href="javascript:" title="我的收藏">我的收藏</a></dd>
+                <dd><a href="javascript:" title="我的订单">我的订单</a></dd>
+            </dl>
+            <dl class="help-nav">
+                <dt>服务保证</dt>
+                <dd><a href="javascript:" title="退货政策">退货政策</a></dd>
+                <dd><a href="javascript:" title="售后服务保证">售后服务保证</a></dd>
+                <dd><a href="javascript:" title="产品质量保证">产品质量保证</a></dd>
+            </dl>
+            <dl class="help-nav">
+                <dt>特色服务</dt>
+                <dd><a href="javascript:" title="关于我们">关于我们</a></dd>
+                <dd><a href="javascript:" title="联系我们">联系我们</a></dd>
+                <dd><a href="javascript:" title="联系客服">联系客服</a></dd>
+            </dl>
+            <div class="help-cover">
+                <h5 class="mod_help_cover_tit">全国配送</h5>
+                <div class="mod_help_cover_con">
+                    <p class="mod_help_cover_info"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<#include "footer_shop.html" />
+<!--footer section end-->
+</body>
+</html>

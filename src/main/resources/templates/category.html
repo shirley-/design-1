@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>购物商城</title>
+	<link rel="stylesheet" href="assets/css/shop.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link href="css/jquery.uls.css" rel="stylesheet"/>
+	<link href="css/jquery.uls.grid.css" rel="stylesheet"/>
+	<link href="css/jquery.uls.lcd.css" rel="stylesheet"/>
+	<link rel="stylesheet" type="text/css" href="css/easy-responsive-tabs.css " />
+	<link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!--<link rel="stylesheet" href="css/bootstrap-select.css">-->
+	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<link rel="shortcut icon" href="/assets/img/K_Letter_16px.png">
+	<!-- for-mobile-apps -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<!--<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>-->
+	<!-- //for-mobile-apps -->
+	<!-- js -->
+
+</head>
+<#include "header_shop.html" />
+	<div class="banner text-center">
+	  <div class="container">
+			<h1>Sell or Advertise   <span class="segment-heading">    anything online </span> with Resale</h1>
+			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+			<a href="post-ad.html">Post Free Ad</a>
+	  </div>
+	</div>
+	<!-- Categories -->
+	<!--Vertical Tab-->
+	<div class="categories-section main-grid-border">
+		<div class="container">
+			<h2 class="head"><a href="category" style="text-decoration: none; color: #f3c500; font-size: 35px; margin: 35px 0;">商品分类</a></h2>
+			<div class="category-list">
+				<div id="parentVerticalTab">
+					<input type="hidden" value="${type}" name="type"/>
+					<ul class="resp-tabs-list tab_group">
+						<#if goodsTypes??>
+							<#list goodsTypes as typeItem>
+								<li data-type="${typeItem.id}">${typeItem.name}</li>
+							</#list>
+						</#if>
+						<!--<a href="all-classifieds.html">All Ads</a>-->
+					</ul>
+					<div class="resp-tabs-container tab_group ">
+						<!--<span class="active total" style="display:block;" data-toggle="modal" data-target="#myModal"><strong>All USA</strong> (Select your city to see local ads)</span>-->
+						<#list goodsTypes  as typeItem>
+							<#if typeItem.id == type >
+								<div id="container">
+									<#if goods?? >
+										<ul class="list">
+											<#list goods as item>
+												<a href="single?id=${item.id}">
+													<li>
+														<#assign img = item.img?split(";") />
+														<img src="http://kml8888.com:880/${img[0]}" title="${item.name}" alt="${item.name}" />
+														<section class="list-left">
+															<h5 class="title">${item.name}</h5>
+															<span class="adprice">${item.price}购物积分</span>
+															<div class="category-info" style="margin-top: 10px;">
+																<span style="color: #f3c500; font-size: 18px; ">查看详情<i class="fa fa-arrow-right"></i></span>
+															</div>
+														</section>
+
+														<section class="list-right">
+															<!--<span class="date">Today, 17:55</span>-->
+															<!--<span class="cityname">City name</span>-->
+														</section>
+														<div class="clearfix"></div>
+													</li>
+												</a>
+											</#list>
+										</ul>
+										<#if goods?size == 0 >
+											<span class="active total"><strong>暂时缺货</strong> </span>
+										</#if>
+									</#if>
+								</div>
+							<#else>
+								<div></div>
+							</#if>
+						</#list>
+					</div>
+					<div style="width: 70%; float: right; padding-left: 20px;">
+						<div class="text-center">
+							<nav class="pagination-sm">
+								<input type="hidden" id="total" value="${total}" >
+								<input type="hidden" id="pageIndex" value="${pageIndex}" >
+								<span style="float: left; margin-top: 20px; line-height: 34px;">
+                            总共 ${total} 条记录
+                          </span>
+								<ul class="pagination"  id="categoryPage"></ul>
+							</nav>
+						</div>
+					</div>
+
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--Plug-in Initialisation-->
+
+	<!-- //Categories -->
+	<!--footer section start-->
+<#include "footer_shop.html" />
+        <!--footer section end-->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<!-- js -->
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap-select.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/assets/js/bootstrap-paginator.js"></script>
+<!--<script type="text/javascript" src="https://cdn.bootcss.com/backbone.paginator/2.0.6/backbone.paginator.min.js"></script>-->
+<script type="text/javascript" src="js/jquery.leanModal.min.js"></script>
+
+<!-- Source -->
+<script src="js/jquery.uls.data.js"></script>
+<script src="js/jquery.uls.data.utils.js"></script>
+<script src="js/jquery.uls.lcd.js"></script>
+<script src="js/jquery.uls.languagefilter.js"></script>
+<script src="js/jquery.uls.regionfilter.js"></script>
+<script src="js/jquery.uls.core.js"></script>
+
+<script src="js/easyResponsiveTabs.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        //Vertical Tab
+        $('#parentVerticalTab').easyResponsiveTabs({
+            type: 'vertical', //Types: default, vertical, accordion
+            width: 'auto', //auto or any width like 600px
+            fit: true, // 100% fit in a container
+            closed: 'accordion', // Start closed if in accordion view
+            tabidentify: 'tab_group', // The tab groups identifier
+            activate: function(event) { // Callback function if tab is switched
+                var $tab = $(this);
+                var typeId;
+                if($tab.is('h2')) {//phone
+                    typeId = $('li.resp-tab-item.tab_group[aria-controls='+$tab.attr("aria-controls")+']').attr("data-type");
+                    if(typeId == $('input[type]').val()) {
+                        if($('#container').hasClass("resp-tab-content-active")) {
+                            $('#container').css("display","none");
+                        }
+                    }else {
+                        window.location = "category?type=" + typeId;
+                    }
+                }else {
+                    typeId = $tab.attr("data-type");
+                    window.location = "category?type=" + typeId;
+                }
+
+				/*var $info = $('#nested-tabInfo2');
+				 var $name = $('span', $info);
+				 $name.text($tab.text());
+				 $info.show();*/
+            }
+        });
+
+        $('li.resp-tab-item.tab_group[data-type=1]').removeClass("resp-tab-active").css({
+            'background-color': "#F5F5F5",
+            'border-color': "#c1c1c1"
+        });
+        $('li.resp-tab-item.tab_group[data-type=' + $('input[name=type]').val() + ']').addClass("resp-tab-active").css({
+            'background-color': "white",
+            'border-color': "#c1c1c1"
+        });
+        if(window.location.href.indexOf("type")>-1) {
+            $('#container').addClass("resp-tab-content-active");
+            $("h2[aria-controls="+$('#container').attr("aria-labelledby")).css("background", "none white").css("border-color","rgb(193, 193, 193)");
+        }
+
+    });
+    var options = {
+        currentPage: $('#pageIndex').val(), //设置当前页，默认起始页为第一页
+        totalPages: $('#total').val()%10==0?$('#total').val()/5:parseInt($('#total').val()/5) +1 , //总页数,后台已设置每页10条记录
+        numberOfPages: 5 , //设置控件显示的页码数,跟后台计算出来的总页数没多大关系
+        bootstrapMajorVersion:3,//如果是bootstrap3版本需要加此标识，并且设置包含分页内容的DOM元素为UL,如果是bootstrap2版本，则DOM包含元素是DIV
+        useBootstrapTooltip: false,//是否显示tip提示框
+        pageUrl:function(type, page, current){
+            //为每个页码设置url访问请求链接，page为页码数
+            var url = 'category?type='+$("input[type]").val() + '&pageIndex='+page;
+            //为每个页码设置url访问请求链接，page为页码数
+            return url;
+        },
+        tooltipTitles: function (type, page, current) {
+            return "";
+        },
+        shouldShowPage: function (type, page, current) {
+            var result = true;
+            switch (type) {
+                case "first":
+                    result = true;
+                    // result = (current !== 1);
+                    break;
+                case "prev":
+                    result = true;
+                    // result = (current !== 1);
+                    break;
+                case "next":
+                    result = true;
+                    // result = (current !== this.totalPages);
+                    break;
+                case "last":
+                    result = true;
+                    // result = (current !== this.totalPages);
+                    break;
+                case "page":
+                    result = true;
+                    break;
+            }
+            return result;
+        }
+    }
+    $('.pagination').bootstrapPaginator(options);
+
+</script>
+</body>
+
+</html>

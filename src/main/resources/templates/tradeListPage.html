@@ -1,0 +1,128 @@
+<#include "header.html" />
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        交易管理
+        <small>售出列表</small>
+      </h1>
+    </section>
+
+    <!-- Main content -->
+    <section class="content container-fluid">
+
+      <!--------------------------
+        | Your Page Content Here |
+        -------------------------->
+
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">交易大厅</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body ">
+              <!-- 去掉data-toggle="tab"，不方便实现翻页等请求 -->
+              <ul id="myTab" class="nav nav-tabs">
+                <li><a href="/member/trade?s=orderListPage" >挂单列表</a></li>
+                <li><a href="trade?s=buyOrderListPage" >求购列表</a></li>
+                <li class="active"><a href="/member/trade?s=tradeListPage" >交易完成列表</a></li>
+                <li><a href="/member/trade?s=wantToSellPage" >我要挂单</a></li>
+                <li><a href="/member/trade?s=wantToBuyPage" >我要求购</a></li>
+              </ul>
+              <div id="myTabContent" class="tab-content">
+                <!--tab #soldListTab -->
+                <div class="tab-pane fade in active" id="soldListTab">
+                  <div class="long-solution-list col-md-offset-0">
+                    <h5 class="header">选择排列方式：
+                      <a class="offer-sort-tab active" href="/member/trade?s=tradeListPage&amp;sort=vc&amp;sortOrder=asc">单价最低</a>|
+                      <a class="offer-sort-tab active" href="/member/trade?s=tradeListPage&amp;sort=amount&amp;sortOrder=asc">数量最少</a>|
+                      <a class="offer-sort-tab active" href="/member/trade?s=tradeListPage">时间最近</a>
+                    </h5>
+                    <hr>
+                    <ul class="list-head" style="padding-left: 8%;">
+                      <li class="user-trust-head"><i class="fa  fa-calendar-check-o"></i>交易时间</li>
+                      <li class="user-name-head"><i class="fa  fa-user"></i>卖家</li>
+                      <li class="user-name-head"><i class="fa  fa-user-o"></i>买家</li>
+                      <li class="payment-type-head"><img src="/assets/img/E_Letter_16px.png">交易金额</li>
+                      <li class="minimum-amount-head">交易数量</li>
+                      <li class="price-head"><img src="/assets/img/K_Letter_16px.png">交易单价</li>
+                    </ul>
+                    <#if soldList?? >
+                    <#list soldList as soldItem>
+                      <ul class="list-content" id="soldListTab_${soldItem.id?c}" style="padding-left: 8%;">
+                        <li class="user-trust">
+                          <!--<span class="mobile-head">交易时间</span>-->
+                          ${soldItem.tradeDate !?string('yyyy-MM-dd HH:mm:ss')}
+                          <!--<span class="second-line">好评度 100.00%</span>-->
+                        </li>
+                        <li class="user-name"><!-- 卖家 -->
+                          <span>${soldItem.sellerUid}</span>
+                          <!--<i class="fa fa-check-circle-o"></i>-->
+                        </li>
+                        <li class="user-name">
+                          <!--<span class="mobile-head">买家</span>-->
+                          ${soldItem.buyerUid}
+                          <!--<span class="second-line">好评度 100.00%</span>-->
+                        </li>
+                        <li class="payment-type">
+                          <!--<span class="mobile-head">交易金额</span>-->
+                          <span class="payment-icon">
+                            <#if soldItem.ecoin??>
+                               ${soldItem.ecoin ? string(',###.00')}
+                              <span class="second-line">电子币</span>
+                            </#if>
+                          </span>
+                        </li>
+                        <li class="minimum-amount">
+                          <!--<span class="mobile-head">交易数量</span>-->
+                          <#if soldItem.amount?? >
+                            ${soldItem.amount ?string(',###.00')}
+                          </#if>
+                          <span class="second-line">KTH</span>
+                        </li>
+                        <li class="price">
+                          <!--<span class="mobile-head">交易单价</span>-->
+                          <#if soldItem.vcPrice?? >
+                            ${soldItem.vcPrice !?string(',###.00')}
+                          </#if>
+                        </li>
+                      </ul>
+                    </#list>
+                    </#if>
+                    <div class="text-center">
+                      <nav class="pagination-sm">
+                        <input type="hidden" id="tradeListTotal" value="${tradeListTotal}" >
+                        <input type="hidden" id="pageIndex" value="${pageIndex}" >
+                        <input type="hidden" id="sort" value="${sort}" >
+                        <input type="hidden" id="sortOrder" value="${sortOrder}" >
+                        <span style="float: left; margin-top: 20px; line-height: 34px;">
+                            总共 ${tradeListTotal} 条记录
+                          </span>
+                        <ul class="pagination"  id="tradeListPage"></ul>
+                      </nav>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+
+<#include "footer1.html" />
+<script type="text/javascript" src="/assets/myJs/tradingHall.js"></script>
+<script type="text/javascript" src="/assets/myJs/tradeListPage.js"></script>
+<#include "footer2.html" />

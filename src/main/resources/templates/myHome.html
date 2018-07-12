@@ -1,0 +1,230 @@
+<#include "header.html" />
+<!--会员-->
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        我的店铺
+        <small></small>
+      </h1>
+    </section>
+
+    <!-- Main content -->
+    <section class="content container-fluid">
+
+      <!--------------------------
+        | Your Page Content Here |
+        -------------------------->
+      <!--
+
+      -->
+      <div class="row">
+
+        <!--<div class="row" >-->
+          <div class="col-md-6 col-sm-12 col-xs-12" >
+            <!--<div class="row" >-->
+              <!--<div class="col-md-12 col-sm-12 col-xs-12">-->
+                <!-- small box -->
+                <div class="small-box bg-aqua" style="border-radius: 30px; margin: 10px;">
+                  <div class="inner" style="height:130px; ">
+                    <h3 style="margin:20px 100px 10px 100px; font-size: 50px; ">${vc!'0'}</h3>
+                    <p style="margin-left: 110px; font-size: 20px;">KTH市值</p>
+                  </div>
+                  <div class="icon" style="margin-right: 50px;">
+                    <i class="fa fa-thumbs-up"></i>
+                  </div>
+                  <a href="#" class="small-box-footer" style="border-bottom-left-radius: 100px; border-bottom-right-radius: 100px;">
+                    <i class="fa fa-circle-o"></i>
+                  </a>
+                </div>
+              <!--</div>-->
+              <!-- ./col -->
+            <!--</div>-->
+          </div>
+          <!--<div class="col-md-6 col-sm-12 col-xs-12 " >-->
+            <!--<div class="row">-->
+              <div class="col-md-3 col-sm-12 col-xs-12">
+                <div class="info-box">
+                  <span class="info-box-icon myStyle3"><i class="fa fa-bank"></i></span>
+                  <div class="info-box-content">
+                    <span class="info-box-text">KTH总计</span>
+                    <span class="info-box-number">${user.totalCoin!"0"}</span>
+                  </div>
+                  <!-- /.info-box-content -->
+                </div>
+
+                <!-- /.info-box -->
+              </div>
+              <!-- /.col -->
+              <div class="col-md-3 col-sm-12 col-xs-12">
+                <div class="info-box">
+                  <span class="info-box-icon myStyle3"><i class="fa fa-trophy"></i></span>
+
+                  <div class="info-box-content">
+                    <span class="info-box-text">可挂售KTH</span>
+                    <span class="info-box-number">${user.tradableCoin!"0"}</span>
+                  </div>
+                  <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+              </div>
+              <!-- /.col -->
+
+            <!--</div>-->
+            <!-- /.row -->
+
+            <!--<div class="row">-->
+
+              <div class="col-md-3 col-sm-12 col-xs-12">
+                <div class="info-box">
+                  <span class="info-box-icon myStyle4"><i class="fa fa-star-o"></i></span>
+                  <div class="info-box-content">
+                    <span class="info-box-text">积分</span>
+                    <span class="info-box-number">${user.ecoin!"0"}</span>
+                  </div>
+                  <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+              </div>
+              <!-- /.col -->
+              <div class="col-md-3 col-sm-12 col-xs-12">
+                <div class="info-box">
+                  <span class="info-box-icon myStyle4"><i class="fa fa-cny"></i></span>
+                  <div class="info-box-content">
+                    <span class="info-box-text">我的收益</span>
+                    <span class="info-box-number">${user.earnings!"0"}</span>
+                  </div>
+                  <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+              </div>
+              <!-- /.col -->
+            <!--</div>-->
+            <!-- /.row -->
+          <!--</div>-->
+        <!--</div>-->
+
+
+      <!--</div>-->
+      <!-- /.row -->
+
+      <!--<div class="row">-->
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="info-box">
+            <span class="info-box-icon myStyle2"><i class="fa fa-lock"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">锁仓KTH</span>
+              <span class="info-box-number">${user.releaseFrozenCoin!"0"}</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="info-box">
+            <span class="info-box-icon myStyle2"><i class="fa fa-envelope-open-o"></i></span>
+            <div class="info-box-content">
+              <span class="info-box-text">总释放KTH</span>
+              <span class="info-box-number">${user.releaseCoin!"0"}</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="info-box">
+            <span class="info-box-icon myStyle2"><i class="fa fa-flag-o"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">财富积分</span>
+              <span class="info-box-number">${user.cashCoin!"0"}</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="info-box">
+            <span class="info-box-icon myStyle2"><i class="fa fa-shopping-cart"></i></span>
+            <div class="info-box-content">
+              <span class="info-box-text">购物积分</span>
+              <span class="info-box-number">${user.shopPoints!"0"}</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+      <div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="info-box">
+          <span class="info-box-icon myStyle1"><i class="fa fa-calendar"></i></span>
+
+          <div class="info-box-content">
+            <span class="info-box-text">注册时间</span>
+            <span class="info-box-number">
+                <#if user.createdDate?? >
+                  ${user.createdDate?string('yyyy-MM-dd')}</#if></span>
+          </div>
+          <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+      </div>
+      <!-- /.col -->
+      <div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="info-box">
+          <span class="info-box-icon myStyle1"><i class="fa fa-calendar-check-o"></i></span>
+
+          <div class="info-box-content">
+            <span class="info-box-text">释放天数</span>
+            <span class="info-box-number">${user.releaseDays!''}</span>
+          </div>
+          <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+      </div>
+      <!-- /.col -->
+      <!--<div class="col-md-3 col-sm-6 col-xs-12">-->
+        <!--<div class="info-box">-->
+          <!--<span class="info-box-icon myStyle1"><i class="fa fa-male"></i></span>-->
+
+          <!--<div class="info-box-content">-->
+            <!--<span class="info-box-text">我的推荐人</span>-->
+            <!--<span class="info-box-number">${user.introducerUid!''}</span>-->
+          <!--</div>-->
+          <!--&lt;!&ndash; /.info-box-content &ndash;&gt;-->
+        <!--</div>-->
+        <!--&lt;!&ndash; /.info-box &ndash;&gt;-->
+      <!--</div>-->
+      <!-- /.col -->
+      <!--<div class="col-md-3 col-sm-6 col-xs-12">-->
+        <!--<div class="info-box">-->
+          <!--<span class="info-box-icon myStyle1"><i class="fa fa-users"></i></span>-->
+
+          <!--<div class="info-box-content">-->
+            <!--<span class="info-box-text">推荐人数</span>-->
+            <!--<span class="info-box-number">${childrenNum!"0"}</span>-->
+          <!--</div>-->
+          <!--&lt;!&ndash; /.info-box-content &ndash;&gt;-->
+        <!--</div>-->
+        <!--&lt;!&ndash; /.info-box &ndash;&gt;-->
+      <!--</div>-->
+      <!-- /.col -->
+      </div>
+      <!-- /.row -->
+
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+
+<#include "footer1.html" />
+
+<!--<script type="text/javascript" src="/assets/myJs/changePwd.js"></script>-->
+
+<#include "footer2.html" />

@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>购物商城</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="/css/bootstrap-select.css">-->
+    <link href="/css/jquery.uls.css" rel="stylesheet"/>
+    <link href="/css/jquery.uls.grid.css" rel="stylesheet"/>
+    <link href="/css/jquery.uls.lcd.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/flexslider.css" media="screen" />
+    <link href="css/style-cart.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="assets/css/shop.css">
+    <link rel="shortcut icon" href="/assets/img/K_Letter_16px.png">
+    <!-- for-mobile-apps -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- //for-mobile-apps -->
+    <!-- js -->
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <!-- js -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/bootstrap-select.js"></script>
+    <script type="text/javascript" src="/js/jquery.leanModal.min.js"></script>
+
+    <style>
+        .focus-image i.color1 {
+            background:#3fb7d2;
+        }
+        .focus-image i.color2 {
+            background:#15c01c;
+        }
+        .focus-image i.color3 {
+            background:#ff9e29;
+        }
+        .focus-image i.color4 {
+            background:#f49ecf;
+        }
+        .focus-image i.color5 {
+            background:#7e3b07;
+        }
+        .focus-image i.color6 {
+            background:#1963ce;
+        }
+        .focus-image i.color7 {
+            background:#c119ce;
+        }
+        .focus-image i.color8 {
+            background:#7fbad8;
+        }
+        .focus-image i.color9 {
+            background:#1ca39d;
+        }
+
+        /* ---- 底部模块 ---- */
+        .mod-footer{background-color: #3F3D3D; margin-top: 20px;}
+        .mod-service {padding: 30px 0; border-bottom: 1px solid #dedede; }
+        .mod_service_list {overflow: hidden; height: 42px; }
+        .mod_service_item {float: left; width: 260px; }
+        .mod_service_unit {position: relative; margin: 0 auto; padding-left: 45px; width: 180px; }
+        .mod_service_tit {overflow: hidden; position: absolute; left: 0; top: 0; width: 36px; height: 42px; background-image: url(/static/images/ico_service1.png); text-indent: -999px; }
+        .mod_service_duo {background-position: 0 0; }
+        .mod_service_kuai {background-position: 0 -43px; }
+        .mod_service_hao {background-position: 0 -86px; }
+        .mod_service_sheng {background-position: 0 -129px; }
+        .mod_service_txt { width: 100%; height: 42px; line-height: 42px; font-size: 16px; font-weight: 700; text-overflow: ellipsis; white-space: nowrap; color: #fff; }
+        .mod-help {padding: 20px 0; color: #fff;}
+        .mod-help a{color: #666;}
+        .mod-help .help-nav {float: left; width: 140px; line-height: 22px; }
+        .mod-help .help-nav dt{margin-bottom: 5px; font-size: 14px; font-weight: bold;}
+        .mod-help .help-cover {float: right; width: 200px; height: 150px; background: url(/static/images/ico_footer.png) no-repeat 0 0; }
+        .mod_help_cover_tit {margin-bottom: 15px; font-size: 14px; text-align: center; }
+        .mod_help_cover_con {padding: 0 10px; }
+        .mod_help_cover_more {text-align: right; }
+        .mod-copyright .container{padding: 15px 0; border-top: 1px solid #e1e1e1; text-align: center; }
+        .mod-copyright .copyright-links .cplk-split{margin: 0 10px; color: #ccc; }
+        .mod-copyright .copyright-info{padding: 10px 0; line-height: 22px; color: #999; }
+        .mod-copyright .copyright-info a {color: #999; }
+        .mod_copyright_auth_ico {overflow: hidden; display: inline-block; margin: 0 3px; width: 103px; height: 32px; background-image: url(/static/images/ico_footer.png); line-height: 1000px; }
+        .mod_copyright_auth_ico_1 {background-position: 0 -151px; }
+        .mod_copyright_auth_ico_2 {background-position: -104px -151px; }
+        .mod_copyright_auth_ico_3 {background-position: 0 -184px; }
+        .mod_copyright_auth_ico_4 {background-position: -104px -184px; }
+        .mod_copyright_auth_ico_5 {background-position: 0 -217px; }
+        .mod_copyright_auth_ico_6 {background-position: -104px -217px; }
+
+    </style>
+
+    <!-- Source -->
+    <script src="/js/jquery.uls.data.js"></script>
+    <script src="/js/jquery.uls.data.utils.js"></script>
+    <script src="/js/jquery.uls.lcd.js"></script>
+    <script src="/js/jquery.uls.languagefilter.js"></script>
+    <script src="/js/jquery.uls.regionfilter.js"></script>
+    <script src="/js/jquery.uls.core.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/shop.css">
+    <!--<link rel="stylesheet" href="css/bootstrap-select.css">-->
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <!-- for-mobile-apps -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- //for-mobile-apps -->
+    <!--fonts-->
+    <!--<link href='https://fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'>-->
+    <!--<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>-->
+    <!--//fonts-->
+    <!-- js -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <!-- js -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-select.js"></script>
+    <script type="text/javascript" src="js/jquery.leanModal.min.js"></script>
+    <link href="css/jquery.uls.css" rel="stylesheet"/>
+    <link href="css/jquery.uls.grid.css" rel="stylesheet"/>
+    <link href="css/jquery.uls.lcd.css" rel="stylesheet"/>
+    <!-- Source -->
+    <script src="js/jquery.uls.data.js"></script>
+    <script src="js/jquery.uls.data.utils.js"></script>
+    <script src="js/jquery.uls.lcd.js"></script>
+    <script src="js/jquery.uls.languagefilter.js"></script>
+    <script src="js/jquery.uls.regionfilter.js"></script>
+    <script src="js/jquery.uls.core.js"></script>
+    <script type="text/javascript" src="/assets/myJs/base.js"></script>
+</head>
+<body>
+<div class="header">
+    <div class="container">
+        <div class="logo" style="margin: 10px 0;">
+            <a href="index.html" style="font-size: 35px;"><span>购物</span>商城</a>
+        </div>
+        <div class="header-right" style="">
+            <a class="account" href="/shop" >购物商城</a>
+            <#if user??>
+                <!--<a class="cart" style="" href="/cart"><i class="fa fa-shopping-cart"></i></a>-->
+                <#if user.role == "0" >
+                    <a class="cart" style="" href="/member/cart" target="_blank"><i class="fa fa-shopping-cart"></i></a>
+                    <a class="login" href="/member/myHome" target="_blank">会员中心</a>
+                </#if>
+                <#if user.role == "2" >
+                    <a class="cart" style="" href="/admin/cart" target="_blank"><i class="fa fa-shopping-cart"></i></a>
+                    <a class="login" href="/admin/myHome" target="_blank">管理员入口</a>
+                </#if>
+                <#if user.role == "1" >
+                    <a class="login" href="/op/myHome" target="_blank" >管理员入口</a>
+                </#if>
+            <#else>
+                <a class="login" href="/login" target="_blank" >会员登录</a>
+            </#if>
+        </div>
+    </div>
+</div>

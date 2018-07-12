@@ -1,0 +1,152 @@
+<#include "header.html" />
+<!--会员-->
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        交易大厅
+        <small>KTH趋势<i class="fa fa-line-chart"></i></small>
+      </h1>
+    </section>
+
+    <!-- Main content -->
+    <section class="content container-fluid">
+
+      <!--------------------------
+        | Your Page Content Here |
+        -------------------------->
+
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="box box-danger">
+            <div class="box-header">
+              <!--<h3 class="box-title">交易大厅</h3>-->
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body ">
+              <!-- 去掉data-toggle="tab"，不方便实现翻页等请求 -->
+              <ul id="myTab" class="nav nav-tabs hidden-xs">
+                <li class="active"><a href="trade?s=tradeTrend" >KTH趋势</a></li>
+                <li><a href="trade?s=tradeHall" >交易大厅</a></li>
+                <li><a href="trade?s=myTrade" >我的交易</a></li>
+              </ul>
+              <div id="myTabContent" class="tab-content">
+                <!--tab #tradeTrend-->
+                <div class="tab-pane fade in active" id="tradeTrend">
+                  <h3>KTH趋势<i class="fa fa-line-chart"></i></h3>
+                  <div class="col-md-12 " style="overflow:auto;">
+                    <div  id="main" style="width: 600px; height: 300px; "></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+
+<#include "footer1.html" />
+<script>
+    var trendChart = echarts.init(document.getElementById('main'));
+    trendChart.showLoading({
+        text: '正在努力的读取数据中...',
+    });
+    $.ajax({
+        url: 'getTrendData',
+        type: 'post',
+        dataType: 'json',
+        success: function (result) {
+            var option = {
+                title: {
+//                    text: 'KMC趋势',
+                    padding: 30,
+
+                },
+                tooltip: {
+                    trigger: 'item',
+                    formatter: function (params) {
+                        var date = new Date(params.value[0]);
+                        return date.format("yyyy-MM-dd hh:mm") + '<br/>'
+                            + "KTH:" +params.value[1] ;
+                    }
+                },
+                toolbox: {
+                    show: false,
+                },
+                dataZoom: {
+                    show: false,
+                    start: 0,
+                    end: 100
+                },
+                xAxis: [
+                    {
+                        type: 'time',
+                        splitNumber: 12,
+                        name: "日期"
+                    }
+                ],
+                yAxis: [
+                    {
+                        type: 'value',
+                        name: 'KTH市值',
+                        min: 1.00,
+                        splitNumber: 5,
+                        minInterval: 0.01,
+                        axisLabel: {
+                            formatter: function (value, index) {
+                                return value.toFixed(2);
+                            }
+                        }
+                    }
+                ],
+                series: [
+                    {
+                        name: 'KTH趋势图',
+                        type: 'line',
+                        showAllSymbol: true,
+                        data: result,
+                        smooth: true,
+                        symbol: 'circle',
+                        symbolSize: 10,
+                        lineStyle: {
+                            normal: {
+//                                color: 'green',
+                                width: 4,
+                                type: 'solid'
+                            }
+                        },
+                        itemStyle: {
+                            normal: {
+                                borderWidth: 3,
+                                borderColor: 'navy',
+//                                color: 'blue'
+                            }
+                        },
+                        label: {
+                            normal: {
+                                show: true,
+                              /*formatter: function (params) {
+                               var date = new Date(params.value[0]);
+                               return date.format("MM-dd hh") + '\n'
+                               + "KMC:" +params.value[1] ;
+                               },*/
+                            }
+                        },
+                    }
+                ]
+            };
+            trendChart.hideLoading();
+            trendChart.setOption(option);
+        }
+    });
+</script>
+<#include "footer2.html" />

@@ -1,0 +1,111 @@
+<#include "header1.html" />
+</head>
+<!--
+BODY TAG OPTIONS:
+=================
+Apply one or more of the following classes to get the
+desired effect
+|---------------------------------------------------------|
+| SKINS         | skin-blue                               |
+|               | skin-black                              |
+|               | skin-purple                             |
+|               | skin-yellow                             |
+|               | skin-red                                |
+|               | skin-green                              |
+|---------------------------------------------------------|
+|LAYOUT OPTIONS | fixed                                   |
+|               | layout-boxed                            |
+|               | layout-top-nav                          |
+|               | sidebar-collapse                        |
+|               | sidebar-mini                            |
+|---------------------------------------------------------|
+-->
+<body class="hold-transition skin-blue sidebar-mini ">
+<div class="wrapper">
+
+    <!-- Main Header -->
+    <header class="main-header">
+
+        <!-- Logo -->
+        <a href="/" class="logo">
+            <!-- mini logo for sidebar mini 50x50 pixels -->
+            <span class="logo-mini"><b>购物商城</b></span>
+            <!-- logo for regular state and mobile devices -->
+            <span class="logo-lg"><b>购物商城</b></span>
+        </a>
+
+        <!-- Header Navbar -->
+        <nav class="navbar navbar-static-top" role="navigation">
+            <!-- Sidebar toggle button-->
+            <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                <!--<span class="sr-only">Toggle navigation</span>-->
+            </a>
+            <!-- Navbar Right Menu -->
+            <div class="navbar-custom-menu">
+                <ul class="nav navbar-nav">
+
+                    <!--User  Account Menu  用户-->
+                    <li class=" user user-menu">
+                        <!-- Menu Toggle Button -->
+                        <#if user?? >
+                            <#if user.role == "2" >
+                                <a href="/admin/myHome" class="dropdown-toggle" >
+                                    <i class="fa  fa-user-circle "></i>
+                                </a>
+                            </#if>
+                            <#if user.role == "1" >
+                                <a href="/op/myHome"  title="我的店铺">
+                                    <i class="fa  fa-user-circle "></i>
+                                </a>
+                            </#if>
+                            <#if user.role == "0" >
+                                <a href="/member/myHome"  title="我的店铺">
+                                    <i class="fa  fa-user-circle "></i>
+                                </a>
+                            </#if>
+                            <#else>
+                                <a href="/"  title="首页">
+                                    <!-- The user image in the navbar-->
+                                    <!--<img src="/assets/ico/tou.png" class="user-image hidden-xs" alt="User Image">-->
+                                    <i class="fa  fa-user-circle "></i>
+                                    <!-- hidden-xs hides the username on small devices so only the image appears. -->
+                                </a>
+                        </#if>
+                    </li>
+
+                    <!-- home回主页-->
+                    <li>
+                        <a href="/" title="回到首页" ><i class="fa fa-home"></i></a>
+                    </li>
+                    <!-- 登出 -->
+                    <li>
+                        <a href="/logout" title="退出登录" ><i class="fa fa-sign-out"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <h1>
+                500
+            </h1>
+        </section>
+
+        <!-- Main content -->
+        <section class="content container-fluid">
+            <H2>
+                内部错误！
+            </H2>
+        </section>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+
+
+    <!--<#include "footer1.html" />-->
+
+
+    <#include "footer2.html" />

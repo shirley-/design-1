@@ -1,0 +1,93 @@
+<#include "header.html" />
+<!--会员-->
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        交易大厅
+        <small>完成的交易</small>
+      </h1>
+    </section>
+
+    <!-- Main content -->
+    <section class="content container-fluid">
+
+      <!--------------------------
+        | Your Page Content Here |
+        -------------------------->
+
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="box box-danger">
+            <div class="box-header">
+              <!--<h3 class="box-title">交易大厅</h3>-->
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body ">
+              <ul id="myTab" class="nav nav-tabs hidden-xs">
+                <li><a href="trade?s=tradeTrend" >KTH走势</a></li>
+                <li><a href="trade?s=tradeHall" >交易大厅</a></li>
+                <li  class="active"><a href="trade?s=tradeHistory" >完成的交易</a></li>
+                <li><a href="trade?s=myTrade" >我的交易</a></li>
+              </ul>
+              <div id="myTabContent" class="tab-content col-sm-10 col-sm-offset-1">
+                <!--tab #tradeHistory-->
+                <div class="tab-pane fade in active" id="tradeHistory">
+                  <table id="soldTable" class="table table-striped table-bordered text-nowrap "
+                         data-undefined-text=""
+                         data-toolbar-align="left"
+                         data-buttons-align="left"
+                         data-show-refresh="true"
+                         data-show-columns="true" >
+                    <thead>
+                    <tr>
+                      <th data-field="id"  data-width="10%">#</th>
+                      <th data-field="tradeDate" data-formatter="displayCreatedDate" data-width="25%">交易时间</th>
+                      <th data-field="orderDate" data-formatter="displayCreatedDate" data-width="25%">挂单时间</th>
+                      <th data-field="vcPrice" >单价</th>
+                      <th data-field="amount" >数量</th>
+                      <th data-field="ecoin" >金额</th>
+
+                    </tr>
+                    </thead>
+                  </table>
+
+                </div>
+              </div>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+
+<#include "footer1.html" />
+<script>
+    var soldTable = $('#soldTable').bootstrapTable({
+        url: "buySellList",
+        method: 'post',
+        contentType: "application/x-www-form-urlencoded",
+        cache: false,
+        sidePagination:'server',//指定服务器端分页
+        queryParams:function (params) {  //请求服务器时所传的参数
+            return {
+                type: "sold",
+            }
+        },
+    });
+    $(function() {
+        if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {//手机端
+            $('#soldTable').bootstrapTable('hideColumn', 'orderDate');
+            $('#soldTable').bootstrapTable('hideColumn', 'tradeDate');
+        }
+    });
+</script>
+<#include "footer2.html" />

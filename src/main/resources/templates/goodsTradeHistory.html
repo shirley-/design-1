@@ -1,0 +1,139 @@
+<#include "header.html" />
+<!--管理员-->
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        商品管理
+        <small>商品销售历史</small>
+      </h1>
+    </section>
+
+    <!-- Main content -->
+    <section class="content container-fluid">
+
+      <!--------------------------
+        | Your Page Content Here |
+        -------------------------->
+
+        <div class="row user_table">
+          <div class="col-xs-12 col-md-12">
+            <div class="box box-info">
+              <div class="box-header">
+                <!--<h3 class="box-title">购物记录</h3>-->
+              </div>
+              <!-- /.box-header -->
+              <div class="box-body table-responsive">
+                <div  class="  ">
+                  <form class="form-horizontal"  >
+                    <div class="form-group  col-md-6">
+                        <label  class="col-md-3 control-label">起止日期</label>
+                        <div class="col-md-9">
+                          <input type="date" class="form-control " style="width: 160px; float: left;" id="datepicker1" name="days1">
+                          <input type="date" class=" form-control" style="width: 160px; float: left;" id="datepicker2" name="days2">
+                        </div>
+                    </div>
+                    <div class="form-group  col-md-3 " style="">
+                      <label for="name" class="col-md-5 control-label">商品名称</label>
+                      <div class="col-md-7">
+                        <input type="text" class="form-control " id="name" name="name">
+                      </div>
+                    </div>
+                    <div class="form-group col-md-2">
+                      <label class="col-md-5 control-label">分类</label>
+                      <#if goodsTypes ??>
+                        <select class="form-control col-md-6" name="type" style="width: 90px;">
+                          <option value=""></option>
+                          <#list goodsTypes as type>
+                            <div class="form-group">
+                              <option value="${type.id?c}" >${type.name}</option>
+                            </div>
+                          </#list>
+                        </select>
+                      </#if>
+                    </div>
+                    <div class="">
+                      <button  type="button" class="btn btn-info" onclick="searchTable(); "
+                      >查询</button>
+                    </div>
+                  </form>
+                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12">
+                  <table id="recordTable" class="table table-striped table-bordered text-nowrap"
+                         data-undefined-text=""
+                         data-show-refresh="true"
+                         data-show-columns="true"
+                         data-search="false"
+                         data-search-align="left"  >
+                    <thead>
+                    <tr>
+                      <th data-field="num" >售出总数量</th>
+                      <th data-field="goodsId"  >商品ID</th>
+                      <th data-field="goodsName"  >商品名称</th>
+                      <th data-field="type.id" data-visible="false"  >分类ID</th>
+                      <th data-field="type.name"   >分类</th>
+                    </tr>
+                    </thead>
+                  </table>
+                </div>
+              </div>
+              <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+
+
+<#include "footer1.html" />
+<script>
+    var $table;
+    var goodsType={};
+    $(document).ready(function() {
+        $('select[name=type] option').each(function () {
+            goodsType[$(this).val()] = $(this).text();
+        })
+        $table = $('#recordTable').bootstrapTable({
+            method: 'post',
+            url: 'goodsTradeHistory',
+            contentType: "application/x-www-form-urlencoded",
+//        singleSelect: true,//单选
+            //server分页
+            pageNumber: 1, //初始化加载第一页，默认第一页
+            pagination:true,//是否分页
+            paginationLoop: false,
+            cache: false,
+            searchTimeOut: 2000,
+            queryParams:function (params){  //请求服务器时所传的参数
+                return {
+                    pageIndex : params.offset/params.limit+1, //当前页面,默认是上面设置的1(pageNumber)
+                    pageSize : params.limit, //每一页的数据行数，默认是上面设置的10(pageSize)
+                    days1: $('input[name=days1]').val(),      //day1
+                    days2: $('input[name=days2]').val(),      //day2
+                    name: $('input[name=name]').val(),
+                    type: $('select[name=type] option:selected').val(),
+                    // param : "Your Param" //这里是其他的参数，根据自己的需求定义，可以是多个
+                }
+            },
+            sidePagination:'server',//指定服务器端分页
+            pageSize:10,//单页记录数
+//            pageList:[10, 25, 50],//分页步进值
+            paginationPreText: '<',//指定分页条中上一页按钮的图标或文字,这里是<
+            paginationNextText: '>',//指定分页条中下一页按钮的图标或文字,这里是>
+        });
+    });
+
+    function searchTable() {
+        $table.bootstrapTable('refresh');
+    }
+
+</script>
+<#include "footer2.html" />

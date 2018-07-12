@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zym.Design1.mydao.FinMapper">
+  <resultMap id="BaseResultMap" type="com.zym.Design1.bean.vo.FinVO">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="date" jdbcType="TIMESTAMP" property="date" />
+    <result column="type" jdbcType="CHAR" property="type" />
+    <result column="entity_id" jdbcType="INTEGER" property="entityId" />
+    <result column="entity_user_level" jdbcType="INTEGER" property="entityUserLevel" />
+    <result column="ecoin_bonus" jdbcType="DECIMAL" property="ecoinBonus" />
+    <result column="unfrozen_coin" jdbcType="DECIMAL" property="unfrozenCoin" />
+
+    <result column="entity_uid" jdbcType="VARCHAR" property="user.uid" />
+
+    <result column="rule_id" jdbcType="INTEGER" property="rule.id" />
+    <result column="rule_name" jdbcType="CHAR" property="rule.ruleName" />
+    <result column="days" jdbcType="INTEGER" property="rule.days" />
+    <result column="bonus" jdbcType="DECIMAL" property="rule.bonus" />
+  </resultMap>
+  <!--
+   SELECT t1.id, t1.user_id, t1.date, t1.type, t1.entity_id, t1.entity_user_level,
+    t1.ecoin_bonus, t1.unfrozen_coin,
+ t2.uid entity_uid, t3.id rule_id, t3.rule_name, t3.days, t3.bonus FROM daily_credit_log t1
+left join user t2 on t1.entity_id = t2.id left join rule t3 on t1.entity_user_level=t3.id
+where t1.user_id = 6
+-->
+  <select id="getFinDetailList" resultMap="BaseResultMap" >
+      SELECT t1.id, t1.user_id, t1.date, t1.type, t1.entity_id, t1.entity_user_level,
+          t1.ecoin_bonus, t1.unfrozen_coin,
+          t2.uid entity_uid, t3.id rule_id, t3.rule_name, t3.days, t3.bonus FROM daily_release_log t1
+      left join user t2 on t1.entity_id = t2.id
+      left join rule t3 on t3.id= t1.entity_user_level
+      where 1=1
+      <trim  >
+          <if test="userId!=null" >
+              and t1.user_id = #{userId}
+          </if>
+          <if test="searchUserUid!=null and searchUserUid!=&apos;&apos;">
+            and t2.uid like #{searchUserUid}
+          </if>
+      </trim>
+
+      order by date desc, type asc
+  </select>
+
+</mapper>

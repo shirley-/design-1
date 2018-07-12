@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zym.Design1.mydao.ShopMapper">
+    <resultMap id="ResultMap" type="com.zym.Design1.bean.vo.GoodsDetailVO">
+        <id column="id" jdbcType="INTEGER" property="id" />
+        <result column="name" jdbcType="VARCHAR" property="name" />
+        <result column="price" jdbcType="DECIMAL" property="price" />
+        <result column="img" jdbcType="VARCHAR" property="img" />
+        <result column="goods_type" jdbcType="INTEGER" property="goodsType" />
+        <result column="description" jdbcType="LONGVARCHAR" property="description" />
+
+        <result column="type_id" jdbcType="INTEGER" property="type.id" />
+        <result column="type_name" jdbcType="VARCHAR" property="type.name" />
+        <result column="type_description" jdbcType="VARCHAR" property="type.description" />
+        <result column="type_remark" jdbcType="VARCHAR" property="type.remark" />
+
+    </resultMap>
+    <select id="getGoodsDetailById" resultMap="ResultMap">
+        select t1.id, t1.name, t1.price, t1.img, t1.goods_type, t1.description,
+         t2.id as type_id, t2.name as type_name, t2.description as type_description, t2.remark as type_remark
+         from goods t1 left join goods_type t2 on t1.goods_type = t2.id
+         where t1.id=#{id}
+         order by t1.id;
+    </select>
+
+    <resultMap id="ResultMapStatistic" type="com.zym.Design1.bean.vo.GoodsStatistic">
+        <!--<id column="id" jdbcType="BIGINT" property="id" />-->
+        <result column="goods_id" jdbcType="INTEGER" property="goodsId" />
+        <result column="goods_name" jdbcType="VARCHAR" property="goodsName" />
+
+        <result column="goods_id" jdbcType="INTEGER" property="goods.id" />
+        <result column="goods_name" jdbcType="VARCHAR" property="goods.name" />
+        <result column="goods_type" jdbcType="INTEGER" property="goods.goodsType" />
+
+        <result column="type_id" jdbcType="INTEGER" property="type.id" />
+        <result column="type_name" jdbcType="VARCHAR" property="type.name" />
+
+        <result column="total" jdbcType="INTEGER" property="num" />
+
+    </resultMap>
+    <select id="getStatisticData" resultMap="ResultMapStatistic" >
+        SELECT
+        SUM(num) as total,
+        t.goods_id,
+        g.name AS goods_name,
+        g.goods_type,
+        p.name AS type_name,
+        p.id AS type_id
+        FROM
+        goods_trade t
+        JOIN
+        goods g ON g.id = t.goods_id
+        JOIN
+        goods_type p ON g.goods_type = p.id
+        where  1=1
+        <if test="days1!=null and days1!=&apos;&apos;" >
+            and date(t.date)  <![CDATA[ >=  ]]> date(#{days1})
+        </if>
+        <if test="days2!=null and days2!=&apos;&apos;" >
+            and date(t.date) <![CDATA[ <=  ]]> date(#{days2})
+        </if>
+        <if test="goodsName!=null and goodsName!=&apos;&apos;" >
+            and g.name like #{goodsName}
+        </if>
+        <if test="goodsType!=null and goodsType!=&apos;&apos;" >
+            and p.id = #{goodsType}
+        </if>
+        GROUP BY t.goods_id
+        ORDER BY t.goods_id
+    </select>
+</mapper>

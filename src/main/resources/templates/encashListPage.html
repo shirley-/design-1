@@ -1,0 +1,167 @@
+<#include "header.html" />
+<!--管理员-->
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        提现
+        <small>KTH提现</small>
+      </h1>
+    </section>
+
+    <!-- Main content -->
+    <section class="content container-fluid">
+      <!--------------------------
+       | Your Page Content Here |
+       -------------------------->
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="box box-warning">
+            <div class="box-header">
+              <!--<h3 class="box-title">KTH提现</h3>-->
+              <span class="myAlert" ></span>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body ">
+              <!-- 去掉data-toggle="tab"，不方便实现翻页等请求 -->
+              <#if user.role == "2" >
+                 <ul id="myTab" class="nav nav-tabs">
+
+                    <#if state=="1">
+                      <li class="active"><a href="encashManage?s=encashApplyList" >提现申请列表</a></li>
+                      <li><a href="encashManage?s=encashApprovedList" >提现完成列表</a></li>
+                      <li><a href="encashManage?s=encashRejectedList" >提现拒绝列表</a></li>
+                    </#if>
+                    <#if state=='3'>
+                      <li><a href="encashManage?s=encashApplyList" >提现申请列表</a></li>
+                      <li class="active"><a href="encashManage?s=encashApprovedList" >提现完成列表</a></li>
+                      <li><a href="encashManage?s=encashRejectedList" >提现拒绝列表</a></li>
+                    </#if>
+                    <#if state=='4'>
+                      <li><a href="encashManage?s=encashApplyList" >提现申请列表</a></li>
+                      <li><a href="encashManage?s=encashApprovedList" >提现完成列表</a></li>
+                      <li class="active"><a href="encashManage?s=encashRejectedList" >提现拒绝列表</a></li>
+
+                    </#if>
+
+                  </ul>
+              </#if>
+              <input id="state" value="${state}" type="hidden">
+              <div id="myTabContent" class="tab-content">
+                <!--tab # -->
+                <div class="tab-pane fade in active" id="">
+                  <#if state == "3" >
+                    <form class="form-horizontal col-md-10" style="margin-top: 20px;" >
+                      <div class="form-group col-md-5">
+                        <label for="datepicker" class="col-md-3 control-label">日期</label>
+                        <div class="col-md-9">
+                          <input type="date" class="form-control " id="datepicker">
+                        </div>
+                      </div>
+                      <div class="col-md-1">
+                        <button  type="button" class="btn btn-info" onclick="searchTable(); ">查询</button>
+                      </div>
+                    </form>
+                  </#if>
+                  <!-- /.box-header -->
+                  <div class="box-body table-responsive col-md-12">
+                    <table id="table" class="table table-striped table-bordered text-nowrap"
+                           data-undefined-text=""
+                           data-click-to-select="true"
+                           data-show-refresh="false"
+                           data-show-columns="false" >
+                      <thead>
+                      <tr>
+                        <!--<th data-field="state" data-checkbox="true"></th>-->
+                        <th data-field="id" >id</th><!-- hidden -->
+                        <th data-field="userUid">用户ID</th>
+                        <th data-field="amount">金额</th>
+                        <th data-field="fee">手续费</th>
+                        <th data-field="earnings">收益</th>
+                        <th data-field="shopPoints">购物积分</th>
+                        <!--<th data-field="createdDate" data-formatter="displayCreatedDate">提现请求时间</th>-->
+                        <th data-field="approveDate" data-formatter="displayCreatedDate">审批时间</th>
+                        <!--<th data-field="state"  data-formatter="displayState">状态</th>-->
+                        <#if user.role =='2' >
+                          <#if state=='1' >
+                            <th data-field="action"
+                                data-align="left"
+                                data-formatter="actionFormatter"
+                                data-events="actionEvents">操作</th><!--操作列-->
+                          <#else>
+                            <th data-field="remark"  >备注</th>
+                            <th data-field="reason"  >原因</th>
+                          </#if>
+                        </#if>
+                        <#if state=='3'>
+                          <th data-field="bankAccount">银行账号</th>
+                          <th data-field="depositBank">开户行</th>
+                          <th data-field="accountHolder">开户人</th>
+                        </#if>
+                      </tr>
+                      </thead>
+                    </table>
+                  </div>
+                  <!-- /.box-body -->
+                </div>
+              </div>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+<!-- 弹出框 -->
+<div id="modal" class="modal fade"  data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title"></h4>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal" id="form" name="form-horizontal" autocomplete="off" onkeydown="if(event.keyCode==13)return false;">
+          <input type="hidden" class="form-control" name="id" >
+          <div class="container col-md-12" >
+            <input type="hidden"  name="id" >
+            <div class="form-group  ">
+              <label>用户ID</label>
+              <input type="text" class="form-control" name="userUid" placeholder="用户ID" readonly>
+            </div>
+            <div class="form-group  ">
+              <label>金额</label>
+              <input type="number" class="form-control" name="amount" placeholder="金额" readonly>
+            </div>
+            <div class="form-group ">
+              <label>收益</label>
+              <input type="number" class="form-control" name="earnings" placeholder="收益" readonly>
+            </div>
+            <div class="form-group ">
+              <label>拒绝原因</label>
+              <input type="text" class="form-control" name="reason" placeholder="拒绝原因">
+            </div>
+            <div class="clearfix" ></div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+        <button type="button" class="btn btn-primary submit">同意</button>
+        <button type="button" class="btn btn-danger submit2 col-md-2">拒绝</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+<#include "footer1.html" />
+<script type="text/javascript" src="/assets/myJs/encashListPage.js"></script>
+<#include "footer2.html" />

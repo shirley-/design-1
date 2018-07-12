@@ -1,0 +1,83 @@
+<#include "header.html" />
+<!--管理员-->
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        通知管理
+        <small>新增通知</small>
+      </h1>
+    </section>
+
+    <!-- Main content -->
+    <section class="content container-fluid">
+
+      <!--------------------------
+        | Your Page Content Here |
+        -------------------------->
+
+        <div class="row">
+          <div class="col-xs-11">
+            <div class="box box-primary">
+              <div class="box-header with-border">
+                <h3 class="box-title">编辑通知</h3>
+              </div>
+              <!-- /.box-header -->
+              <form class="notice" action="editNotice" method="post">
+                <div class="box-body">
+                  <div class="form-group">
+                    <#if notice?? >
+                      <input type="hidden" name="id" value="${notice.id?c}">
+                    </#if>
+                    <h4>标题</h4>
+                    <#if notice?? >
+                      <input class="form-control" placeholder="标题" name="title" value="${notice.title!''}">
+                    <#else>
+                      <input class="form-control" placeholder="标题" name="title" >
+                    </#if>
+
+
+                  </div>
+                  <div class="form-group">
+                      <h4>正文内容</h4>
+                    <textarea id="compose-textarea" class="form-control" style="height: 280px" name="content" >
+                        <#if notice?? >
+                          ${notice.content!}
+                        </#if>
+
+                      </textarea>
+                  </div>
+                </div>
+                <!-- /.box-body -->
+                <div class="box-footer">
+                  <div class="pull-right">
+                    <!--<button type="button" class="btn btn-default"><i class="fa fa-pencil"></i> Draft</button>-->
+                    <button type="submit" class="btn btn-primary" onclick="if(!$('input[name=title]').val()) return false;"><i class="fa fa-envelope-o"></i> 保存</button>
+                  </div>
+                  <button type="reset" class="btn btn-default" onclick="$('form.notice')[0].reset();"><i class="fa fa-times"></i> 清空</button>
+                </div>
+                <!-- /.box-footer -->
+              </form>
+            </div>
+            <!-- /. box -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+
+<#include "footer1.html" />
+<script>
+    $(function () {
+        //Add text editor
+        $('#compose-textarea').wysihtml5();
+    });
+</script>
+<!--<script type="text/javascript" src="/assets/myJs/editNotice.js"></script>-->
+
+<#include "footer2.html" />

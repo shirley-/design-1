@@ -1,0 +1,163 @@
+<#include "header.html" />
+<!--管理员-->
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        会员管理
+        <small>积分</small>
+      </h1>
+    </section>
+
+    <!-- Main content -->
+    <section class="content container-fluid">
+
+      <!--------------------------
+        | Your Page Content Here |
+        -------------------------->
+
+        <div class="row user_table">
+          <div class="col-xs-12">
+            <div class="box">
+              <div class="box-header">
+                <h3 class="box-title">会员列表</h3>
+              </div>
+              <!-- /.box-header -->
+              <div class="box-body table-responsive">
+                <table id="user_table" class="table table-striped table-bordered text-nowrap"
+                       data-undefined-text=""
+                       data-click-to-select="true"
+                       data-show-refresh="true"
+                       data-show-columns="true"
+                       data-search="true"
+                       data-search-align="left" >
+                  <thead>
+                  <tr>
+                    <th data-field="checkState" data-checkbox="true"></th>
+                    <th data-field="id" data-visible>id</th><!-- hidden -->
+                    <th data-field="uid" data-sortable="true">用户ID</th>
+                    <th data-field="name" data-sortable="true">姓名</th>
+                    <th data-field="phone">电话</th>
+                    <th data-field="ecoin">积分</th>
+                  </tr>
+                  </thead>
+                </table>
+
+              </div>
+              <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+
+      <div>
+        <p class="">
+          <a class="ecoinAdd btn btn-primary" href="javascript:">
+            <i class="fa fa-plus" ></i>会员积分充值</a>
+          <span class="myAlert alert" ></span>
+        </p>
+      </div>
+
+      <input id="searchUserId" type="hidden"><!-- 勾选user表一条记录，触发积分记录表按用户userId查询-->
+      <div class="row eCoin_log_table">
+        <div class="col-xs-12">
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">积分充值记录</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body table-responsive">
+              <table id="eCoin_log_table" class="table table-striped table-bordered text-nowrap"
+                     data-undefined-text=""
+                     data-click-to-select="true"
+                     data-show-refresh="true"
+                     data-show-columns="true"
+                     data-search="true"
+                     data-search-align="left" >
+                <thead>
+                <tr>
+                  <!--<th data-field="state" data-checkbox="true"></th>-->
+                  <th data-field="userId" data-visible>user_id</th><!-- hidden -->
+                  <th data-field="userUid" data-sortable="true">用户ID</th>
+                  <th data-field="amount" data-sortable="true">积分金额</th>
+                  <th data-field="date" data-sortable="true" data-formatter="displayCreatedDate">日期</th>
+                  <th data-field="serialNumber1">流水号</th>
+                  <!--<th data-field="afterEcoin">积分当时余额</th>-->
+                  <th data-field="remark">备注</th>
+                </tr>
+                </thead>
+              </table>
+
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+
+  <!-- 积分管理eCoinModal弹出框 -->
+  <div id="eCoinModal" class="modal fade"  data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-md">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title"></h4>
+        </div>
+        <div class="modal-body col-ms-11 col-md-offset-1">
+          <form class="form-horizontal " role="form" id="ecoinAddForm"
+                onkeydown="if(event.keyCode==13) return false;" autocomplete="off">
+            <input type="hidden" name="userId">
+            <div class="form-group">
+              <label class="col-sm-3 control-label">用户ID</label>
+              <div class="col-sm-6">
+                <input type="text" class="form-control" id="userUid" name="userUid" disabled="disabled">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="amount" class="col-sm-3 control-label">积分金额</label>
+              <div class="col-sm-6">
+                <input type="text" class="form-control" id="amount" name="amount"
+                       placeholder="积分金额">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="serialNumber1" class="col-sm-3 control-label">充值流水号</label>
+              <div class="col-sm-6">
+                <input type="text" class="form-control" id="serialNumber1" name="serialNumber1"
+                       placeholder="充值流水号">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="remark" class="col-sm-3 control-label">备注</label>
+              <div class="col-sm-6">
+                <input type="text" class="form-control" id="remark" name="remark"
+                       placeholder="备注">
+              </div>
+            </div>
+          </form>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+          <button type="button" class="btn btn-primary submit">新增</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
+  <#include "footer1.html" />
+<script type="text/javascript" src="/assets/myJs/ecoinPage.js"></script>
+  <#include "footer2.html" />

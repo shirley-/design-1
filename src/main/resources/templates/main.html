@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <#if index ?? >
+        <title>KTH</title>
+        <#else>
+            <title>登录</title>
+    </#if>
+
+    <meta charset="utf-8">
+    <!-- CSS -->
+    <link href="/assets/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/main.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/my-custom-styles.css" rel="stylesheet" type="text/css">
+    <!-- IE 9 Fallback-->
+    <!--[if IE 9]>
+    <link href="/assets/css/ie.css" rel="stylesheet">
+    <![endif]-->
+    <!-- FAVICONS -->
+    <link rel="shortcut icon" href="/assets/img/K_Letter_16px.png">
+
+    <style type="text/css">
+        .bgcontainer, .bgcontent::before {
+            background: url(/assets/img/timg.jpg) 0 / cover fixed;
+        }
+
+        .bgcontent {
+            position: relative;
+            background: hsla(0, 0%, 100%, .3);
+            overflow: hidden;
+        }
+
+        .bgcontent::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            filter: blur(10px);
+            margin: -10px;
+        }
+
+        商业转载请联系作者获得授权, 非商业转载请注明出处。
+
+    </style>
+</head>
+
+<body>
+<!-- WRAPPER -->
+<div class="wrapper">
+    <!--NAVBAR -->
+    <nav class="navbar navbar-default navbar-blue " role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <!--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav">-->
+                <!--<span class="sr-only">Toggle Navigation</span>-->
+                <!--<i class="fa fa-bars"></i>-->
+                <!--</button>-->
+                <!--<a href="/" class="navbar-brand navbar-logo">
+                    <img src="assets/img/K_Letter_32px.png" alt="KTH" style="width: 100%;">
+                </a>
+                <a href="/" class="navbar-brand ">
+                    <span class=""
+                          style="font-size: 26px; margin-top: 5px; color: #fff; position: absolute;">KTH康泰坊</span>
+                </a>-->
+
+            </div>
+            <!-- MAIN NAVIGATION -->
+            <div id="main-nav" class="navbar-collapse collapse navbar-mega-menu">
+                <ul class="nav navbar-nav navbar-right">
+                    <#if index ??>
+                        <li class=" active" style="margin-right: 20px;">
+                            <#else>
+                        <li class="" style="margin-right: 20px;">
+                    </#if>
+                    <a href="#" class="dropdown-toggle"><span><i class="fa fa-home"
+                                                                 style="color: #fff;"></i>主页</span></a>
+                    </li>
+
+                    <li>
+                        <a class="btn" href="login" style="background-color: #FA5555; border-radius:  30px; margin: 12px 0 0 0px;
+    padding: 3px 10px 3px 10px; ">
+                            <span><i class="fa fa-sign-in"></i>登录</span></a>
+                    </li>
+                </ul>
+            </div>
+            <!-- END MAIN NAVIGATION -->
+        </div>
+    </nav>
+    <div class="clearfix"></div>
+    <!--END NAVBAR -->
+    <!-- HERO UNIT -->
+    <section class="hero-unit-slider slider-responsive no-margin">
+        <div id="carousel-hero" class="slick-carousel">
+            <div class="carousel-inner" role="listbox">
+                <div class="item active" style="background-color: #eeeeee">
+                    <img src="assets/img/sliders/slider-people1.png" class="img-responsive" alt="Slider Image"
+                         style="clear:both; margin:auto;">
+                    <!--<div class="carousel-caption">-->
+                    <!--<h2 class="hero-heading">CLEAN &amp; ELEGANT DESIGN</h2>-->
+                    <!--<p class="lead">Giving valuable reputation and credibility to your business</p>-->
+                    <!--<a href="#" class="btn btn-lg hero-button">LEARN MORE</a>-->
+                    <!--</div>-->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END HERO UNIT -->
+    <!-- NUMBERS -->
+    <section class="full-width-section" style="padding: 30px 0;">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3 col-xs-6">
+                    <div class="number-info horizontal text-white-color">
+                        <i class="fa fa-plug pull-left"></i>
+                        <p>5200 <span>SUBSCRIBERS</span></p>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-xs-6">
+                    <div class="number-info horizontal text-white-color">
+                        <i class="fa fa-cubes pull-left"></i>
+                        <p>273 <span>PROJECTS</span></p>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-xs-6">
+                    <div class="number-info horizontal text-white-color">
+                        <i class="fa fa-thumbs-up pull-left"></i>
+                        <p>640K <span>APPRECIATIONS</span></p>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-xs-6">
+                    <div class="number-info horizontal text-white-color">
+                        <i class="fa fa-users pull-left"></i>
+                        <p>132 <span>CLIENTS</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END NUMBERS -->
+
+    <!-- BOXED CONTENT -->
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="boxed-content left-aligned left-boxed-icon">
+                        <i class="fa fa-flag"></i>
+                        <h2 class="boxed-content-title">GOAL ORIENTED</h2>
+                        <p>Holisticly harness just in time technologies via corporate scenarios. Intrinsicly predominate
+                            ubiquitous outsourcing through an expanded array of functionalities.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="boxed-content left-aligned left-boxed-icon">
+                        <i class="fa fa-globe"></i>
+                        <h2 class="boxed-content-title">GLOBAL SERVICE</h2>
+                        <p>Holisticly harness just in time technologies via corporate scenarios. Intrinsicly predominate
+                            ubiquitous outsourcing through an expanded array of functionalities.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="boxed-content left-aligned left-boxed-icon">
+                        <i class="fa fa-cog"></i>
+                        <h2 class="boxed-content-title">DYNAMIC CHANGE</h2>
+                        <p>Holisticly harness just in time technologies via corporate scenarios. Intrinsicly predominate
+                            ubiquitous outsourcing through an expanded array of functionalities.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="boxed-content left-aligned left-boxed-icon">
+                        <i class="fa fa-users"></i>
+                        <h2 class="boxed-content-title">PROFESSIONAL SUPPORT</h2>
+                        <p>Holisticly harness just in time technologies via corporate scenarios. Intrinsicly predominate
+                            ubiquitous outsourcing through an expanded array of functionalities.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END BOXED CONTENT -->
+
+    <!-- CALL-TO-ACTION -->
+    <section class="call-to-action">
+        <div class="container">
+            <div class="pull-left">
+                <h2 class="section-heading">GET IN TOUCH</h2>
+            </div>
+            <div class="pull-right">
+                <span>Call us at (1800) 765 - 4321 or</span>&nbsp;&nbsp;<a href="#" class="btn btn-lg btn-primary">CONTACT
+                US</a>
+            </div>
+        </div>
+    </section>
+    <!-- END CALL-TO-ACTION -->
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <!-- COLUMN 1 -->
+                    <h3 class="sr-only">ABOUT US</h3>
+                    <img src="assets/img/K_Letter_32px.png" class="logo" alt="KTH">
+                    <p>Proactively aggregate B2B initiatives before extensive channels. Monotonectally extend
+                        interactive methods of empowerment through excellent applications. Rapidiously synergize
+                        visionary products with sticky technology.</p>
+                    <br>
+                    <address class="margin-bottom-30px">
+                        <ul class="list-unstyled">
+                            <li>1234 North Main Street
+                                <br/> New York, NY 222222
+                            </li>
+                            <li>Phone: (1800) 765 - 4321</li>
+                            <li>Email: email@yourdomain.com</li>
+                        </ul>
+                    </address>
+                    <!-- END COLUMN 1 -->
+                </div>
+                <div class="col-md-4">
+                    <!-- COLUMN 2 -->
+                    <h3 class="footer-heading">USEFUL LINKS</h3>
+                    <div class="row margin-bottom-30px">
+                        <div class="col-xs-6">
+                            <ul class="list-unstyled footer-nav">
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">News</a></li>
+                                <li><a href="#">Community</a></li>
+                                <li><a href="#">Career</a></li>
+                                <li><a href="#">Blog</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-6">
+                            <ul class="list-unstyled footer-nav">
+                                <li><a href="#">Press Kit</a></li>
+                                <li><a href="#">FAQ</a></li>
+                                <li><a href="#">Terms</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- END COLUMN 2 -->
+                </div>
+                <div class="col-md-4">
+                    <!-- COLUMN 3 -->
+                    <div class="newsletter">
+                        <h3 class="footer-heading">NEWSLETTER</h3>
+                        <p>Get the latest update from us by subscribing to our newsletter.</p>
+                        <form class="newsletter-form" method="POST">
+                            <div class="input-group input-group-lg">
+                                <input type="email" class="form-control" name="email"
+                                       placeholder="youremail@domain.com">
+                                <span class="input-group-btn"><button class="btn btn-primary"
+                                                                      type="button">SUBSCRIBE</button></span>
+                            </div>
+                            <div class="alert"></div>
+                        </form>
+                    </div>
+                    <div class="social-connect">
+                        <h3 class="footer-heading">GET CONNECTED</h3>
+                        <ul class="list-inline social-icons">
+                            <li><a href="#" class="facebook-bg"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#" class="twitter-bg"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#" class="googleplus-bg"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href="#" class="rss-bg"><i class="fa fa-rss"></i></a></li>
+                        </ul>
+                    </div>
+                    <!-- END COLUMN 3 -->
+                </div>
+            </div>
+        </div>
+        <!-- COPYRIGHT -->
+        <!-- END COPYRIGHT -->
+    </footer>
+    <!-- END FOOTER -->
+</div>
+<!-- END WRAPPER -->
+<!-- JAVASCRIPTS -->
+<script src="/assets/js/jquery-2.1.1.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+<script src="/assets/js/plugins/slick/slick.min.js"></script>
+<script src="/assets/js/plugins/stellar/jquery.stellar.min.js"></script>
+</body>
+
+</html>

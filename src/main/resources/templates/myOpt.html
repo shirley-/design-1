@@ -1,0 +1,182 @@
+<#include "header.html" />
+<!--会员-->
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        积分套餐
+        <small>积分套餐</small>
+      </h1>
+    </section>
+
+    <!-- Main content -->
+    <section class="content container-fluid">
+
+      <!--------------------------
+        | Your Page Content Here |
+        -------------------------->
+
+        <div class="row">
+          <div class="col-md-11">
+            <div class="box box-danger">
+              <div class="box-header">
+                <h3 class="box-title">积分套餐</h3>
+              </div>
+              <!-- /.box-header -->
+              <div class="box-body ">
+                <div class="clearfix" ><span class="myAlert" style="display: block"></span></div>
+                <div class="clearfix" ></div>
+                <div class="col-md-4  col-xs-12">
+                  <div class="info-box">
+                    <span class="info-box-icon bg-aqua"><i class="fa fa-envelope-o"></i></span>
+
+                    <div class="info-box-content">
+                      <span class="info-box-text">我的积分</span>
+                      <span class="info-box-number">${user.ecoin}</span>
+                    </div>
+                    <!-- /.info-box-content -->
+                  </div>
+                  <!-- /.info-box -->
+                </div>
+                <div class="col-md-4  col-xs-12">
+                  <div class="info-box">
+                    <span class="info-box-icon bg-aqua"><i class="fa fa-envelope-o"></i></span>
+
+                    <div class="info-box-content">
+                      <span class="info-box-text">持仓KTH</span>
+                      <span class="info-box-number">${user.releaseFrozenCoin}</span>
+                    </div>
+                    <!-- /.info-box-content -->
+                  </div>
+                  <!-- /.info-box -->
+                </div>
+                <div class="clearfix" ></div>
+                <hr>
+                <div class="col-md-offset-1">
+                  <form class="form " role="form"
+                        onkeydown="if(event.keyCode==13)return false;"
+                        autocomplete="off">
+                    <div class="col-md-6">
+                      <label>
+                        <#if user.ecoinSetFlag?? && user.ecoinSetFlag == "0">
+                          我已选择
+                          <#else>我未选择
+                        </#if>
+                      </label>
+                      <#if ruleList ??>
+                        <select class="form-control col-md-6" name="option">
+                          <option></option>
+                          <#list ruleList as rule>
+                              <div class="form-group">
+                                    <#if user.ecoinSetFlag?? && user.ecoinSetFlag == "0" && user.ruleId == rule.id >
+                                      <option value="${rule.id?c}" selected>${rule.remark}</option>
+                                    <#else>
+                                      <option value="${rule.id?c}" >${rule.remark}</option>
+                                    </#if>
+                              </div>
+                          </#list>
+                        </select>
+                      </#if>
+                    </div>
+
+                    <#if phaseState?? && phaseState=='0' >
+                      <div class="clearfix"></div>
+                      <div class="col-md-5 " >
+                          <div class="form-group ">
+                            <#if user.ecoinSetFlag?? && user.ecoinSetFlag == "0">
+                                <#if user.releaseDays?? && user.releaseDays == 0>
+                                  <button  type="button" class="btn btn-warning col-xs-12 col-sm-3" onclick="modifyForm(); " style="">修改</button>
+                                </#if>
+                            <#else>
+                                <button type="button" class="btn btn-info col-xs-12 col-sm-3" onclick="submitForm();" style="">确定</button>
+                            </#if>
+                          </div>
+                      </div>
+                    <#else>
+                      <hr>
+                      <div class="clearfix col-md-12">
+                        <h4 style="color: red">该功能已关闭</h4>
+                      </div>
+                    </#if>
+                    <div class="clearfix" ></div>
+                    <!--<#if user.ecoinSetFlag?? && user.ecoinSetFlag == "0">
+                      <#if  user.releaseDays gt 1 && user.releaseFrozenCoin == 0 >
+                        <div class="col-md-5" style="margin: 20px 0">
+                          <label>套餐已映射完毕!</label>
+                        </div>
+                      </#if>
+                    </#if>-->
+                  </form>
+
+                </div>
+
+              </div>
+              <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+
+<#include "footer1.html" />
+<script>
+  function submitForm() {
+      if(!$("option:selected").val()) {
+          showAlert('请选择!', 'warning');
+          return;
+      }
+      $.ajax({
+          url:"/member/chooseOpt",
+          type: "post",
+          dataType: "json",//预期服务器返回的数据类型
+          data: $('form').serialize(),
+          success: function (result) {
+              if (result.code == 0) {
+                  showAlert('操作成功!', 'success');
+                  setTimeout("location.reload()", 1000);
+              }else {
+                  showAlert('操作失败!' + result.msg, 'danger');
+              }
+          },
+          error : function(e) {
+              console.log(e.responseJSON.msg);
+              showAlert('操作失败!' + e.responseJSON.msg, 'danger');
+          }
+      });
+  }
+  function modifyForm() {
+      if(!$("option:selected").val()) {
+          showAlert('请选择!', 'warning');
+          return;
+      }
+      $.ajax({
+          url:"/member/modifyOpt",
+          type: "post",
+          dataType: "json",//预期服务器返回的数据类型
+          data: $('form').serialize(),
+          success: function (result) {
+              if (result.code == 0) {
+                  showAlert('操作成功!', 'success');
+              }else {
+                  showAlert('操作失败!' + result.msg, 'danger');
+              }
+          },
+          error : function(e) {
+              console.log(e.responseJSON.msg);
+              showAlert('操作失败!' + e.responseJSON.msg, 'danger');
+          }
+      });
+  }
+</script>
+<!--<script type="text/javascript" src="/assets/myJs/myConnection.js"></script>-->
+<!--<script type="text/javascript" src="/assets/myJs/memberList.js"></script>-->
+
+<#include "footer2.html" />

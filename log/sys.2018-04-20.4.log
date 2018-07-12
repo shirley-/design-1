@@ -1,0 +1,677 @@
+2018-04-24 23:26:19 [INFO][com.zym.Design1.Design1Application][logStarting][50]-> Starting Design1Application on DESKTOP-YM with PID 15588 (E:\JavaWorkSpace\Design1\target\classes started by YM in E:\JavaWorkSpace\Design1)
+2018-04-24 23:26:19 [INFO][com.zym.Design1.Design1Application][logStartupProfileInfo][652]-> No active profile set, falling back to default profiles: default
+2018-04-24 23:26:19 [INFO][org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext][prepareRefresh][589]-> Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@3f460c0e: startup date [Tue Apr 24 23:26:19 CST 2018]; root of context hierarchy
+2018-04-24 23:26:23 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][multipleStoresDetected][163]-> Multiple Spring Data modules found, entering strict repository configuration mode!
+2018-04-24 23:26:23 [INFO][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker][postProcessAfterInitialization][328]-> Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$c104463a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-24 23:26:24 [ERROR][org.apache.catalina.core.AprLifecycleListener][log][180]-> An incompatible version [1.2.12] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2018-04-24 23:26:24 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][initialize][91]-> Tomcat initialized with port(s): 9999 (http)
+2018-04-24 23:26:24 [ERROR][org.apache.catalina.core.AprLifecycleListener][log][180]-> An incompatible version [1.2.12] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2018-04-24 23:26:24 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][180]-> Initializing ProtocolHandler ["http-nio-9999"]
+2018-04-24 23:26:24 [INFO][org.apache.catalina.core.StandardService][log][180]-> Starting service [Tomcat]
+2018-04-24 23:26:24 [INFO][org.apache.catalina.core.StandardEngine][log][180]-> Starting Servlet Engine: Apache Tomcat/8.5.28
+2018-04-24 23:26:24 [ERROR][org.apache.catalina.core.AprLifecycleListener][log][180]-> An incompatible version [1.2.12] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2018-04-24 23:26:24 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]][log][180]-> Initializing Spring embedded WebApplicationContext
+2018-04-24 23:26:24 [INFO][org.springframework.web.context.ContextLoader][prepareWebApplicationContext][285]-> Root WebApplicationContext: initialization completed in 4865 ms
+2018-04-24 23:26:25 [INFO][com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure][dataSource][56]-> Init DruidDataSource
+2018-04-24 23:26:26 [INFO][com.alibaba.druid.pool.DruidDataSource][init][928]-> {dataSource-1} inited
+2018-04-24 23:26:27 [INFO][org.springframework.boot.web.servlet.ServletRegistrationBean][addRegistration][185]-> Servlet dispatcherServlet mapped to [/]
+2018-04-24 23:26:27 [INFO][org.springframework.boot.web.servlet.ServletRegistrationBean][addRegistration][185]-> Servlet statViewServlet mapped to [/druid/*]
+2018-04-24 23:26:27 [INFO][org.springframework.boot.web.servlet.ServletRegistrationBean][addRegistration][185]-> Servlet com.zym.Design1.config.DruidStatViewServlet mapped to [/druid/*]
+2018-04-24 23:26:27 [INFO][org.springframework.boot.web.servlet.ServletRegistrationBean][addRegistration][185]-> Servlet com.zym.Design1.util.ValidateCodeServlet mapped to [/validateCode]
+2018-04-24 23:26:27 [INFO][org.springframework.boot.web.servlet.FilterRegistrationBean][configure][243]-> Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-04-24 23:26:27 [INFO][org.springframework.boot.web.servlet.FilterRegistrationBean][configure][243]-> Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-04-24 23:26:27 [INFO][org.springframework.boot.web.servlet.FilterRegistrationBean][configure][243]-> Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-04-24 23:26:27 [INFO][org.springframework.boot.web.servlet.FilterRegistrationBean][configure][243]-> Mapping filter: 'requestContextFilter' to: [/*]
+2018-04-24 23:26:27 [INFO][org.springframework.boot.web.servlet.FilterRegistrationBean][configure][243]-> Mapping filter: 'httpTraceFilter' to: [/*]
+2018-04-24 23:26:27 [INFO][org.springframework.boot.web.servlet.FilterRegistrationBean][configure][256]-> Mapping filter: 'webStatFilter' to urls: [/*]
+2018-04-24 23:26:27 [INFO][org.springframework.boot.web.servlet.FilterRegistrationBean][configure][243]-> Mapping filter: 'webMvcMetricsFilter' to: [/*]
+2018-04-24 23:26:27 [INFO][org.springframework.boot.web.servlet.FilterRegistrationBean][configure][256]-> Mapping filter: 'druidWebStatFilter' to urls: [/*]
+2018-04-24 23:26:27 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: List com.zym.Design1.dao.RuleMapper.selectByExample(RuleExample), args: com.zym.Design1.entity.RuleExample@5d059e9e,
+2018-04-24 23:26:27 [INFO][com.zym.Design1.bean.UserLevelRule][afterPropertiesSet][50]-> userCreditMap size: 8
+2018-04-24 23:26:27 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: List com.zym.Design1.dao.OrgRuleMapper.selectByExample(OrgRuleExample), args: com.zym.Design1.entity.OrgRuleExample@6f338fe8,
+2018-04-24 23:26:27 [INFO][com.zym.Design1.bean.UserLevelRule][afterPropertiesSet][53]-> levelNumMap size: 4
+2018-04-24 23:26:27 [INFO][com.zym.Design1.bean.UserLevelRule][afterPropertiesSet][55]-> ruleList size: 4
+2018-04-24 23:26:28 [WARN][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor][lambda$buildAutowiringMetadata$1][438]-> Autowired annotation is not supported on static fields: public static final java.lang.String com.zym.Design1.exception.DefaultErrorController.ERROR_PATH
+2018-04-24 23:26:28 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter][initControllerAdviceCache][567]-> Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@3f460c0e: startup date [Tue Apr 24 23:26:19 CST 2018]; root of context hierarchy
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/admin/closeEarlyPhase],methods=[POST]}" onto public java.lang.String com.zym.Design1.controller.CurrencyController.closeEarlyPhase()
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/admin/trend]}" onto public java.lang.String com.zym.Design1.controller.CurrencyController.trend(org.springframework.ui.Model,java.lang.String)
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/admin/recordVcPrice]}" onto public java.lang.String com.zym.Design1.controller.CurrencyController.recordVcPrice(java.math.BigDecimal)
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/member/encash || /admin/encash],methods=[POST]}" onto public java.lang.String com.zym.Design1.controller.EncashController.encash(java.lang.Integer,java.lang.String)
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/member/encashRecord || /admin/encashRecord],methods=[POST]}" onto public java.lang.String com.zym.Design1.controller.EncashController.encashList(java.lang.Integer,java.lang.Integer,java.lang.String,java.lang.String,java.lang.String,org.springframework.ui.Model)
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/member/myFin || /admin/myFin],methods=[GET]}" onto public java.lang.String com.zym.Design1.controller.FinController.ecoinRecordPage(java.lang.String,java.lang.String,org.springframework.ui.Model)
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/member/finDetail || /admin/finDetail],methods=[POST]}" onto public java.lang.String com.zym.Design1.controller.FinController.finDetail(java.lang.Integer,java.lang.Integer,org.springframework.ui.Model)
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/]}" onto public java.lang.String com.zym.Design1.controller.LoginController.index(org.springframework.ui.Model)
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/logout],methods=[POST || GET]}" onto public java.lang.String com.zym.Design1.controller.LoginController.logout(java.lang.String)
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/login],methods=[GET]}" onto public java.lang.String com.zym.Design1.controller.LoginController.loginGet(java.lang.String,org.springframework.ui.Model)
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/login],methods=[POST]}" onto public java.lang.String com.zym.Design1.controller.LoginController.loginPost(javax.servlet.http.HttpSession,java.lang.String,java.lang.String,java.lang.String,java.lang.String,org.springframework.ui.Model,javax.servlet.http.HttpServletResponse)
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/reglogin]}" onto public java.lang.String com.zym.Design1.controller.LoginController.reglogin(java.lang.String,org.springframework.ui.Model)
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/member/changeTradePwd || /admin/changeTradePwd],methods=[POST]}" onto public java.lang.String com.zym.Design1.controller.MemberController.changeTradePwdAction(java.lang.String,java.lang.String,java.lang.String)
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/member/myConnection || /admin/myConnection]}" onto public java.lang.String com.zym.Design1.controller.MemberController.myConnection(java.lang.String,org.springframework.ui.Model)
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/member/chooseOpt || /admin/chooseOpt],methods=[POST]}" onto public java.lang.String com.zym.Design1.controller.MemberController.chooseOpt(java.lang.Integer)
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/member/modifyOpt || /admin/modifyOpt],methods=[POST]}" onto public java.lang.String com.zym.Design1.controller.MemberController.modifyOpt(java.lang.Integer)
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/member/changePwd || /admin/changePwd],methods=[POST]}" onto public java.lang.String com.zym.Design1.controller.MemberController.changePwdAction(java.lang.String,java.lang.String,java.lang.String)
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/member/ecoinLog || /admin/ecoinLog],methods=[POST]}" onto public java.lang.String com.zym.Design1.controller.MemberController.ecoinLogList(java.lang.Integer,java.lang.Integer,java.lang.String,java.lang.String,java.lang.String)
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/member/sendSms || /admin/sendSms],methods=[POST]}" onto public java.lang.String com.zym.Design1.controller.MemberController.sendSms(java.lang.String,javax.servlet.http.HttpServletRequest)
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/member/myOpt || /admin/myOpt]}" onto public java.lang.String com.zym.Design1.controller.MemberController.myOpt(java.lang.String,org.springframework.ui.Model)
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/member/myHome || /member/ || /admin/myHome || /admin/],methods=[GET]}" onto public java.lang.String com.zym.Design1.controller.MemberController.myHome(java.lang.String,org.springframework.ui.Model)
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/admin/encashList || /op/encashList],methods=[POST]}" onto public java.lang.String com.zym.Design1.controller.OpController.encashList(java.lang.Integer,java.lang.Integer,java.lang.String,java.lang.String,java.lang.String,org.springframework.ui.Model)
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/admin/members/{id} || /op/members/{id}],methods=[PUT]}" onto public java.lang.String com.zym.Design1.controller.OpController.updateMember(com.zym.Design1.entity.User)
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/admin/memberlist || /op/memberlist],methods=[POST]}" onto public java.lang.String com.zym.Design1.controller.OpController.memberList(java.lang.Integer,java.lang.Integer,java.lang.String,java.lang.String,java.lang.String)
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/admin/rejectEncash/{id} || /op/rejectEncash/{id}],methods=[POST]}" onto public java.lang.String com.zym.Design1.controller.OpController.rejectEncash(java.lang.Integer,java.lang.String)
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/admin/editNotice || /op/editNotice],methods=[GET]}" onto public java.lang.String com.zym.Design1.controller.OpController.editNoticePage(java.lang.Integer,org.springframework.ui.Model)
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/admin/members/{id} || /op/members/{id}],methods=[DELETE]}" onto public java.lang.String com.zym.Design1.controller.OpController.deleteMember(java.lang.Integer)
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/admin/approveEncash/{id} || /op/approveEncash/{id}],methods=[POST]}" onto public java.lang.String com.zym.Design1.controller.OpController.approveEncash(java.lang.Integer,java.lang.String)
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/admin/ecoinLogList || /op/ecoinLogList],methods=[POST]}" onto public java.lang.String com.zym.Design1.controller.OpController.ecoinLogList(java.lang.Integer,java.lang.Integer,java.lang.String,java.lang.String,java.lang.String,java.lang.Integer,java.lang.Integer)
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/admin/memberManage || /op/memberManage],methods=[GET]}" onto public java.lang.String com.zym.Design1.controller.OpController.memberListPage(org.springframework.ui.Model,java.lang.String,java.lang.String)
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/admin/members || /op/members],methods=[POST]}" onto public java.lang.String com.zym.Design1.controller.OpController.addMember(com.zym.Design1.entity.User)
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/admin/encashManage || /op/encashManage],methods=[GET]}" onto public java.lang.String com.zym.Design1.controller.OpController.encashListPage(java.lang.String,java.lang.String,org.springframework.ui.Model)
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/admin/ecoinLogAdd || /op/ecoinLogAdd],methods=[POST]}" onto public java.lang.String com.zym.Design1.controller.OpController.addECoinLog(com.zym.Design1.entity.BuyEcoinLog)
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/admin/editNotice || /op/editNotice],methods=[POST]}" onto public java.lang.String com.zym.Design1.controller.OpController.editNotice(java.lang.String,java.lang.String,java.lang.Integer)
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/admin/ecoinManage || /op/ecoinManage],methods=[GET]}" onto public java.lang.String com.zym.Design1.controller.OpController.eCoinManage()
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/admin/noticeListPage || /op/noticeListPage],methods=[GET]}" onto public java.lang.String com.zym.Design1.controller.OpController.noticeListPage(java.lang.String,org.springframework.ui.Model)
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/member/buy || /admin/buy],methods=[POST]}" onto public java.lang.String com.zym.Design1.controller.TradeController.wantToBuy(javax.servlet.http.HttpServletRequest,java.math.BigDecimal,java.math.BigDecimal,java.lang.String,java.lang.String,java.lang.Integer)
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/member/myTrade || /admin/myTrade],methods=[POST]}" onto public java.lang.String com.zym.Design1.controller.TradeController.myTrade(org.springframework.ui.Model,java.lang.String,java.lang.Integer,java.lang.Integer)
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/member/cancelOrder || /admin/cancelOrder],methods=[POST]}" onto public java.lang.String com.zym.Design1.controller.TradeController.cancelSell(javax.servlet.http.HttpServletRequest,java.lang.Long,java.lang.String,java.lang.String,java.lang.String)
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/member/trade || /admin/trade],methods=[GET]}" onto public java.lang.String com.zym.Design1.controller.TradeController.tradeHall(org.springframework.ui.Model,java.lang.String,java.lang.String)
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/member/buySellList || /admin/buySellList],methods=[POST]}" onto public java.lang.String com.zym.Design1.controller.TradeController.tradingList(org.springframework.ui.Model,java.lang.String)
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/member/sell || /admin/sell],methods=[POST]}" onto public java.lang.String com.zym.Design1.controller.TradeController.sell(javax.servlet.http.HttpServletRequest,java.math.BigDecimal,java.math.BigDecimal,java.lang.String,java.lang.String)
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/member/getTrendData || /admin/getTrendData]}" onto public java.lang.String com.zym.Design1.controller.TradeController.calculteTrend()
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/admin/memberOrgTreeview || /op/memberOrgTreeview || /member/memberOrgTreeview],methods=[GET]}" onto public java.lang.String com.zym.Design1.controller.UserController.memberOrgTreeview(java.lang.Integer)
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/admin/memberOrgTreeChart || /op/memberOrgTreeChart || /member/memberOrgTreeChart],methods=[GET]}" onto public java.lang.String com.zym.Design1.controller.UserController.memberOrgTreeChart(java.lang.Integer)
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/admin/noticePage || /op/noticePage || /member/noticePage],methods=[GET]}" onto public java.lang.String com.zym.Design1.controller.UserController.noticeListPage(java.lang.String,org.springframework.ui.Model)
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/admin/noticeList || /op/noticeList || /member/noticeList],methods=[POST]}" onto public java.lang.String com.zym.Design1.controller.UserController.noticeList(java.lang.String,java.lang.Integer,java.lang.Integer)
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/admin/readNotice || /op/readNotice || /member/readNotice],methods=[GET]}" onto public java.lang.String com.zym.Design1.controller.UserController.readNoticePage(java.lang.String,java.lang.Integer,org.springframework.ui.Model)
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/admin/my || /op/my || /member/my],methods=[GET]}" onto public java.lang.String com.zym.Design1.controller.UserController.changePwdPage(java.lang.String,java.lang.String,org.springframework.ui.Model)
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/isTradePwdCorrect],methods=[POST]}" onto public java.lang.String com.zym.Design1.controller.UtilController.isTradePwdCorrect(java.lang.String)
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/isValidateCodeCorrect]}" onto public java.lang.String com.zym.Design1.controller.UtilController.compareValidateCode(javax.servlet.http.HttpSession,java.lang.String)
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/isUidNotExist],methods=[POST]}" onto public java.lang.String com.zym.Design1.controller.UtilController.isUidNotExist(java.lang.String)
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/401]}" onto public java.lang.String com.zym.Design1.controller.UtilController.page401()
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/404]}" onto public java.lang.String com.zym.Design1.controller.UtilController.page404()
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/isPwdCorrect],methods=[POST]}" onto public java.lang.String com.zym.Design1.controller.UtilController.isPwdCorrect(java.lang.String)
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/isUidExist],methods=[POST]}" onto public java.lang.String com.zym.Design1.controller.UtilController.isUidExist(java.lang.String)
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> com.zym.Design1.exception.DefaultErrorController.error(java.lang.Exception,javax.servlet.http.HttpServletRequest,java.lang.Exception) throws java.lang.Exception
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView com.zym.Design1.exception.DefaultErrorController.errorHtml(java.lang.Exception,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/testA]}" onto public java.lang.String com.zym.Design1.tttest.TestController.test()
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/testB]}" onto public java.lang.String com.zym.Design1.tttest.TestController.testB()
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/testC]}" onto public java.lang.String com.zym.Design1.tttest.TestController.testc()
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/testA2]}" onto public java.lang.String com.zym.Design1.tttest.TestController2.test()
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/testB2]}" onto public java.lang.String com.zym.Design1.tttest.TestController2.testB()
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/testC2]}" onto public java.lang.String com.zym.Design1.tttest.TestController2.testc()
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping][registerHandler][373]-> Mapped URL path [/templates/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping][registerHandler][373]-> Mapped URL path [/static/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping][registerHandler][373]-> Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping][registerHandler][373]-> Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][initExceptionHandlerAdviceCache][289]-> Detected @ExceptionHandler methods in defaultErrorController
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping][registerHandler][373]-> Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-04-24 23:26:29 [INFO][org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping][<init>][61]-> Adding welcome page template: index
+2018-04-24 23:26:29 [INFO][org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer][postProcessTemplateLoaders][131]-> ClassTemplateLoader for Spring macros added to FreeMarker configuration
+2018-04-24 23:26:30 [INFO][org.quartz.impl.StdSchedulerFactory][instantiate][1208]-> Using default implementation for ThreadExecutor
+2018-04-24 23:26:30 [INFO][org.quartz.core.SchedulerSignalerImpl][<init>][61]-> Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2018-04-24 23:26:30 [INFO][org.quartz.core.QuartzScheduler][<init>][229]-> Quartz Scheduler v.2.3.0 created.
+2018-04-24 23:26:30 [INFO][org.quartz.simpl.RAMJobStore][initialize][155]-> RAMJobStore initialized.
+2018-04-24 23:26:30 [INFO][org.quartz.core.QuartzScheduler][initialize][294]-> Scheduler meta-data: Quartz Scheduler (v2.3.0) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2018-04-24 23:26:30 [INFO][org.quartz.impl.StdSchedulerFactory][instantiate][1362]-> Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2018-04-24 23:26:30 [INFO][org.quartz.impl.StdSchedulerFactory][instantiate][1366]-> Quartz scheduler version: 2.3.0
+2018-04-24 23:26:30 [INFO][org.quartz.core.QuartzScheduler][setJobFactory][2287]-> JobFactory set to: org.springframework.boot.autoconfigure.quartz.AutowireCapableBeanJobFactory@2f79a99b
+2018-04-24 23:26:30 [INFO][org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer][startServer][57]-> LiveReload server is running on port 35729
+2018-04-24 23:26:31 [INFO][org.springframework.boot.actuate.endpoint.web.servlet.WebMvcEndpointHandlerMapping][register][548]-> Mapped "{[/actuator/health],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2018-04-24 23:26:31 [INFO][org.springframework.boot.actuate.endpoint.web.servlet.WebMvcEndpointHandlerMapping][register][548]-> Mapped "{[/actuator/info],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2018-04-24 23:26:31 [INFO][org.springframework.boot.actuate.endpoint.web.servlet.WebMvcEndpointHandlerMapping][register][548]-> Mapped "{[/actuator],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto protected java.util.Map<java.lang.String, java.util.Map<java.lang.String, org.springframework.boot.actuate.endpoint.web.Link>> org.springframework.boot.actuate.endpoint.web.servlet.WebMvcEndpointHandlerMapping.links(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-04-24 23:26:31 [INFO][org.springframework.jmx.export.annotation.AnnotationMBeanExporter][afterSingletonsInstantiated][434]-> Registering beans for JMX exposure on startup
+2018-04-24 23:26:31 [INFO][org.springframework.jmx.export.annotation.AnnotationMBeanExporter][autodetect][896]-> Bean with name 'statFilter' has been autodetected for JMX exposure
+2018-04-24 23:26:31 [INFO][org.springframework.jmx.export.annotation.AnnotationMBeanExporter][autodetect][896]-> Bean with name 'slf4jLogFilter' has been autodetected for JMX exposure
+2018-04-24 23:26:31 [INFO][org.springframework.jmx.export.annotation.AnnotationMBeanExporter][autodetect][896]-> Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-04-24 23:26:31 [INFO][org.springframework.jmx.export.annotation.AnnotationMBeanExporter][registerBeanInstance][669]-> Located MBean 'slf4jLogFilter': registering with JMX server as MBean [com.alibaba.druid.filter.logging:name=slf4jLogFilter,type=Slf4jLogFilter]
+2018-04-24 23:26:31 [INFO][org.springframework.jmx.export.annotation.AnnotationMBeanExporter][registerBeanInstance][669]-> Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.spring.boot.autoconfigure:name=dataSource,type=DruidDataSourceWrapper]
+2018-04-24 23:26:31 [INFO][org.springframework.jmx.export.annotation.AnnotationMBeanExporter][registerBeanInstance][669]-> Located MBean 'statFilter': registering with JMX server as MBean [com.alibaba.druid.filter.stat:name=statFilter,type=StatFilter]
+2018-04-24 23:26:31 [INFO][org.springframework.context.support.DefaultLifecycleProcessor][start][351]-> Starting beans in phase 2147483647
+2018-04-24 23:26:31 [INFO][org.springframework.scheduling.quartz.SchedulerFactoryBean][startScheduler][686]-> Starting Quartz Scheduler now
+2018-04-24 23:26:31 [INFO][org.quartz.core.QuartzScheduler][start][547]-> Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2018-04-24 23:26:31 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][180]-> Starting ProtocolHandler ["http-nio-9999"]
+2018-04-24 23:26:31 [INFO][org.apache.tomcat.util.net.NioSelectorPool][log][180]-> Using a shared selector for servlet write/read
+2018-04-24 23:26:31 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][start][205]-> Tomcat started on port(s): 9999 (http) with context path ''
+2018-04-24 23:26:31 [INFO][com.zym.Design1.Design1Application][logStarted][59]-> Started Design1Application in 12.341 seconds (JVM running for 13.263)
+2018-04-20 23:27:01 [INFO][com.zym.Design1.Design1Application][logStarting][50]-> Starting Design1Application on DESKTOP-YM with PID 2436 (E:\JavaWorkSpace\Design1\target\classes started by YM in E:\JavaWorkSpace\Design1)
+2018-04-20 23:27:01 [INFO][com.zym.Design1.Design1Application][logStartupProfileInfo][652]-> No active profile set, falling back to default profiles: default
+2018-04-20 23:27:01 [INFO][org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext][prepareRefresh][589]-> Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@7a07932a: startup date [Fri Apr 20 23:27:01 CST 2018]; root of context hierarchy
+2018-04-20 23:27:02 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][multipleStoresDetected][163]-> Multiple Spring Data modules found, entering strict repository configuration mode!
+2018-04-20 23:27:03 [INFO][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker][postProcessAfterInitialization][328]-> Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$81e75236] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-20 23:27:04 [ERROR][org.apache.catalina.core.AprLifecycleListener][log][180]-> An incompatible version [1.2.12] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2018-04-20 23:27:04 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][initialize][91]-> Tomcat initialized with port(s): 9999 (http)
+2018-04-20 23:27:04 [ERROR][org.apache.catalina.core.AprLifecycleListener][log][180]-> An incompatible version [1.2.12] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2018-04-20 23:27:04 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][180]-> Initializing ProtocolHandler ["http-nio-9999"]
+2018-04-20 23:27:04 [INFO][org.apache.catalina.core.StandardService][log][180]-> Starting service [Tomcat]
+2018-04-20 23:27:04 [INFO][org.apache.catalina.core.StandardEngine][log][180]-> Starting Servlet Engine: Apache Tomcat/8.5.28
+2018-04-20 23:27:04 [ERROR][org.apache.catalina.core.AprLifecycleListener][log][180]-> An incompatible version [1.2.12] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2018-04-20 23:27:04 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]][log][180]-> Initializing Spring embedded WebApplicationContext
+2018-04-20 23:27:04 [INFO][org.springframework.web.context.ContextLoader][prepareWebApplicationContext][285]-> Root WebApplicationContext: initialization completed in 3383 ms
+2018-04-20 23:27:05 [INFO][com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure][dataSource][56]-> Init DruidDataSource
+2018-04-20 23:27:05 [INFO][com.alibaba.druid.pool.DruidDataSource][init][928]-> {dataSource-1} inited
+2018-04-20 23:27:06 [INFO][org.springframework.boot.web.servlet.ServletRegistrationBean][addRegistration][185]-> Servlet dispatcherServlet mapped to [/]
+2018-04-20 23:27:06 [INFO][org.springframework.boot.web.servlet.ServletRegistrationBean][addRegistration][185]-> Servlet statViewServlet mapped to [/druid/*]
+2018-04-20 23:27:06 [INFO][org.springframework.boot.web.servlet.ServletRegistrationBean][addRegistration][185]-> Servlet com.zym.Design1.config.DruidStatViewServlet mapped to [/druid/*]
+2018-04-20 23:27:06 [INFO][org.springframework.boot.web.servlet.ServletRegistrationBean][addRegistration][185]-> Servlet com.zym.Design1.util.ValidateCodeServlet mapped to [/validateCode]
+2018-04-20 23:27:06 [INFO][org.springframework.boot.web.servlet.FilterRegistrationBean][configure][243]-> Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-04-20 23:27:06 [INFO][org.springframework.boot.web.servlet.FilterRegistrationBean][configure][243]-> Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-04-20 23:27:06 [INFO][org.springframework.boot.web.servlet.FilterRegistrationBean][configure][243]-> Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-04-20 23:27:06 [INFO][org.springframework.boot.web.servlet.FilterRegistrationBean][configure][243]-> Mapping filter: 'requestContextFilter' to: [/*]
+2018-04-20 23:27:06 [INFO][org.springframework.boot.web.servlet.FilterRegistrationBean][configure][243]-> Mapping filter: 'httpTraceFilter' to: [/*]
+2018-04-20 23:27:06 [INFO][org.springframework.boot.web.servlet.FilterRegistrationBean][configure][256]-> Mapping filter: 'webStatFilter' to urls: [/*]
+2018-04-20 23:27:06 [INFO][org.springframework.boot.web.servlet.FilterRegistrationBean][configure][243]-> Mapping filter: 'webMvcMetricsFilter' to: [/*]
+2018-04-20 23:27:06 [INFO][org.springframework.boot.web.servlet.FilterRegistrationBean][configure][256]-> Mapping filter: 'druidWebStatFilter' to urls: [/*]
+2018-04-20 23:27:07 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: List com.zym.Design1.dao.RuleMapper.selectByExample(RuleExample), args: com.zym.Design1.entity.RuleExample@498faa3a,
+2018-04-20 23:27:07 [INFO][com.zym.Design1.bean.UserLevelRule][afterPropertiesSet][50]-> userCreditMap size: 8
+2018-04-20 23:27:07 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: List com.zym.Design1.dao.OrgRuleMapper.selectByExample(OrgRuleExample), args: com.zym.Design1.entity.OrgRuleExample@4e586e31,
+2018-04-20 23:27:07 [INFO][com.zym.Design1.bean.UserLevelRule][afterPropertiesSet][53]-> levelNumMap size: 4
+2018-04-20 23:27:07 [INFO][com.zym.Design1.bean.UserLevelRule][afterPropertiesSet][55]-> ruleList size: 4
+2018-04-20 23:27:07 [WARN][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor][lambda$buildAutowiringMetadata$1][438]-> Autowired annotation is not supported on static fields: public static final java.lang.String com.zym.Design1.exception.DefaultErrorController.ERROR_PATH
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter][initControllerAdviceCache][567]-> Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@7a07932a: startup date [Fri Apr 20 23:27:01 CST 2018]; root of context hierarchy
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/admin/recordVcPrice]}" onto public java.lang.String com.zym.Design1.controller.CurrencyController.recordVcPrice(java.math.BigDecimal)
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/admin/trend]}" onto public java.lang.String com.zym.Design1.controller.CurrencyController.trend(org.springframework.ui.Model,java.lang.String)
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/admin/closeEarlyPhase],methods=[POST]}" onto public java.lang.String com.zym.Design1.controller.CurrencyController.closeEarlyPhase()
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/member/encash || /admin/encash],methods=[POST]}" onto public java.lang.String com.zym.Design1.controller.EncashController.encash(java.lang.Integer,java.lang.String)
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/member/encashRecord || /admin/encashRecord],methods=[POST]}" onto public java.lang.String com.zym.Design1.controller.EncashController.encashList(java.lang.Integer,java.lang.Integer,java.lang.String,java.lang.String,java.lang.String,org.springframework.ui.Model)
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/member/finDetail || /admin/finDetail],methods=[POST]}" onto public java.lang.String com.zym.Design1.controller.FinController.finDetail(java.lang.Integer,java.lang.Integer,org.springframework.ui.Model)
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/member/myFin || /admin/myFin],methods=[GET]}" onto public java.lang.String com.zym.Design1.controller.FinController.ecoinRecordPage(java.lang.String,java.lang.String,org.springframework.ui.Model)
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/]}" onto public java.lang.String com.zym.Design1.controller.LoginController.index(org.springframework.ui.Model)
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/logout],methods=[POST || GET]}" onto public java.lang.String com.zym.Design1.controller.LoginController.logout(java.lang.String)
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/login],methods=[GET]}" onto public java.lang.String com.zym.Design1.controller.LoginController.loginGet(java.lang.String,org.springframework.ui.Model)
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/reglogin]}" onto public java.lang.String com.zym.Design1.controller.LoginController.reglogin(java.lang.String,org.springframework.ui.Model)
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/login],methods=[POST]}" onto public java.lang.String com.zym.Design1.controller.LoginController.loginPost(javax.servlet.http.HttpSession,java.lang.String,java.lang.String,java.lang.String,java.lang.String,org.springframework.ui.Model,javax.servlet.http.HttpServletResponse)
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/member/changeTradePwd || /admin/changeTradePwd],methods=[POST]}" onto public java.lang.String com.zym.Design1.controller.MemberController.changeTradePwdAction(java.lang.String,java.lang.String,java.lang.String)
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/member/changePwd || /admin/changePwd],methods=[POST]}" onto public java.lang.String com.zym.Design1.controller.MemberController.changePwdAction(java.lang.String,java.lang.String,java.lang.String)
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/member/ecoinLog || /admin/ecoinLog],methods=[POST]}" onto public java.lang.String com.zym.Design1.controller.MemberController.ecoinLogList(java.lang.Integer,java.lang.Integer,java.lang.String,java.lang.String,java.lang.String)
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/member/chooseOpt || /admin/chooseOpt],methods=[POST]}" onto public java.lang.String com.zym.Design1.controller.MemberController.chooseOpt(java.lang.Integer)
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/member/myOpt || /admin/myOpt]}" onto public java.lang.String com.zym.Design1.controller.MemberController.myOpt(java.lang.String,org.springframework.ui.Model)
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/member/modifyOpt || /admin/modifyOpt],methods=[POST]}" onto public java.lang.String com.zym.Design1.controller.MemberController.modifyOpt(java.lang.Integer)
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/member/myHome || /member/ || /admin/myHome || /admin/],methods=[GET]}" onto public java.lang.String com.zym.Design1.controller.MemberController.myHome(java.lang.String,org.springframework.ui.Model)
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/member/myConnection || /admin/myConnection]}" onto public java.lang.String com.zym.Design1.controller.MemberController.myConnection(java.lang.String,org.springframework.ui.Model)
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/member/sendSms || /admin/sendSms],methods=[POST]}" onto public java.lang.String com.zym.Design1.controller.MemberController.sendSms(java.lang.String,javax.servlet.http.HttpServletRequest)
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/admin/encashList || /op/encashList],methods=[POST]}" onto public java.lang.String com.zym.Design1.controller.OpController.encashList(java.lang.Integer,java.lang.Integer,java.lang.String,java.lang.String,java.lang.String,org.springframework.ui.Model)
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/admin/ecoinLogList || /op/ecoinLogList],methods=[POST]}" onto public java.lang.String com.zym.Design1.controller.OpController.ecoinLogList(java.lang.Integer,java.lang.Integer,java.lang.String,java.lang.String,java.lang.String,java.lang.Integer,java.lang.Integer)
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/admin/ecoinLogAdd || /op/ecoinLogAdd],methods=[POST]}" onto public java.lang.String com.zym.Design1.controller.OpController.addECoinLog(com.zym.Design1.entity.BuyEcoinLog)
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/admin/encashManage || /op/encashManage],methods=[GET]}" onto public java.lang.String com.zym.Design1.controller.OpController.encashListPage(java.lang.String,java.lang.String,org.springframework.ui.Model)
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/admin/memberManage || /op/memberManage],methods=[GET]}" onto public java.lang.String com.zym.Design1.controller.OpController.memberListPage(org.springframework.ui.Model,java.lang.String,java.lang.String)
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/admin/rejectEncash/{id} || /op/rejectEncash/{id}],methods=[POST]}" onto public java.lang.String com.zym.Design1.controller.OpController.rejectEncash(java.lang.Integer,java.lang.String)
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/admin/editNotice || /op/editNotice],methods=[POST]}" onto public java.lang.String com.zym.Design1.controller.OpController.editNotice(java.lang.String,java.lang.String,java.lang.Integer)
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/admin/ecoinManage || /op/ecoinManage],methods=[GET]}" onto public java.lang.String com.zym.Design1.controller.OpController.eCoinManage()
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/admin/approveEncash/{id} || /op/approveEncash/{id}],methods=[POST]}" onto public java.lang.String com.zym.Design1.controller.OpController.approveEncash(java.lang.Integer,java.lang.String)
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/admin/members/{id} || /op/members/{id}],methods=[PUT]}" onto public java.lang.String com.zym.Design1.controller.OpController.updateMember(com.zym.Design1.entity.User)
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/admin/members/{id} || /op/members/{id}],methods=[DELETE]}" onto public java.lang.String com.zym.Design1.controller.OpController.deleteMember(java.lang.Integer)
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/admin/memberlist || /op/memberlist],methods=[POST]}" onto public java.lang.String com.zym.Design1.controller.OpController.memberList(java.lang.Integer,java.lang.Integer,java.lang.String,java.lang.String,java.lang.String)
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/admin/editNotice || /op/editNotice],methods=[GET]}" onto public java.lang.String com.zym.Design1.controller.OpController.editNoticePage(java.lang.Integer,org.springframework.ui.Model)
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/admin/noticeListPage || /op/noticeListPage],methods=[GET]}" onto public java.lang.String com.zym.Design1.controller.OpController.noticeListPage(java.lang.String,org.springframework.ui.Model)
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/admin/members || /op/members],methods=[POST]}" onto public java.lang.String com.zym.Design1.controller.OpController.addMember(com.zym.Design1.entity.User)
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/member/getTrendData || /admin/getTrendData]}" onto public java.lang.String com.zym.Design1.controller.TradeController.calculteTrend()
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/member/sell || /admin/sell],methods=[POST]}" onto public java.lang.String com.zym.Design1.controller.TradeController.sell(javax.servlet.http.HttpServletRequest,java.math.BigDecimal,java.math.BigDecimal,java.lang.String,java.lang.String)
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/member/buy || /admin/buy],methods=[POST]}" onto public java.lang.String com.zym.Design1.controller.TradeController.wantToBuy(javax.servlet.http.HttpServletRequest,java.math.BigDecimal,java.math.BigDecimal,java.lang.String,java.lang.String,java.lang.Integer)
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/member/trade || /admin/trade],methods=[GET]}" onto public java.lang.String com.zym.Design1.controller.TradeController.tradeHall(org.springframework.ui.Model,java.lang.String,java.lang.String)
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/member/buySellList || /admin/buySellList],methods=[POST]}" onto public java.lang.String com.zym.Design1.controller.TradeController.tradingList(org.springframework.ui.Model,java.lang.String)
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/member/cancelOrder || /admin/cancelOrder],methods=[POST]}" onto public java.lang.String com.zym.Design1.controller.TradeController.cancelSell(javax.servlet.http.HttpServletRequest,java.lang.Long,java.lang.String,java.lang.String,java.lang.String)
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/member/myTrade || /admin/myTrade],methods=[POST]}" onto public java.lang.String com.zym.Design1.controller.TradeController.myTrade(org.springframework.ui.Model,java.lang.String,java.lang.Integer,java.lang.Integer)
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/admin/memberOrgTreeview || /op/memberOrgTreeview || /member/memberOrgTreeview],methods=[GET]}" onto public java.lang.String com.zym.Design1.controller.UserController.memberOrgTreeview(java.lang.Integer)
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/admin/memberOrgTreeChart || /op/memberOrgTreeChart || /member/memberOrgTreeChart],methods=[GET]}" onto public java.lang.String com.zym.Design1.controller.UserController.memberOrgTreeChart(java.lang.Integer)
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/admin/noticePage || /op/noticePage || /member/noticePage],methods=[GET]}" onto public java.lang.String com.zym.Design1.controller.UserController.noticeListPage(java.lang.String,org.springframework.ui.Model)
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/admin/noticeList || /op/noticeList || /member/noticeList],methods=[POST]}" onto public java.lang.String com.zym.Design1.controller.UserController.noticeList(java.lang.String,java.lang.Integer,java.lang.Integer)
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/admin/my || /op/my || /member/my],methods=[GET]}" onto public java.lang.String com.zym.Design1.controller.UserController.changePwdPage(java.lang.String,java.lang.String,org.springframework.ui.Model)
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/admin/readNotice || /op/readNotice || /member/readNotice],methods=[GET]}" onto public java.lang.String com.zym.Design1.controller.UserController.readNoticePage(java.lang.String,java.lang.Integer,org.springframework.ui.Model)
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/isTradePwdCorrect],methods=[POST]}" onto public java.lang.String com.zym.Design1.controller.UtilController.isTradePwdCorrect(java.lang.String)
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/isValidateCodeCorrect]}" onto public java.lang.String com.zym.Design1.controller.UtilController.compareValidateCode(javax.servlet.http.HttpSession,java.lang.String)
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/isPwdCorrect],methods=[POST]}" onto public java.lang.String com.zym.Design1.controller.UtilController.isPwdCorrect(java.lang.String)
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/isUidExist],methods=[POST]}" onto public java.lang.String com.zym.Design1.controller.UtilController.isUidExist(java.lang.String)
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/isUidNotExist],methods=[POST]}" onto public java.lang.String com.zym.Design1.controller.UtilController.isUidNotExist(java.lang.String)
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/401]}" onto public java.lang.String com.zym.Design1.controller.UtilController.page401()
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/404]}" onto public java.lang.String com.zym.Design1.controller.UtilController.page404()
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> com.zym.Design1.exception.DefaultErrorController.error(java.lang.Exception,javax.servlet.http.HttpServletRequest,java.lang.Exception) throws java.lang.Exception
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView com.zym.Design1.exception.DefaultErrorController.errorHtml(java.lang.Exception,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/testA]}" onto public java.lang.String com.zym.Design1.tttest.TestController.test()
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/testB]}" onto public java.lang.String com.zym.Design1.tttest.TestController.testB()
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/testC]}" onto public java.lang.String com.zym.Design1.tttest.TestController.testc()
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/testA2]}" onto public java.lang.String com.zym.Design1.tttest.TestController2.test()
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/testB2]}" onto public java.lang.String com.zym.Design1.tttest.TestController2.testB()
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][register][548]-> Mapped "{[/testC2]}" onto public java.lang.String com.zym.Design1.tttest.TestController2.testc()
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping][registerHandler][373]-> Mapped URL path [/templates/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping][registerHandler][373]-> Mapped URL path [/static/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping][registerHandler][373]-> Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping][registerHandler][373]-> Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][initExceptionHandlerAdviceCache][289]-> Detected @ExceptionHandler methods in defaultErrorController
+2018-04-20 23:27:08 [INFO][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping][registerHandler][373]-> Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-04-20 23:27:08 [INFO][org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping][<init>][61]-> Adding welcome page template: index
+2018-04-20 23:27:09 [INFO][org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer][postProcessTemplateLoaders][131]-> ClassTemplateLoader for Spring macros added to FreeMarker configuration
+2018-04-20 23:27:09 [INFO][org.quartz.impl.StdSchedulerFactory][instantiate][1208]-> Using default implementation for ThreadExecutor
+2018-04-20 23:27:09 [INFO][org.quartz.core.SchedulerSignalerImpl][<init>][61]-> Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2018-04-20 23:27:09 [INFO][org.quartz.core.QuartzScheduler][<init>][229]-> Quartz Scheduler v.2.3.0 created.
+2018-04-20 23:27:09 [INFO][org.quartz.simpl.RAMJobStore][initialize][155]-> RAMJobStore initialized.
+2018-04-20 23:27:09 [INFO][org.quartz.core.QuartzScheduler][initialize][294]-> Scheduler meta-data: Quartz Scheduler (v2.3.0) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2018-04-20 23:27:09 [INFO][org.quartz.impl.StdSchedulerFactory][instantiate][1362]-> Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2018-04-20 23:27:09 [INFO][org.quartz.impl.StdSchedulerFactory][instantiate][1366]-> Quartz scheduler version: 2.3.0
+2018-04-20 23:27:09 [INFO][org.quartz.core.QuartzScheduler][setJobFactory][2287]-> JobFactory set to: org.springframework.boot.autoconfigure.quartz.AutowireCapableBeanJobFactory@6935c604
+2018-04-20 23:27:10 [INFO][org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer][startServer][57]-> LiveReload server is running on port 35729
+2018-04-20 23:27:10 [INFO][org.springframework.boot.actuate.endpoint.web.servlet.WebMvcEndpointHandlerMapping][register][548]-> Mapped "{[/actuator/health],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2018-04-20 23:27:10 [INFO][org.springframework.boot.actuate.endpoint.web.servlet.WebMvcEndpointHandlerMapping][register][548]-> Mapped "{[/actuator/info],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2018-04-20 23:27:10 [INFO][org.springframework.boot.actuate.endpoint.web.servlet.WebMvcEndpointHandlerMapping][register][548]-> Mapped "{[/actuator],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto protected java.util.Map<java.lang.String, java.util.Map<java.lang.String, org.springframework.boot.actuate.endpoint.web.Link>> org.springframework.boot.actuate.endpoint.web.servlet.WebMvcEndpointHandlerMapping.links(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-04-20 23:27:11 [INFO][org.springframework.jmx.export.annotation.AnnotationMBeanExporter][afterSingletonsInstantiated][434]-> Registering beans for JMX exposure on startup
+2018-04-20 23:27:11 [INFO][org.springframework.jmx.export.annotation.AnnotationMBeanExporter][autodetect][896]-> Bean with name 'statFilter' has been autodetected for JMX exposure
+2018-04-20 23:27:11 [INFO][org.springframework.jmx.export.annotation.AnnotationMBeanExporter][autodetect][896]-> Bean with name 'slf4jLogFilter' has been autodetected for JMX exposure
+2018-04-20 23:27:11 [INFO][org.springframework.jmx.export.annotation.AnnotationMBeanExporter][autodetect][896]-> Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-04-20 23:27:11 [INFO][org.springframework.jmx.export.annotation.AnnotationMBeanExporter][registerBeanInstance][669]-> Located MBean 'slf4jLogFilter': registering with JMX server as MBean [com.alibaba.druid.filter.logging:name=slf4jLogFilter,type=Slf4jLogFilter]
+2018-04-20 23:27:11 [INFO][org.springframework.jmx.export.annotation.AnnotationMBeanExporter][registerBeanInstance][669]-> Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.spring.boot.autoconfigure:name=dataSource,type=DruidDataSourceWrapper]
+2018-04-20 23:27:11 [INFO][org.springframework.jmx.export.annotation.AnnotationMBeanExporter][registerBeanInstance][669]-> Located MBean 'statFilter': registering with JMX server as MBean [com.alibaba.druid.filter.stat:name=statFilter,type=StatFilter]
+2018-04-20 23:27:11 [INFO][org.springframework.context.support.DefaultLifecycleProcessor][start][351]-> Starting beans in phase 2147483647
+2018-04-20 23:27:11 [INFO][org.springframework.scheduling.quartz.SchedulerFactoryBean][startScheduler][686]-> Starting Quartz Scheduler now
+2018-04-20 23:27:11 [INFO][org.quartz.core.QuartzScheduler][start][547]-> Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2018-04-20 23:27:11 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][180]-> Starting ProtocolHandler ["http-nio-9999"]
+2018-04-20 23:27:11 [INFO][org.apache.tomcat.util.net.NioSelectorPool][log][180]-> Using a shared selector for servlet write/read
+2018-04-20 23:27:11 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][start][205]-> Tomcat started on port(s): 9999 (http) with context path ''
+2018-04-20 23:27:11 [INFO][com.zym.Design1.Design1Application][logStarted][59]-> Started Design1Application in 10.777 seconds (JVM running for 11.614)
+2018-04-20 23:27:32 [ERROR][org.apache.catalina.core.AprLifecycleListener][log][180]-> An incompatible version [1.2.12] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2018-04-20 23:27:32 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]][log][180]-> Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-04-20 23:27:32 [INFO][org.springframework.web.servlet.DispatcherServlet][initServletBean][494]-> FrameworkServlet 'dispatcherServlet': initialization started
+2018-04-20 23:27:32 [INFO][org.springframework.web.servlet.DispatcherServlet][initServletBean][513]-> FrameworkServlet 'dispatcherServlet': initialization completed in 36 ms
+2018-04-20 23:27:32 [INFO][io.lettuce.core.EpollProvider][info][101]-> Starting without optional epoll library
+2018-04-20 23:27:32 [INFO][io.lettuce.core.KqueueProvider][info][101]-> Starting without optional kqueue library
+2018-04-20 23:27:33 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][95]-> WebLogAspect.doBefore()
+2018-04-20 23:27:33 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][100]-> URL : http://127.0.0.1:9999/login
+2018-04-20 23:27:33 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][101]-> HTTP_METHOD : GET
+2018-04-20 23:27:33 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][102]-> IP : 127.0.0.1
+2018-04-20 23:27:33 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][103]-> CLASS_METHOD : com.zym.Design1.controller.LoginController.loginGet
+2018-04-20 23:27:33 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][104]-> ARGS : [/member/myOpt, {}]
+2018-04-20 23:27:33 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][109]-> next : /member/myOpt
+2018-04-20 23:27:33 [INFO][com.zym.Design1.controller.LoginController][loginGet][33]-> next: /member/myOpt
+2018-04-20 23:27:33 [ERROR][org.apache.catalina.core.AprLifecycleListener][log][180]-> An incompatible version [1.2.12] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2018-04-20 23:27:33 [ERROR][org.apache.catalina.core.AprLifecycleListener][log][180]-> An incompatible version [1.2.12] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2018-04-20 23:27:33 [ERROR][org.apache.catalina.core.AprLifecycleListener][log][180]-> An incompatible version [1.2.12] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2018-04-20 23:27:33 [INFO][com.zym.Design1.util.ValidateCodeServlet][doPost][74]-> vCode: W3T5
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][95]-> WebLogAspect.doBefore()
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][100]-> URL : http://127.0.0.1:9999/login
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][101]-> HTTP_METHOD : POST
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][102]-> IP : 127.0.0.1
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][103]-> CLASS_METHOD : com.zym.Design1.controller.LoginController.loginPost
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][104]-> ARGS : [org.apache.catalina.session.StandardSessionFacade@7889271e, w3t5, xx03, 00000000, /member/myOpt, {}, com.alibaba.druid.support.http.WebStatFilter$StatHttpServletResponseWrapper@18aeec1a]
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][109]-> name : xx03
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][109]-> password : 00000000
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][109]-> validateCode : w3t5
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][109]-> next : /member/myOpt
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: Map com.zym.Design1.service.LoginService.login(String,String), args: xx03,00000000,
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserByUid(String), args: xx03,
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: List com.zym.Design1.dao.UserMapper.selectByExample(UserExample), args: com.zym.Design1.entity.UserExample@49876a4,
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: boolean com.zym.Design1.service.UserService.checkPassword(User,String), args: com.zym.Design1.entity.User@557d24a3,00000000,
+2018-04-20 23:27:43 [INFO][com.zym.Design1.service.LoginService][addLoginTicket][72]-> eafee49d-2e14-4086-b3d9-e1b00d865a3b
+2018-04-20 23:27:43 [INFO][com.zym.Design1.service.LoginService][addLoginTicket][75]-> USER_SESSION:eafee49d-2e14-4086-b3d9-e1b00d865a3b
+2018-04-20 23:27:43 [INFO][com.zym.Design1.service.LoginService][addLoginTicket][76]-> 4
+2018-04-20 23:27:43 [INFO][com.zym.Design1.controller.LoginController][loginPost][59]-> {code=0, role=0, ticket=eafee49d-2e14-4086-b3d9-e1b00d865a3b}
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 4,
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 4,
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][95]-> WebLogAspect.doBefore()
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][100]-> URL : http://127.0.0.1:9999/member/myOpt
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][101]-> HTTP_METHOD : GET
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][102]-> IP : 127.0.0.1
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][103]-> CLASS_METHOD : com.zym.Design1.controller.MemberController.myOpt
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][104]-> ARGS : [myOpt, {}]
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: List com.zym.Design1.service.RuleService.getRuleList(), args: 
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: String com.zym.Design1.service.PhaseService.getEarlyPhaseState(), args: 
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 4,
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 4,
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 4,
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 4,
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 4,
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 4,
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 4,
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 4,
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 4,
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 4,
+2018-04-20 23:27:43 [ERROR][org.apache.catalina.core.AprLifecycleListener][log][180]-> An incompatible version [1.2.12] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2018-04-20 23:27:43 [ERROR][org.apache.catalina.core.AprLifecycleListener][log][180]-> An incompatible version [1.2.12] of the APR based Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 4,
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 4,
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 4,
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 4,
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 4,
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 4,
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 4,
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 4,
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 4,
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 4,
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 4,
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 4,
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 4,
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 4,
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 4,
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 4,
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 4,
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 4,
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 4,
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 4,
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 4,
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 4,
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 4,
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 4,
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 4,
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 4,
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 4,
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 4,
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 4,
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 4,
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 4,
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 4,
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 4,
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 4,
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 4,
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 4,
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 4,
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 4,
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 4,
+2018-04-20 23:27:43 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 4,
+2018-04-20 23:27:49 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 4,
+2018-04-20 23:27:49 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 4,
+2018-04-20 23:27:49 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][95]-> WebLogAspect.doBefore()
+2018-04-20 23:27:49 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][100]-> URL : http://127.0.0.1:9999/member/chooseOpt
+2018-04-20 23:27:49 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][101]-> HTTP_METHOD : POST
+2018-04-20 23:27:49 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][102]-> IP : 127.0.0.1
+2018-04-20 23:27:49 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][103]-> CLASS_METHOD : com.zym.Design1.controller.MemberController.chooseOpt
+2018-04-20 23:27:49 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][104]-> ARGS : [2]
+2018-04-20 23:27:49 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][109]-> option : 2
+2018-04-20 23:27:49 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: void com.zym.Design1.service.UserService.addEcoinOpt(User), args: com.zym.Design1.entity.User@400aa45d,
+2018-04-20 23:27:49 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: String com.zym.Design1.service.PhaseService.getEarlyPhaseState(), args: 
+2018-04-20 23:27:49 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: BigDecimal com.zym.Design1.service.CurrencyService.getCurrency(), args: 
+2018-04-20 23:27:49 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: Double com.zym.Design1.service.CurrencyService.incrementCurrencyCount(BigDecimal), args: 12500.0000,
+2018-04-20 23:27:49 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: void com.zym.Design1.service.TradeService.insertTrade(Trade), args: com.zym.Design1.entity.Trade@54488590,
+2018-04-20 23:27:49 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: int com.zym.Design1.dao.TradeMapper.insertSelective(Trade), args: com.zym.Design1.entity.Trade@54488590,
+2018-04-20 23:27:49 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: UserBonus com.zym.Design1.service.UserBonusService.addReleaseRule(User,BigDecimal,Trade,String), args: com.zym.Design1.entity.User@400aa45d,10000.0000,com.zym.Design1.entity.Trade@54488590,5,
+2018-04-20 23:27:49 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: int com.zym.Design1.dao.UserBonusMapper.insertSelective(UserBonus), args: com.zym.Design1.entity.UserBonus@4b326d5,
+2018-04-20 23:27:49 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: int com.zym.Design1.dao.UserMapper.updateByExampleSelective(User,UserExample), args: com.zym.Design1.entity.User@400aa45d,com.zym.Design1.entity.UserExample@765c9a3e,
+2018-04-20 23:27:49 [INFO][com.zym.Design1.service.UserService][updateUser][243]-> {"accountHolder":"3","address":"3","bankAccount":"3","cashCoin":0.0000,"createdDate":1524117495000,"depositBank":"3","earnings":0.0000,"ecoin":0,"ecoinSetFlag":"0","email":"","encashFrozenCashCoin":0.0000,"id":4,"idNumber":"3","introducerId":3,"introducerUid":"xx02","lastModifiedDate":1524238069514,"level":3,"name":"xx03","onBuyEcoin":0.0000,"onSaleCoin":0.0000,"password":"00000000","phone":"11111111111","releaseCoin":0.0000,"releaseDays":0,"releaseFrozenCoin":12500.0000,"role":"0","ruleId":2,"shopPoints":0.0000,"soldCoin":0.0000,"state":"0","totalCoin":12500.0000,"tradableCoin":0.0000,"tradePassword":"11111111","uid":"xx03","version":3}
+2018-04-20 23:27:49 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 4,
+2018-04-20 23:27:49 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 4,
+2018-04-20 23:27:50 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 4,
+2018-04-20 23:27:50 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 4,
+2018-04-20 23:27:50 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][95]-> WebLogAspect.doBefore()
+2018-04-20 23:27:50 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][100]-> URL : http://127.0.0.1:9999/member/myOpt
+2018-04-20 23:27:50 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][101]-> HTTP_METHOD : GET
+2018-04-20 23:27:50 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][102]-> IP : 127.0.0.1
+2018-04-20 23:27:50 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][103]-> CLASS_METHOD : com.zym.Design1.controller.MemberController.myOpt
+2018-04-20 23:27:50 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][104]-> ARGS : [myOpt, {}]
+2018-04-20 23:27:50 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: List com.zym.Design1.service.RuleService.getRuleList(), args: 
+2018-04-20 23:27:50 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: String com.zym.Design1.service.PhaseService.getEarlyPhaseState(), args: 
+2018-04-20 23:27:50 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 4,
+2018-04-20 23:27:50 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 4,
+2018-04-20 23:27:50 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 4,
+2018-04-20 23:27:50 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 4,
+2018-04-20 23:27:50 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 4,
+2018-04-20 23:27:50 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 4,
+2018-04-20 23:27:50 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 4,
+2018-04-20 23:27:50 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 4,
+2018-04-20 23:27:50 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 4,
+2018-04-20 23:27:50 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 4,
+2018-04-20 23:27:50 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 4,
+2018-04-20 23:27:50 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 4,
+2018-04-20 23:27:50 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 4,
+2018-04-20 23:27:50 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 4,
+2018-04-20 23:27:50 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 4,
+2018-04-20 23:27:50 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 4,
+2018-04-20 23:27:50 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 4,
+2018-04-20 23:27:50 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 4,
+2018-04-20 23:27:50 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 4,
+2018-04-20 23:27:50 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 4,
+2018-04-20 23:27:50 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 4,
+2018-04-20 23:27:50 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 4,
+2018-04-20 23:27:50 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 4,
+2018-04-20 23:27:50 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 4,
+2018-04-20 23:27:51 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 4,
+2018-04-20 23:27:51 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 4,
+2018-04-20 23:27:51 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 4,
+2018-04-20 23:27:51 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 4,
+2018-04-20 23:27:51 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 4,
+2018-04-20 23:27:51 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 4,
+2018-04-20 23:27:51 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 4,
+2018-04-20 23:27:51 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 4,
+2018-04-20 23:27:51 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 4,
+2018-04-20 23:27:51 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 4,
+2018-04-20 23:27:51 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 4,
+2018-04-20 23:27:51 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 4,
+2018-04-20 23:27:51 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 4,
+2018-04-20 23:27:51 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 4,
+2018-04-20 23:27:51 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 4,
+2018-04-20 23:27:51 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 4,
+2018-04-20 23:27:51 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 4,
+2018-04-20 23:27:51 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 4,
+2018-04-20 23:27:51 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 4,
+2018-04-20 23:27:51 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 4,
+2018-04-20 23:27:51 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 4,
+2018-04-20 23:27:51 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 4,
+2018-04-20 23:27:51 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 4,
+2018-04-20 23:27:51 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 4,
+2018-04-20 23:27:51 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 4,
+2018-04-20 23:27:51 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 4,
+2018-04-20 23:27:55 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 4,
+2018-04-20 23:27:55 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 4,
+2018-04-20 23:27:55 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][95]-> WebLogAspect.doBefore()
+2018-04-20 23:27:55 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][100]-> URL : http://127.0.0.1:9999/member/modifyOpt
+2018-04-20 23:27:55 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][101]-> HTTP_METHOD : POST
+2018-04-20 23:27:55 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][102]-> IP : 127.0.0.1
+2018-04-20 23:27:55 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][103]-> CLASS_METHOD : com.zym.Design1.controller.MemberController.modifyOpt
+2018-04-20 23:27:55 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][104]-> ARGS : [1]
+2018-04-20 23:27:55 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][109]-> option : 1
+2018-04-20 23:27:55 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: void com.zym.Design1.service.UserService.updateEcoinOpt(User), args: com.zym.Design1.entity.User@618995b2,
+2018-04-20 23:27:55 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: int com.zym.Design1.dao.UserMapper.updateByExampleSelective(User,UserExample), args: com.zym.Design1.entity.User@618995b2,com.zym.Design1.entity.UserExample@3c830132,
+2018-04-20 23:27:55 [INFO][com.zym.Design1.service.UserService][updateUser][243]-> {"accountHolder":"3","address":"3","bankAccount":"3","cashCoin":0.0000,"createdDate":1524117495000,"depositBank":"3","earnings":0.0000,"ecoin":0.0000,"ecoinSetFlag":"0","email":"","encashFrozenCashCoin":0.0000,"id":4,"idNumber":"3","introducerId":3,"introducerUid":"xx02","lastModifiedDate":1524238075202,"level":3,"name":"xx03","onBuyEcoin":0.0000,"onSaleCoin":0.0000,"password":"00000000","phone":"11111111111","releaseCoin":0.0000,"releaseDays":0,"releaseFrozenCoin":12500.0000,"role":"0","ruleId":1,"shopPoints":0.0000,"soldCoin":0.0000,"state":"0","totalCoin":12500.0000,"tradableCoin":0.0000,"tradePassword":"11111111","uid":"xx03","version":4}
+2018-04-20 23:27:55 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: void com.zym.Design1.service.UserBonusService.updateEcoinOpt(User), args: com.zym.Design1.entity.User@618995b2,
+2018-04-20 23:27:55 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: List com.zym.Design1.dao.UserBonusMapper.selectByExample(UserBonusExample), args: com.zym.Design1.entity.UserBonusExample@58e7032e,
+2018-04-20 23:27:55 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: Trade com.zym.Design1.service.TradeService.getTradeOfEarlyPhase(Integer), args: 4,
+2018-04-20 23:27:55 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: List com.zym.Design1.dao.TradeMapper.selectByExample(TradeExample), args: com.zym.Design1.entity.TradeExample@638bd4ad,
+2018-04-20 23:27:55 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: ResponseEntity com.zym.Design1.exception.DefaultErrorController.error(Exception,HttpServletRequest,Exception), args: java.lang.RuntimeException: 锁仓交易信息错误,org.apache.catalina.connector.RequestFacade@436e5efd,java.lang.RuntimeException: 锁仓交易信息错误,
+2018-04-20 23:27:55 [INFO][com.zym.Design1.exception.DefaultErrorController][error][88]-> ================【开始打印异常信息】================
+2018-04-20 23:27:55 [ERROR][com.zym.Design1.exception.DefaultErrorController][error][89]-> 具体错误信息:【锁仓交易信息错误】
+2018-04-20 23:27:55 [ERROR][com.zym.Design1.exception.DefaultErrorController][error][92]-> com.zym.Design1.service.TradeService.getTradeOfEarlyPhase(TradeService.java:698)
+2018-04-20 23:27:55 [ERROR][com.zym.Design1.exception.DefaultErrorController][error][92]-> com.zym.Design1.service.TradeService$$FastClassBySpringCGLIB$$e280f812.invoke(<generated>)
+2018-04-20 23:27:55 [ERROR][com.zym.Design1.exception.DefaultErrorController][error][92]-> org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+2018-04-20 23:27:55 [ERROR][com.zym.Design1.exception.DefaultErrorController][error][92]-> org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:747)
+2018-04-20 23:27:55 [ERROR][com.zym.Design1.exception.DefaultErrorController][error][92]-> org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+2018-04-20 23:27:55 [ERROR][com.zym.Design1.exception.DefaultErrorController][error][92]-> org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:52)
+2018-04-20 23:27:55 [ERROR][com.zym.Design1.exception.DefaultErrorController][error][92]-> org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:185)
+2018-04-20 23:27:55 [ERROR][com.zym.Design1.exception.DefaultErrorController][error][92]-> org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92)
+2018-04-20 23:27:55 [ERROR][com.zym.Design1.exception.DefaultErrorController][error][92]-> org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:185)
+2018-04-20 23:27:55 [ERROR][com.zym.Design1.exception.DefaultErrorController][error][92]-> org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689)
+2018-04-20 23:27:55 [ERROR][com.zym.Design1.exception.DefaultErrorController][error][92]-> com.zym.Design1.service.TradeService$$EnhancerBySpringCGLIB$$485bda21.getTradeOfEarlyPhase(<generated>)
+2018-04-20 23:27:55 [ERROR][com.zym.Design1.exception.DefaultErrorController][error][92]-> com.zym.Design1.service.UserBonusService.updateEcoinOpt(UserBonusService.java:46)
+2018-04-20 23:27:55 [ERROR][com.zym.Design1.exception.DefaultErrorController][error][92]-> com.zym.Design1.service.UserBonusService$$FastClassBySpringCGLIB$$e8591fe2.invoke(<generated>)
+2018-04-20 23:27:55 [ERROR][com.zym.Design1.exception.DefaultErrorController][error][92]-> org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+2018-04-20 23:27:55 [ERROR][com.zym.Design1.exception.DefaultErrorController][error][92]-> org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:747)
+2018-04-20 23:27:55 [INFO][com.zym.Design1.exception.DefaultErrorController][error][95]-> ================【异常信息打印完毕】================
+2018-04-20 23:27:55 [INFO][com.zym.Design1.exception.DefaultErrorController][error][109]-> return json
+2018-04-20 23:27:55 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][193]-> Resolved exception caused by Handler execution: java.lang.RuntimeException: 锁仓交易信息错误
+2018-04-20 23:27:55 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 4,
+2018-04-20 23:27:55 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 4,
+2018-04-20 23:28:18 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][95]-> WebLogAspect.doBefore()
+2018-04-20 23:28:18 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][100]-> URL : http://127.0.0.1:9999/logout
+2018-04-20 23:28:18 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][101]-> HTTP_METHOD : GET
+2018-04-20 23:28:18 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][102]-> IP : 127.0.0.1
+2018-04-20 23:28:18 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][103]-> CLASS_METHOD : com.zym.Design1.controller.LoginController.logout
+2018-04-20 23:28:18 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][104]-> ARGS : [eafee49d-2e14-4086-b3d9-e1b00d865a3b]
+2018-04-20 23:28:18 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: void com.zym.Design1.service.LoginService.logout(String), args: eafee49d-2e14-4086-b3d9-e1b00d865a3b,
+2018-04-20 23:28:18 [INFO][com.zym.Design1.service.LoginService][logout][65]-> delete redis key: eafee49d-2e14-4086-b3d9-e1b00d865a3b
+2018-04-20 23:28:18 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][95]-> WebLogAspect.doBefore()
+2018-04-20 23:28:18 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][100]-> URL : http://127.0.0.1:9999/login
+2018-04-20 23:28:18 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][101]-> HTTP_METHOD : GET
+2018-04-20 23:28:18 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][102]-> IP : 127.0.0.1
+2018-04-20 23:28:18 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][103]-> CLASS_METHOD : com.zym.Design1.controller.LoginController.loginGet
+2018-04-20 23:28:18 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][104]-> ARGS : [null, {}]
+2018-04-20 23:28:18 [INFO][com.zym.Design1.controller.LoginController][loginGet][33]-> next: null
+2018-04-20 23:28:18 [INFO][com.zym.Design1.util.ValidateCodeServlet][doPost][74]-> vCode: 7J7M
+2018-04-20 23:28:26 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][95]-> WebLogAspect.doBefore()
+2018-04-20 23:28:26 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][100]-> URL : http://127.0.0.1:9999/login
+2018-04-20 23:28:26 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][101]-> HTTP_METHOD : POST
+2018-04-20 23:28:26 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][102]-> IP : 127.0.0.1
+2018-04-20 23:28:26 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][103]-> CLASS_METHOD : com.zym.Design1.controller.LoginController.loginPost
+2018-04-20 23:28:26 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][104]-> ARGS : [org.apache.catalina.session.StandardSessionFacade@7889271e, 7j7m, xx04, 00000000, null, {}, com.alibaba.druid.support.http.WebStatFilter$StatHttpServletResponseWrapper@59f03cbc]
+2018-04-20 23:28:26 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][109]-> name : xx04
+2018-04-20 23:28:26 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][109]-> password : 00000000
+2018-04-20 23:28:26 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][109]-> validateCode : 7j7m
+2018-04-20 23:28:26 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: Map com.zym.Design1.service.LoginService.login(String,String), args: xx04,00000000,
+2018-04-20 23:28:26 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserByUid(String), args: xx04,
+2018-04-20 23:28:26 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: List com.zym.Design1.dao.UserMapper.selectByExample(UserExample), args: com.zym.Design1.entity.UserExample@460ed188,
+2018-04-20 23:28:26 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: boolean com.zym.Design1.service.UserService.checkPassword(User,String), args: com.zym.Design1.entity.User@26f4e779,00000000,
+2018-04-20 23:28:26 [INFO][com.zym.Design1.service.LoginService][addLoginTicket][72]-> 8f024638-1edd-4a08-8d2d-bd27b63000c2
+2018-04-20 23:28:26 [INFO][com.zym.Design1.service.LoginService][addLoginTicket][75]-> USER_SESSION:8f024638-1edd-4a08-8d2d-bd27b63000c2
+2018-04-20 23:28:26 [INFO][com.zym.Design1.service.LoginService][addLoginTicket][76]-> 6
+2018-04-20 23:28:26 [INFO][com.zym.Design1.controller.LoginController][loginPost][59]-> {code=0, role=0, ticket=8f024638-1edd-4a08-8d2d-bd27b63000c2}
+2018-04-20 23:28:26 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 6,
+2018-04-20 23:28:26 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 6,
+2018-04-20 23:28:26 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][95]-> WebLogAspect.doBefore()
+2018-04-20 23:28:26 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][100]-> URL : http://127.0.0.1:9999/member/myHome
+2018-04-20 23:28:26 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][101]-> HTTP_METHOD : GET
+2018-04-20 23:28:26 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][102]-> IP : 127.0.0.1
+2018-04-20 23:28:26 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][103]-> CLASS_METHOD : com.zym.Design1.controller.MemberController.myHome
+2018-04-20 23:28:26 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][104]-> ARGS : [myHome, {}]
+2018-04-20 23:28:26 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: void com.zym.Design1.service.OrgService.getDescendantsMap(Integer,Map), args: 6,{},
+2018-04-20 23:28:26 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 6,
+2018-04-20 23:28:26 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 6,
+2018-04-20 23:28:26 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: List com.zym.Design1.dao.OrgMapper.selectByExample(OrgExample), args: com.zym.Design1.entity.OrgExample@5274a6bd,
+2018-04-20 23:28:26 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: BigDecimal com.zym.Design1.service.CurrencyService.getCurrency(), args: 
+2018-04-20 23:28:26 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 6,
+2018-04-20 23:28:26 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 6,
+2018-04-20 23:28:26 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 6,
+2018-04-20 23:28:26 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 6,
+2018-04-20 23:28:26 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 6,
+2018-04-20 23:28:26 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 6,
+2018-04-20 23:28:26 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 6,
+2018-04-20 23:28:26 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 6,
+2018-04-20 23:28:26 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 6,
+2018-04-20 23:28:26 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 6,
+2018-04-20 23:28:26 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 6,
+2018-04-20 23:28:26 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 6,
+2018-04-20 23:28:26 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 6,
+2018-04-20 23:28:26 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 6,
+2018-04-20 23:28:26 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 6,
+2018-04-20 23:28:26 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 6,
+2018-04-20 23:28:26 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 6,
+2018-04-20 23:28:26 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 6,
+2018-04-20 23:28:26 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 6,
+2018-04-20 23:28:26 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 6,
+2018-04-20 23:28:26 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 6,
+2018-04-20 23:28:26 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 6,
+2018-04-20 23:28:26 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 6,
+2018-04-20 23:28:26 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 6,
+2018-04-20 23:28:26 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 6,
+2018-04-20 23:28:26 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 6,
+2018-04-20 23:28:26 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 6,
+2018-04-20 23:28:26 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 6,
+2018-04-20 23:28:27 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 6,
+2018-04-20 23:28:26 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 6,
+2018-04-20 23:28:27 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 6,
+2018-04-20 23:28:27 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 6,
+2018-04-20 23:28:27 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 6,
+2018-04-20 23:28:27 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 6,
+2018-04-20 23:28:27 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 6,
+2018-04-20 23:28:27 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 6,
+2018-04-20 23:28:27 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 6,
+2018-04-20 23:28:27 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 6,
+2018-04-20 23:28:27 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 6,
+2018-04-20 23:28:27 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 6,
+2018-04-20 23:28:27 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 6,
+2018-04-20 23:28:27 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 6,
+2018-04-20 23:28:27 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 6,
+2018-04-20 23:28:27 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 6,
+2018-04-20 23:28:27 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 6,
+2018-04-20 23:28:27 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 6,
+2018-04-20 23:28:27 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 6,
+2018-04-20 23:28:27 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 6,
+2018-04-20 23:28:27 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 6,
+2018-04-20 23:28:27 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 6,
+2018-04-20 23:28:27 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 6,
+2018-04-20 23:28:27 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 6,
+2018-04-20 23:28:29 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 6,
+2018-04-20 23:28:29 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 6,
+2018-04-20 23:28:29 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][95]-> WebLogAspect.doBefore()
+2018-04-20 23:28:29 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][100]-> URL : http://127.0.0.1:9999/member/myOpt
+2018-04-20 23:28:29 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][101]-> HTTP_METHOD : GET
+2018-04-20 23:28:29 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][102]-> IP : 127.0.0.1
+2018-04-20 23:28:29 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][103]-> CLASS_METHOD : com.zym.Design1.controller.MemberController.myOpt
+2018-04-20 23:28:29 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][104]-> ARGS : [myOpt, {}]
+2018-04-20 23:28:29 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: List com.zym.Design1.service.RuleService.getRuleList(), args: 
+2018-04-20 23:28:29 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: String com.zym.Design1.service.PhaseService.getEarlyPhaseState(), args: 
+2018-04-20 23:28:29 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 6,
+2018-04-20 23:28:29 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 6,
+2018-04-20 23:28:29 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 6,
+2018-04-20 23:28:29 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 6,
+2018-04-20 23:28:29 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 6,
+2018-04-20 23:28:29 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 6,
+2018-04-20 23:28:29 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 6,
+2018-04-20 23:28:29 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 6,
+2018-04-20 23:28:29 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 6,
+2018-04-20 23:28:29 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 6,
+2018-04-20 23:28:29 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 6,
+2018-04-20 23:28:29 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 6,
+2018-04-20 23:28:29 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 6,
+2018-04-20 23:28:29 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 6,
+2018-04-20 23:28:29 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 6,
+2018-04-20 23:28:29 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 6,
+2018-04-20 23:28:29 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 6,
+2018-04-20 23:28:29 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 6,
+2018-04-20 23:28:29 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 6,
+2018-04-20 23:28:29 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 6,
+2018-04-20 23:28:29 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 6,
+2018-04-20 23:28:29 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 6,
+2018-04-20 23:28:29 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 6,
+2018-04-20 23:28:29 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 6,
+2018-04-20 23:28:29 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 6,
+2018-04-20 23:28:29 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 6,
+2018-04-20 23:28:29 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 6,
+2018-04-20 23:28:29 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 6,
+2018-04-20 23:28:29 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 6,
+2018-04-20 23:28:29 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 6,
+2018-04-20 23:28:29 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 6,
+2018-04-20 23:28:29 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 6,
+2018-04-20 23:28:29 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 6,
+2018-04-20 23:28:29 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 6,
+2018-04-20 23:28:29 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 6,
+2018-04-20 23:28:29 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 6,
+2018-04-20 23:28:29 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 6,
+2018-04-20 23:28:29 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 6,
+2018-04-20 23:28:29 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 6,
+2018-04-20 23:28:29 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 6,
+2018-04-20 23:28:29 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 6,
+2018-04-20 23:28:29 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 6,
+2018-04-20 23:28:29 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 6,
+2018-04-20 23:28:29 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 6,
+2018-04-20 23:28:29 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 6,
+2018-04-20 23:28:29 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 6,
+2018-04-20 23:28:29 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 6,
+2018-04-20 23:28:29 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 6,
+2018-04-20 23:28:29 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 6,
+2018-04-20 23:28:29 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 6,
+2018-04-20 23:28:33 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 6,
+2018-04-20 23:28:33 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 6,
+2018-04-20 23:28:33 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][95]-> WebLogAspect.doBefore()
+2018-04-20 23:28:33 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][100]-> URL : http://127.0.0.1:9999/member/chooseOpt
+2018-04-20 23:28:33 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][101]-> HTTP_METHOD : POST
+2018-04-20 23:28:33 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][102]-> IP : 127.0.0.1
+2018-04-20 23:28:33 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][103]-> CLASS_METHOD : com.zym.Design1.controller.MemberController.chooseOpt
+2018-04-20 23:28:33 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][104]-> ARGS : [2]
+2018-04-20 23:28:33 [INFO][com.zym.Design1.aspect.LogAspect][doBefore][109]-> option : 2
+2018-04-20 23:28:36 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: void com.zym.Design1.service.UserService.addEcoinOpt(User), args: com.zym.Design1.entity.User@333137da,
+2018-04-20 23:28:36 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: String com.zym.Design1.service.PhaseService.getEarlyPhaseState(), args: 
+2018-04-20 23:28:36 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: BigDecimal com.zym.Design1.service.CurrencyService.getCurrency(), args: 
+2018-04-20 23:28:36 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: Double com.zym.Design1.service.CurrencyService.incrementCurrencyCount(BigDecimal), args: 62500.0000,
+2018-04-20 23:28:38 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: void com.zym.Design1.service.TradeService.insertTrade(Trade), args: com.zym.Design1.entity.Trade@2273d536,
+2018-04-20 23:29:04 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: int com.zym.Design1.dao.TradeMapper.insertSelective(Trade), args: com.zym.Design1.entity.Trade@2273d536,
+2018-04-20 23:29:04 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: UserBonus com.zym.Design1.service.UserBonusService.addReleaseRule(User,BigDecimal,Trade,String), args: com.zym.Design1.entity.User@333137da,50000.0000,com.zym.Design1.entity.Trade@2273d536,5,
+2018-04-20 23:29:04 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: int com.zym.Design1.dao.UserBonusMapper.insertSelective(UserBonus), args: com.zym.Design1.entity.UserBonus@eda5c4e,
+2018-04-20 23:29:04 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: int com.zym.Design1.dao.UserMapper.updateByExampleSelective(User,UserExample), args: com.zym.Design1.entity.User@333137da,com.zym.Design1.entity.UserExample@4ca76288,
+2018-04-20 23:29:04 [INFO][com.zym.Design1.service.UserService][updateUser][243]-> {"accountHolder":"","address":"4","bankAccount":"4","cashCoin":0.0000,"createdDate":1524204055000,"depositBank":"4","earnings":0.0000,"ecoin":0,"ecoinSetFlag":"0","email":"","encashFrozenCashCoin":0.0000,"id":6,"idNumber":"","introducerId":2,"introducerUid":"xx01","lastModifiedDate":1524238144695,"level":2,"name":"xx04","onBuyEcoin":0.0000,"onSaleCoin":0.0000,"password":"00000000","phone":"11111111111","releaseCoin":0.0000,"releaseDays":0,"releaseFrozenCoin":62500.0000,"role":"0","ruleId":2,"shopPoints":0.0000,"soldCoin":0.0000,"state":"0","totalCoin":62500.0000,"tradableCoin":0.0000,"tradePassword":"11111111","uid":"xx04","version":3}
+2018-04-20 23:29:04 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.service.UserService.getUserById(Integer), args: 6,
+2018-04-20 23:29:04 [INFO][com.zym.Design1.aspect.LogAspect][beforeMethod][44]-> before method: User com.zym.Design1.dao.UserMapper.selectByPrimaryKey(Integer), args: 6,

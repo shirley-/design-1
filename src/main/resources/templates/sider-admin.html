@@ -1,0 +1,222 @@
+<!--管理员菜单-->
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar">
+
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+
+            <!-- Sidebar user panel (optional) -->
+            <div class="user-panel" style="height: 80px;">
+                <div class="pull-left image">
+                    <img src="/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                </div>
+                <div class="pull-left info">
+                    <p><i class="fa fa-check-circle text-success"></i> ${user.uid}</p>
+                    <p><i class="fa fa-star" style="color: gold"></i>会员a</p>
+                </div>
+            </div>
+
+            <!-- Sidebar Menu -->
+            <ul class="sidebar-menu" data-widget="tree">
+                <!--<li class="header">HEADER</li>-->
+                <!-- Optionally, you can add icons to the links -->
+                <!-- class="active" 当前展开-->
+                <!-- myHome -->
+                <#if  m?? && m=='myHome'>
+                    <li class="active"><a href="/admin/myHome"><i class="fa fa-link"></i> <span>我的店铺</span></a></li>
+                <#else>
+                    <li><a href="/admin/myHome"><i class="fa fa-link"></i> <span>我的店铺</span></a></li>
+                </#if>
+
+                <!--KMC-->
+                <#if  m?? && m=='trend'>
+                    <li class="active"><a href="/admin/trend"><i class="fa fa-link"></i> <span>KTH价格</span></a></li>
+                    <#else>
+                        <li><a href="/admin/trend"><i class="fa fa-link"></i> <span>KTH价格</span></a></li>
+                </#if>
+
+
+                <#if  m?? && m=='memberManage'>
+                    <li class="treeview active">
+                        <#else>
+                    <li class="treeview ">
+                </#if>
+                <a href="#"><i class="fa fa-link"></i> <span>用户管理</span>
+                    <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+                </a>
+                <ul class="treeview-menu">
+                    <#if s?? && s=='memberList' >
+                        <li class="active"><a href="/admin/memberManage?s=memberList" class="sub-menu"> <span>用户列表</span></a></li>
+                        <#else>
+                            <li><a href="/admin/memberManage?s=memberList" class="sub-menu"> <span>用户列表</span></a></li>
+                    </#if>
+                    <#if s?? && s=='ecoinManage' >
+                        <li class="active"><a href="/admin/memberManage?s=ecoinManage" class="sub-menu"> <span>电子币充值</span></a></li>
+                        <#else>
+                            <li><a href="/admin/memberManage?s=ecoinManage" class="sub-menu"> <span>电子币充值</span></a></li>
+                    </#if>
+                </ul>
+                </li>
+
+                <!-- trade -->
+                <#if  m?? && m=='trade'>
+                    <li class="treeview active">
+                <#else>
+                    <li class="treeview ">
+                </#if>
+                    <a href="#"><i class="fa fa-link"></i> <span>交易管理</span>
+                        <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                <ul class="treeview-menu">
+                    <#if s?? && s=='tradeTrend' >
+                        <li class="active"><a href="/admin/trade?s=tradeTrend" class="sub-menu"> <span>KTH趋势</span></a></li>
+                        <#else>
+                            <li><a href="/admin/trade?s=tradeTrend" class="sub-menu"> <span>KTH趋势</span></a></li>
+                    </#if>
+                    <#if s?? && s=='tradeHall' >
+                        <li class="active"><a href="/admin/trade?s=tradeHall" class="sub-menu"> <span>交易大厅</span></a></li>
+                        <#else>
+                            <li><a href="/admin/trade?s=tradeHall" class="sub-menu"> <span>交易大厅</span></a></li>
+                    </#if>
+                    <#if s?? && s=='myTrade' >
+                        <li class="active"><a href="/admin/trade?s=myTrade" class="sub-menu"> <span>我的交易</span></a></li>
+                        <#else>
+                            <li><a href="/admin/trade?s=myTrade" class="sub-menu"> <span>我的交易</span></a></li>
+                    </#if>
+                    <#if s?? && s=='tradeOrderList' >
+                        <li class="active"><a href="/admin/trade?s=tradeOrderList" class="sub-menu"> <span>挂单列表</span></a></li>
+                        <#else>
+                            <li><a href="/admin/trade?s=tradeOrderList" class="sub-menu"> <span>挂单列表</span></a></li>
+                    </#if>
+                    <#if s?? && s=='tradeHistoryAll' >
+                        <li class="active"><a href="/admin/trade?s=tradeHistoryAll" class="sub-menu"> <span>完成的交易</span></a></li>
+                        <#else>
+                            <li><a href="/admin/trade?s=tradeHistoryAll" class="sub-menu"> <span>完成的交易</span></a></li>
+                    </#if>
+
+                </ul>
+                </li>
+                <!-- myFin -->
+                <#if  m?? && m=='myFin'>
+                    <li class="treeview active">
+                <#else>
+                    <li class="treeview ">
+                </#if>
+                    <a href="#"><i class="fa fa-link"></i> <span>财务管理</span>
+                        <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <#if s?? && s=='finDetailAll' >
+                            <li class="active"><a href="/admin/myFin?s=finDetailAll" class="sub-menu"> <span>资金明细</span></a></li>
+                        <#else>
+                            <li><a href="/admin/myFin?s=finDetailAll" class="sub-menu"> <span>资金明细</span></a></li>
+                        </#if>
+                            <#if s?? && s=='ecoinRecord' >
+                            <li class="active"><a href="/admin/myFin?s=ecoinRecord" class="sub-menu"> <span>电子币充值记录</span></a></li>
+                        <#else>
+                            <li><a href="/admin/myFin?s=ecoinRecord" class="sub-menu"> <span>电子币充值记录</span></a></li>
+                        </#if>
+                        <#if s?? && s=='encash' >
+                            <li class="active"><a href="/admin/myFin?s=encash" class="sub-menu"> <span>KTH提现</span></a></li>
+                        <#else>
+                            <li><a href="/admin/myFin?s=encash" class="sub-menu"> <span>KTH提现</span></a></li>
+                        </#if>
+                        <#if s?? && s=='encashRecord' >
+                            <li class="active"><a href="/admin/myFin?s=encashRecord" class="sub-menu"><span>提现记录</span></a></li>
+                        <#else>
+                            <li><a href="/admin/myFin?s=encashRecord" class="sub-menu"> <span>提现记录</span></a></li>
+                        </#if>
+                    </ul>
+                </li>
+                <!-- encash -->
+                <#if  m?? && m=='encashManage'>
+                    <li class="treeview active">
+                <#else>
+                    <li class="treeview ">
+                </#if>
+                <a href="#"><i class="fa fa-link"></i> <span>提现管理</span>
+                    <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+                </a>
+                <ul class="treeview-menu">
+                    <#if s?? && s=='encashApplyList' >
+                        <li class="active"><a href="/admin/encashManage?s=encashApplyList" class="sub-menu"> <span>提现申请列表</span></a></li>
+                    <#else>
+                            <li><a href="/admin/encashManage?s=encashApplyList" class="sub-menu"> <span>提现申请列表</span></a></li>
+                    </#if>
+                    <#if s?? && s=='encashApprovedList' >
+                        <li class="active"><a href="/admin/encashManage?s=encashApprovedList" class="sub-menu"><span>提现完成列表</span></a></li>
+                    <#else>
+                            <li><a href="/admin/encashManage?s=encashApprovedList" class="sub-menu"> <span>提现完成列表</span></a></li>
+                    </#if>
+                </ul>
+                </li>
+                <!-- shop -->
+                <#if  m?? && m=='shopManage'>
+                    <li class="treeview active">
+                <#else>
+                    <li class="treeview ">
+                </#if>
+                <a href="#"><i class="fa fa-link"></i> <span>购物管理</span>
+                    <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class=""><a href="/shop" class="sub-menu"><span>购物商城</span></a></li>
+                    <#if s?? && s=='goodsList' >
+                        <li class="active"><a href="/admin/goodsList" class="sub-menu"><span>商品列表</span></a></li>
+                    <#else>
+                        <li><a href="/admin/goodsList" class="sub-menu"> <span>商品列表</span></a></li>
+                    </#if>
+                    <#if s?? && s=='shopRecord' >
+                        <li class="active"><a href="/admin/shopRecord" class="sub-menu"><span>我的购物记录</span></a></li>
+                    <#else>
+                        <li><a href="/admin/shopRecord" class="sub-menu"> <span>我的购物记录</span></a></li>
+                    </#if>
+                    <#if s?? && s=='allShopRecord' >
+                        <li class="active"><a href="/admin/allShopRecord" class="sub-menu"><span>所有购物记录</span></a></li>
+                    <#else>
+                        <li><a href="/admin/allShopRecord" class="sub-menu"> <span>所有购物记录</span></a></li>
+                    </#if>
+                    <#if s?? && s=='goodsTradeHistory' >
+                        <li class="active"><a href="/admin/goodsTradeHistory" class="sub-menu"><span>商品销售数据</span></a></li>
+                    <#else>
+                        <li><a href="/admin/goodsTradeHistory" class="sub-menu"> <span>商品销售数据</span></a></li>
+                    </#if>
+                </ul>
+                </li>
+                <!-- my -->
+                <#if  m?? && m=='my'>
+                    <li class="treeview active">
+                        <#else>
+                    <li class="treeview ">
+                </#if>
+                <a href="#"><i class="fa fa-link"></i> <span>个人中心</span>
+                    <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+                </a>
+                <ul class="treeview-menu">
+                    <#if s?? && s=='myInfo' >
+                        <li class="active"><a href="/admin/my?s=myInfo" class="sub-menu"> <span>基本信息</span></a></li>
+                        <#else>
+                            <li><a href="/admin/my?s=myInfo" class="sub-menu"> <span>基本信息</span></a></li>
+                    </#if>
+                    <#if s?? && s=='changePwd' >
+                        <li class="active"><a href="/admin/my?s=changePwd" class="sub-menu"> <span>修改密码</span></a></li>
+                        <#else>
+                            <li><a href="/admin/my?s=changePwd" class="sub-menu"> <span>修改密码</span></a></li>
+                    </#if>
+                </ul>
+                </li>
+                <!-- notice -->
+                <#if  m?? && m=='notice'>
+                    <li class=" active">
+                    <a href="/admin/noticeListPage"><i class="fa fa-link"></i> <span>会员公告</span></a></li>
+                <#else>
+                    <li><a href="/admin/noticeListPage"><i class="fa fa-link"></i> <span>会员公告</span></a></li>
+                </#if>
+
+                <li><a href="/logout"><i class="fa fa-sign-out"></i> <span>退出登录</span></a></li>
+            </ul>
+            <!-- /.sidebar-menu -->
+        </section>
+        <!-- /.sidebar -->
+    </aside>

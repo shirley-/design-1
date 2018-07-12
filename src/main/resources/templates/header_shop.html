@@ -1,0 +1,28 @@
+
+<body>
+<div class="header">
+    <div class="container">
+        <div class="logo" style="margin: 10px 0;">
+            <a href="index.html" style="font-size: 35px;"><span>购物</span>商城</a>
+        </div>
+        <div class="header-right" style="">
+            <a class="account" href="/shop" >购物商城</a>
+            <#if user??>
+                <!--<a class="cart" style="" href="/cart"><i class="fa fa-shopping-cart"></i></a>-->
+                <#if user.role == "0" >
+                    <a class="cart" style="" href="/member/cart" target="_blank"><i class="fa fa-shopping-cart"></i></a>
+                    <a class="login" href="/member/myHome" target="_blank">会员中心</a>
+                </#if>
+                <#if user.role == "2" >
+                    <a class="cart" style="" href="/admin/cart" target="_blank"><i class="fa fa-shopping-cart"></i></a>
+                    <a class="login" href="/admin/myHome" target="_blank">管理员入口</a>
+                </#if>
+                <#if user.role == "1" >
+                    <a class="login" href="/op/myHome" target="_blank" >管理员入口</a>
+                </#if>
+            <#else>
+                <a class="login" href="/login" target="_blank" >会员登录</a>
+            </#if>
+        </div>
+    </div>
+</div>

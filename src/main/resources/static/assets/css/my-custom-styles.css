@@ -1,0 +1,39 @@
+/* your custom styles here */
+ul.treeview-menu > li > a.sub-menu {
+    padding-left:40px;
+    font-size: 12px;
+}
+
+.info-box {
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.1), 0px 3px 10px rgba(0,0,0,0.1);
+}
+.myStyle1 {
+    background-color: #BFEBFF;
+    color: #fff;
+    /*box-shadow: 0px 3px 10px rgba(0,0,0,0.1), 0px 3px 10px rgba(0,0,0,0.1);*/
+}
+.myStyle2 {
+    background-color: #BAE06B;
+    color: #fff;
+    /*box-shadow: 0px 3px 10px rgba(0,0,0,0.1), 0px 3px 10px rgba(0,0,0,0.1);*/
+}
+.myStyle3 {
+    background-color: #FFF04A;
+    color: #fff;
+    /*box-shadow: 0px 3px 10px rgba(0,0,0,0.1), 0px 3px 10px rgba(0,0,0,0.1);*/
+}
+.myStyle4 {
+    background-color: #FFD9D2;
+    color: #fff;
+    /*box-shadow: 0px 3px 10px rgba(0,0,0,0.1), 0px 3px 10px rgba(0,0,0,0.1);*/
+}
+
+/**
+2FA6D4  BFEBFF  BAE06B  FFF04A  FFD9D2
+
+FA9DDB  FFD0F4  DFE9FF  C8FBFF  FCC185
+F69A9A  EF4566  F9CDAE  C8C8A9  83AE9B
+D3F8E2  E4C1F9  F694C1  EDE7B1  A9DEF9
+7BDFF2  B2F7EF  EFF7F6  F7D6E0  F2B5D4
+
+ */

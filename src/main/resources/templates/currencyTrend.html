@@ -1,0 +1,339 @@
+<#include "header.html" />
+<!--管理员-->
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        KTH管理
+        <small>KTH市值</small>
+      </h1>
+    </section>
+
+    <!-- Main content -->
+    <section class="content container-fluid">
+
+      <!--------------------------
+        | Your Page Content Here |
+        -------------------------->
+
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="box box-danger">
+              <div class="box-header">
+                <!--<h3 class="box-title">KTH市值</h3>-->
+              </div>
+              <!-- /.box-header -->
+              <div class="box-body ">
+                <div class="col-md-3" style=" margin-right: 30px;">
+                    <div class="info-box " style="margin-top: 30px;">
+                      <span class="info-box-icon myStyle1"><i class="fa fa-flag-o"></i></span>
+                      <div class="info-box-content">
+                        <span class="info-box-text">KTH总释放量</span>
+                        <span class="info-box-number">${totalVc!"0"}</span>
+                      </div>
+                  </div>
+                  <div class="info-box" style="margin-top: 30px;">
+                      <span class="info-box-icon myStyle4"><i class="fa fa-flag-o"></i></span>
+                      <div class="info-box-content">
+                        <span class="info-box-text">KTH市值</span>
+                        <span class="info-box-number">${vc!"0"}</span>
+                      </div>
+                  </div>
+                </div>
+                <div class="col-md-8 " style="overflow: auto;">
+                  <div id="main"  style="width: 400px; height: 300px; "></div>
+                </div>
+                <div class="clearfix"></div>
+                <hr>
+                <div class=" col-md-10 ">
+                    <!--<form class="form-horizontal" action="recordVcPrice" method="post" class="form-horizontal " role="form"
+                           onkeydown="if(event.keyCode==13) return false;" autocomplete="off" >
+                        <div class="form-group">
+                          <label  class="col-sm-4 ">改变KTH市值</label>
+                          <div class="col-sm-2">
+                            <input type="number" min="0" step="0.01" class="form-control"  name="vc" value="${vc!}">
+                          </div>
+                          <div class=" col-sm-2">
+                            <button type="submit" class="btn btn-warning" onclick="if(!$('input[name=vc]').val()) return false;" >确定</button>
+                          </div>
+                        </div>
+                    </form>-->
+                  <form  autocomplete="off" onkeydown="if(event.keyCode==13) return false;"
+                        action="recordVcPrice" method="post" >
+                    <div class="form-group">
+                      <label class="col-sm-4 control-label">改变KTH市值</label>
+                      <div class="col-md-5">
+                        <input type="number" min="0" step="0.01" class="form-control"  name="vc" value="${vc?c}">
+                      </div>
+                      <div class=" col-sm-2">
+                        <button type="submit" class="btn btn-warning" onclick="if(!$('input[name=vc]').val()) return false;" >确定</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                <div class="clearfix"></div>
+                <hr>
+                <#if phaseState?? && phaseState=='0' >
+                  <div class="col-md-10" style="">
+                    <form id="closeForm" autocomplete="off" onkeydown="if(event.keyCode==13) return false;"
+                          method="post" action="closeEarlyPhase">
+                      <div class="form-group">
+                        <label class="col-sm-4 control-label">前期 用户选择锁仓天数功能</label>
+                        <div class=" col-sm-2">
+                          <button type="submit" class="btn btn-danger" onclick="if(confirmClose()) $('#closeForm').submit(); " >
+                            关闭</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </#if>
+                <div class="clearfix"></div>
+                <hr>
+                <div class="col-md-12">
+                  <div class="col-md-7" style="  ">
+                    <div class="row">
+                      <div class="col-md-6" >
+                        <div class="info-box ">
+                          <span class="info-box-icon myStyle3"><i class="fa fa-flag-o"></i></span>
+                          <div class="info-box-content">
+                            <span class="info-box-text">可挂售KTH</span>
+                            <span class="info-box-number">${user.tradableCoin!"0"}</span>
+                          </div>
+                          <!-- /.info-box-content -->
+                        </div>
+                        <!-- /.info-box -->
+                      </div>
+                      <div class="col-md-6" >
+                        <div class="info-box ">
+                          <span class="info-box-icon myStyle3"><i class="fa fa-envelope-o"></i></span>
+                          <div class="info-box-content">
+                            <span class="info-box-text">KTH总计</span>
+                            <span class="info-box-number">${user.totalCoin!"0"}</span>
+                          </div>
+                          <!-- /.info-box-content -->
+                        </div>
+                        <!-- /.info-box -->
+                      </div>
+                    </div>
+                  </div>
+                  <div class="clearfix"></div>
+                  <div class="col-md-8" >
+                    <form id="increaseVc" class="form-horizontal" role="form" autocomplete="off" onkeydown="if(event.keyCode==13) return false;" >
+                      <div class="form-group " >
+                        <label for="amount" class="col-md-4 control-label">增加我的KTH数量</label>
+                        <div class="col-md-4">
+                          <input type="number" min=0 step=100 class="form-control" id="amount" name="amount">
+                        </div>
+                        <div class="col-md-1 ">
+                          <button  type="button" class="btn btn-info" onclick="increaseVc(); ">增加</button>
+                        </div>
+                      </div>
+
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+
+<#include "footer1.html" />
+<script>
+  function increaseVc() {
+      if(!$('#amount').val()) {
+          return;
+      }
+      $.ajax({
+          url: 'increaseAdminVc',
+          type: 'post',
+          dataType: 'json',
+          data: $('#increaseVc').serialize(),
+          success: function (result) {
+            showSuccessAlert("增加成功");
+          },
+          error: function (e) {
+              showSuccessAlert("增加失败");
+          }
+      });
+  }
+    function confirmClose() {
+        if(confirm("确定要关闭么？不可恢复！"))
+            return true;
+        else
+            return false;
+    }
+    var trendChart = echarts.init(document.getElementById('main'));
+    trendChart.showLoading({
+        text: '正在努力的读取数据中...',
+    });
+    $.ajax({
+        url: 'getTrendData',
+        type: 'post',
+        dataType: 'json',
+        success: function (result) {
+            /*var p_y = [];
+            $.each(e, function (i, result) {
+                var t = new Date(Date.parse(result.time.replace(/-/g, "/")))
+                var p = result.value;
+                p_y.push([t, p]);
+            });*/
+            // ajax callback
+            var option = {
+                title: {
+//                    text: 'KTH趋势图',
+                    padding: 10,
+
+                },
+                tooltip: {
+                    trigger: 'item',
+                    formatter: function (params) {
+                        var date = new Date(params.value[0]);
+                        return date.format("yyyy-MM-dd hh:mm") + '<br/>'
+                            + "KTH:" +params.value[1] ;
+                    }
+                },
+                toolbox: {
+                    show: false,
+                    feature: {
+                        dataView: {show: true, readOnly: false},
+                        magicType: {show: true, type: ['line', 'bar']},
+                        restore: {show: true},
+                        saveAsImage: {show: true}
+                    }
+                },
+                dataZoom: {
+                    show: false,
+                    start: 0,
+                    end: 100
+                },
+                /*grid: {
+                    x: 50,
+                    x2: 20
+                },*/
+                xAxis: [
+                    {
+                        type: 'time',
+                        splitNumber: 12,
+                        name: "日期"
+                    }
+                ],
+                yAxis: [
+                    {
+                        type: 'value',
+                        name: 'KTH市值',
+                        min: 1.00,
+                        minInterval: 0.01,
+                        splitNumber: 5,
+                        axisLabel: {
+                            formatter: function (value, index) {
+                                return value.toFixed(2);
+                            }
+                        }
+                    }
+                ],
+                series: [
+                    {
+                        name: 'KTH趋势图',
+                        type: 'line',
+                        showAllSymbol: true,
+                        data: result,
+                        smooth: true,
+                        symbol: 'circle',
+                        symbolSize: 10,
+                        lineStyle: {
+                            normal: {
+//                                color: 'green',
+                                width: 4,
+                                type: 'solid'
+                            }
+                        },
+                        itemStyle: {
+                            normal: {
+                                borderWidth: 3,
+                                borderColor: 'navy',
+//                                color: 'blue'
+                            }
+                        }
+                    }
+                ]
+            };
+            trendChart.hideLoading();
+            trendChart.setOption(option);
+        }
+    });
+    /*var myChart = echarts.init(document.getElementById('main'));
+    var data = [
+        {name:'2016/12/18 6:38:08', value:['2016/12/18 6:38:08', 80]},
+        {name:'2016/12/18 16:18:18', value:['2016/12/18 16:18:18', 60]},
+        {name:'2016/12/18 19:18:18', value:['2016/12/18 19:18:18', 90]}
+    ];
+    var anchor = [
+        {name:'2016/12/16 00:00:00', value:['2016/12/16 00:00:00', 0]},
+        {name:'2016/12/25 00:00:00', value:['2016/12/25 00:00:00', 0]}
+    ];
+
+    option = {
+        title: {
+            text: '动态数据 + 时间坐标轴'
+        },
+        tooltip: {
+            trigger: 'axis',
+            formatter: function (params) {
+                params = params[0];
+                var date = new Date(params.name);
+                return date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear() + ' : ' + params.value[1];
+            },
+            axisPointer: {
+                animation: false
+            }
+        },
+        xAxis: {
+            type: 'time',
+            splitLine: {
+                show: false
+            }
+        },
+        yAxis: {
+            type: 'value',
+            boundaryGap: [0, '100%'],
+            splitLine: {
+                show: false
+            }
+        },
+        series: [{
+            name: '模拟数据',
+            type: 'line',
+            showSymbol: false,
+            hoverAnimation: false,
+            data: data
+          },
+          {
+              name:'.anchor',
+              type:'line',
+              showSymbol:false,
+              data:anchor,
+              itemStyle:{normal:{opacity:0}},
+              lineStyle:{normal:{opacity:0}}
+          }
+        ]
+    };
+    /!*调用option生成图表*!/
+      myChart.setOption(option);
+*/
+
+</script>
+
+
+
+<#include "footer2.html" />

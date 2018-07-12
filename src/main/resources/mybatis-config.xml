@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <settings>
+        <!-- 设置关联对象加载的形态，此处为按需加载字段(加载字段由SQL指定)，不会加载关联表的所有字段，以提高性能 -->
+        <setting name="aggressiveLazyLoading" value="true"></setting>
+        <!-- Globally enables or disables any caches configured in any mapper under this configuration -->
+        <setting name="cacheEnabled" value="true"/>
+        <!-- Sets the number of seconds the driver will wait for a response from the database -->
+        <setting name="defaultStatementTimeout" value="3000"/>
+        <!-- Enables automatic mapping from classic database column names A_COLUMN to camel case classic Java property names aColumn -->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <!-- Allows JDBC support for generated keys. A compatible driver is required.
+        This setting forces generated keys to be used if set to true,
+         as some drivers deny compatibility but still work -->
+        <setting name="useGeneratedKeys" value="true"/>
+
+        <setting name="lazyLoadingEnabled" value="true" />
+
+        <!-- BATCH对于批量更新操作缓存SQL以提高性能，自增主键在事务未提及时无法返回，所以改为SIMPLE-->
+        <setting name="defaultExecutorType" value="SIMPLE"></setting>
+
+
+        <!-- 打印查询语句 -->
+        <setting name="logImpl" value="STDOUT_LOGGING" />
+
+    </settings>
+
+    <plugins>
+        <!--<plugin interceptor="com.zym.Design1.util.locker.interceptor.OptimisticLocker"></plugin>-->
+        <plugin interceptor="com.zym.Design1.interceptor.SqlCostInterceptor"></plugin>
+    </plugins>
+
+    <!-- Continue going here -->
+
+</configuration>

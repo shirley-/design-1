@@ -1,0 +1,231 @@
+<#include "header.html" />
+<!--管理员-->
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        购物管理
+        <small>会员购物记录</small>
+      </h1>
+    </section>
+
+    <!-- Main content -->
+    <section class="content container-fluid">
+
+      <!--------------------------
+        | Your Page Content Here |
+        -------------------------->
+
+        <div class="row user_table">
+          <div class="col-xs-12 col-md-12">
+            <div class="box box-warning">
+              <div class="box-header">
+                <!--<h3 class="box-title">购物记录</h3>-->
+              </div>
+              <!-- /.box-header -->
+              <div class="box-body table-responsive">
+                <div  class=" col-md-12 ">
+                  <form class="form-horizontal"  >
+                    <div class="form-group col-md-4 "  >
+                      <label  class="col-md-6 control-label">状态</label>
+                      <select class="form-control col-md-6" name="state" style="width: 100px; margin-left: 15px;">
+                          <option value=""></option>
+                          <option value="0">已购买</option>
+                          <option value="7">已发货</option>
+                          <option value="8">缺货</option>
+                        </select>
+                    </div>
+                    <div class="form-group  col-md-7">
+                      <label  class="col-md-3 control-label">起止日期</label>
+                      <div class="col-md-9">
+                        <input type="date" class="form-control " style="width: 160px; float: left;" id="datepicker1" name="days1">
+                        <input type="date" class=" form-control" style="width: 160px; float: left;" id="datepicker2" name="days2">
+                      </div>
+                    </div>
+                    <div class="form-group  col-md-4">
+                      <label for="buyerUid" class="col-md-6 control-label">会员ID</label>
+                      <div class="col-md-6">
+                        <input type="text" class="form-control " id="buyerUid">
+                      </div>
+                    </div>
+                    <div class="form-group  col-md-4">
+                      <label for="buyerUid" class="col-md-6 control-label">商品名称</label>
+                      <div class="col-md-6">
+                        <input type="text" class="form-control " id="goodsName">
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <button  type="button" class="btn btn-info" onclick="searchTable(); "
+                      >查询</button>
+                      <button  type="button" class="btn btn-success" onclick="confirmAndSend(); " style="margin-left: 60px;"
+                      >确认发货</button>
+                      <button  type="button" class="btn btn-danger" onclick="lackGoods(); " style="margin-left: 30px;"
+                      >缺货</button>
+                    </div>
+                  </form>
+                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12">
+                  <table id="recordTable" class="table  table-bordered text-nowrap "
+                         data-undefined-text=""
+                         data-click-to-select="true"
+                         data-show-refresh="true"
+                         data-show-columns="true"
+                         data-search="false"
+                         data-search-align="left"  >
+                    <thead>
+                    <tr>
+                      <th data-field="check" data-checkbox="true"></th>
+                      <th data-field="buyerId" data-visible="false">userId</th>
+                      <th data-field="id" >购买ID</th>
+                      <th data-field="buyerUid" >会员ID</th>
+                      <th data-field="state" data-formatter="displayState">状态</th>
+                      <th data-field="goodsId" >商品ID</th>
+                      <th data-field="goodsName" >商品名称</th>
+                      <th data-field="goodsPrice" >单价</th>
+                      <th data-field="num" >数量</th>
+                      <th data-field="shopPoints" data-formatter="displayShopPoints">购物积分</th>
+                      <th data-field="date" data-formatter="displayCreatedDate">购买日期<i class="fa fa-calendar"></i></th>
+                      <th data-field="name" >收货人</th>
+                      <th data-field="phone" >电话</th>
+                      <th data-field="address" >地址</th>
+                    </tr>
+                    </thead>
+                  </table>
+                </div>
+              </div>
+              <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+
+
+<#include "footer1.html" />
+<script>
+    var $table;
+    $(document).ready(function() {
+        var today = new Date();
+        $('#datepicker').val(today.format('yyyy-MM-dd'));
+        $table = $('#recordTable').bootstrapTable({
+            method: 'post',
+            url: 'allShopRecord',
+            contentType: "application/x-www-form-urlencoded",
+//        singleSelect: true,//单选
+            //server分页
+            pageNumber: 1, //初始化加载第一页，默认第一页
+            pagination:true,//是否分页
+            paginationLoop: false,
+            cache: false,
+            searchTimeOut: 2000,
+            queryParams:function (params){  //请求服务器时所传的参数
+                return {
+                    pageIndex : params.offset/params.limit+1, //当前页面,默认是上面设置的1(pageNumber)
+                    pageSize : params.limit, //每一页的数据行数，默认是上面设置的10(pageSize)
+                    state: $('select[name=state] option:selected').val(),      //state
+                    userUid: $('#buyerUid').val(),
+                    goodsName: $('#goodsName').val(),
+                    days1: $('input[name=days1]').val(),      //day1
+                    days2: $('input[name=days2]').val(),      //day2
+                    // param : "Your Param" //这里是其他的参数，根据自己的需求定义，可以是多个
+                }
+            },
+            sidePagination:'server',//指定服务器端分页
+//            pageSize:10,//单页记录数
+            pageList:[10, 25, 50],//分页步进值
+            paginationPreText: '<',//指定分页条中上一页按钮的图标或文字,这里是<
+            paginationNextText: '>',//指定分页条中下一页按钮的图标或文字,这里是>
+        });
+    });
+
+
+
+    function displayState(value,row,index) {
+        if(value == "0") {
+            return "<span style='color: dodgerblue'>已购买</span>";
+        }
+        if(value == "7") {
+            return "<span style='color: green'>已发货</span>";
+        }
+        if(value == "8") {
+            return "<span style='color: red'>缺货</span>";
+        }
+    }
+
+    function displayShopPoints(value,row,index) {
+        return parseFloat(row.goodsPrice) * parseFloat(row.num) ;
+    }
+
+    function searchTable() {
+        $table.bootstrapTable('refresh');
+    }
+
+    function confirmAndSend() {
+        var selectRow = $table.bootstrapTable('getSelections');
+        if(selectRow.length < 1) {
+            alert("请在列表中选择记录!");
+            return;
+        }
+        var ids = [];
+        for(var i=0; i<selectRow.length; i++) {
+            ids.push(selectRow[i].id);
+        }
+        if(confirm(ids.length + "件商品，确认发货么？")) {
+            $.ajax({
+                url: "confirmAndSendGoods",
+                type: "post",
+                data: JSON.stringify(ids),
+                dataType: "json",
+                contentType: 'application/json',
+                success: function (result) {
+                    if (result.code == 0) {
+                        showSuccessAlert("确认发货成功!", 2);
+                        $table.bootstrapTable('refresh');
+                    }
+                },
+                error: function (e) {
+                    showErrorAlert("确认发货失败", 2);
+                }
+            });
+        }
+    }
+    function lackGoods() {
+        var selectRow = $table.bootstrapTable('getSelections');
+        if(selectRow.length < 1) {
+            alert("请在列表中选择记录!");
+            return;
+        }
+        var ids = [];
+        for(var i=0; i<selectRow.length; i++) {
+            ids.push(selectRow[i].id);
+        }
+        if(confirm(ids.length + "件商品，缺货并返还购物积分么？")) {
+            $.ajax({
+                url: "lackGoods",
+                type: "post",
+                data: JSON.stringify(ids),
+                dataType: "json",
+                contentType: 'application/json',
+                success: function (result) {
+                    if (result.code == 0) {
+                        showSuccessAlert("缺货操作成功!", 2);
+                        $table.bootstrapTable('refresh');
+                    }
+                },
+                error: function (e) {
+                    showErrorAlert("缺货操作失败", 2);
+                }
+            });
+        }
+    }
+
+</script>
+<#include "footer2.html" />

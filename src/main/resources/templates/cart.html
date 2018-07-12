@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>购物商城</title>
+	<link rel="stylesheet" href="/assets/css/shop.css">
+	<link rel="stylesheet" href="/css/bootstrap.min.css">
+	<link href="/css/jquery.uls.css" rel="stylesheet"/>
+	<link href="/css/jquery.uls.grid.css" rel="stylesheet"/>
+	<link href="/css/jquery.uls.lcd.css" rel="stylesheet"/>
+	<link rel="stylesheet" type="text/css" href="/css/easy-responsive-tabs.css " />
+	<link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!--<link rel="stylesheet" href="css/bootstrap-select.css">-->
+	<link href="/css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="/css/style-cart.css" rel="stylesheet" type="text/css" media="all" />
+	<link rel="shortcut icon" href="/assets/img/K_Letter_16px.png">
+	<!-- for-mobile-apps -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+	<!-- //for-mobile-apps -->
+	<!-- js -->
+	<style type="text/css">
+		.cart > tbody > tr > th {
+			padding: 8px;
+			line-height: 1.42857143;
+			vertical-align: top;
+			border-top: none;
+		}
+		td.t-data {
+			padding: 10px !important;
+			color:#000;
+			vertical-align: middle !important;
+		}
+		table.cart th.t1-head {
+			background: rgba(1, 161, 133, 0.65);
+			color: #FFFFFF;
+			font-size: 1.4em;
+			padding: 0.6em !important;
+			font-family: 'Lato', sans-serif;
+			font-weight: 700;
+		}
+		.table.cart > tbody > tr > td {
+			padding: 8px;
+			line-height: 1.42857143;
+			vertical-align: top;
+			border-top: none;
+		}
+	</style>
+</head>
+<#include "header_shop.html" />
+<div class="banner text-center" style=" ">
+	<div class="container">
+		<h1>Sell or Advertise   <span class="segment-heading">    anything online </span> with Resale</h1>
+		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+		<a href="post-ad.html">Post Free Ad</a>
+	</div>
+</div>
+	<!-- Categories -->
+	<!--Vertical Tab-->
+
+<div class="categories-section main-grid-border">
+	<div class="check-out" style="padding: 0">
+			<div class="container">
+				<h3 class="head col-md-4" style=" float: left; padding: 20px 0;"><a href="/category" style="text-decoration: none; color: #f3c500; font-size: 30px; margin: 10px 0;">
+					我的购物车</a></h3>
+				<#if cartList??>
+					<h3 id="updateBtn" class="head label label-primary col-md-1" style=" float: right; margin: 20px 0 ; padding: 5px 20px;">
+						<a id="update" href="javascript:void(0)" onclick="update()" style="text-decoration: none; color: #fff; font-size: 25px; margin: 10px 0;">
+							管理</a></h3>
+					<div class="clearfix"></div>
+					<table class="table animated wow cart col-md-12 col-xs-12" >
+						<tr>
+							<th class="t1-head head-it col-md-5 col-xs-4" >商品</th>
+							<th class="t1-head col-md-3 col-xs-3" >单价</th>
+							<th class="t1-head col-md-4 col-xs-5" >数量</th>
+							<!--<th class="t1-head">Total</th>-->
+						</tr>
+						<#list cartList as item >
+							<tr class="cross" id="cross_close_${item.goods.id?c}" style="border-bottom: #c0c0c0 solid;">
+								<td class="ring-in t-data ">
+									<div class="clearfix"> </div>
+									<div class="close1 col-xs-1 col-md-1" id="close_${item.goods.id?c}" style=" "> </div>
+									<div class="col-xs-11 col-xs-offset-1 col-md-4">
+										<a href="/single?id=${item.goods.id?c}" class="at-in">
+											<#assign img = item.goods.img?split(";") />
+											<img src="http://kml8888.com:880/${img[0]}" class="img-responsive"  title="${item.goods.name}" alt="${item.goods.name}"  />
+										</a>
+									</div>
+									<div class=" hidden-xs col-md-7" style="margin-top: 10px;">
+										<span style="font-size: 20px; color: #000; ">${item.goods.name}</span>
+									</div>
+									<div class=" hidden-md col-xs-12 hidden-sm" style="margin-top: 1px;">
+										<span style="font-size: 10px; color: #000; ">${item.goods.name}</span>
+									</div>
+								</td>
+								<td class="t-data ">
+									<div class="col-xs-12"><span class="goodsPrice" style="font-size: 24px;">${item.goods.price?c}</span></div>
+									<div class="col-xs-12"><span style="font-size: 10px;" class="">购物积分</span></div>
+								</td>
+								<td class="t-data ">
+									<div class="quantity ">
+										<div class="quantity-select ">
+											<div class="entry value-minus ">&nbsp;</div>
+											<!--<div class="entry value"><span class="span-1">1</span></div>-->
+											<input class="entry value " type="number" min="1" max="999" step="1" name="num" value="${item.num?c}"
+												   style="color: #000; background: #fff; ">
+											<div class="entry value-plus active ">&nbsp;</div>
+
+										</div>
+									</div>
+								</td>
+								<!--<td class="t-data">$100.00</td>-->
+							</tr>
+						</#list>
+					</table>
+				<#else>
+					<div class="clearfix"></div>
+					<h3 style="margin: 30px; color: palevioletred ">购物车是空的</h3>
+					<div class="clearfix"></div>
+				</#if>
+				<div class=" cart-total col-md-12 col-xs-12" style="width: 100%">
+					<div class="col-md-6 col-md-offset-1 grid-pro col-xs-12 col-md-push-5">
+						<div class="col-md-3 col-xs-3" > <h4 style="text-align: left; font-weight: bolder; color: orangered">总计</h4></div>
+						<div class="col-md-4 col-xs-4" style="text-align: right"><h4 class="totalPrice" ></h4></div>
+						<div  class="col-md-4 col-xs-5"><h4>购物积分</h4></div>
+					</div>
+					<div class="col-md-5 grid-pro col-xs-12 col-md-pull-7">
+						<div>
+							<div class="col-md-5 col-xs-7" style="text-align: left; color: #01a185"><h4>我的购物积分</h4></div>
+							<div class="col-md-7 col-xs-5"><h4 class="shopPoints">${user.shopPoints?c}</h4></div>
+						</div>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+				<!-- Feedback -->
+					<div class="container " >
+							<div class="">
+								<h2 class="head col-md-3 col-xs-6" style="font-size: 30px;">收货信息</h2>
+								<#if user.role == "2" >
+									<h4 class="head col-md-5  col-xs-6 "><a href="/admin/my?s=myInfo" target="_blank" style="text-decoration: none; color: dodgerblue">(修改默认收货信息)</a></h4>
+								</#if>
+								<#if user.role == "0" >
+									<h4 class="head col-md-5  col-xs-6"><a href="/member/my?s=myInfo" target="_blank" style="text-decoration: none; color: dodgerblue">(修改默认收货信息)</a></h4>
+								</#if>
+							</div>
+							<form class="" id="infoForm" name="form-horizontal" onkeydown="if(event.keyCode==13)return false;" autocomplete="off" >
+								<input type="hidden" class="form-control" name="userId" value="${user.id?c}">
+								<div class="container col-md-10 col-xs-12" >
+									<div class="form-group  ">
+										<label for="name" class="control-label input-required">收货人姓名</label>
+										<input type="text" class="form-control" name="name" placeholder="收货人姓名" id="name" value="${user.name}">
+									</div>
+									<div class="form-group  ">
+										<label for="phone" class="control-label input-required">收货人联系电话</label>
+										<input type="text" class="form-control" name="phone" placeholder="收货人联系电话" id="phone" value="${user.phone}">
+									</div>
+									<div class="form-group  ">
+										<label for="address" class="control-label input-required">收货地址</label>
+										<textarea  class="form-control" name="address" rows="4" id="address">${user.address?trim}</textarea>
+									</div>
+									<input class="btn btn-lg col-md-2 col-xs-6" style="background-color: #FF7000; color: white;" type="button" value="结算" onclick="finish()" >
+								</div>
+							</form>
+					</div>
+				<!-- // Feedback -->
+			</div>
+		</div>
+	</div>
+	<!--Plug-in Initialisation-->
+<div class="modal fade" id="alertModalError" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+				<h4 class="modal-title" id="myModalLabelError">
+					提示：
+				</h4>
+			</div>
+			<div class="modal-body" style="    color: #a94442; background-color: #f2dede;  border-color: #ebccd1;">
+
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+				</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal -->
+</div>
+
+<div class="modal fade" id="alertModalSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+				<h4 class="modal-title" id="myModalLabelSuccess">
+					提示：
+				</h4>
+			</div>
+			<div class="modal-body" style="color: #3c763d; background-color: #dff0d8; border-color: #d6e9c6;">
+
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+				</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal -->
+</div>
+	<!-- //Categories -->
+<#include "footer_shop.html" />
+
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+<!-- js -->
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/bootstrap-select.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/assets/js/bootstrap-paginator.js"></script>
+<!--<script type="text/javascript" src="https://cdn.bootcss.com/backbone.paginator/2.0.6/backbone.paginator.min.js"></script>-->
+<script type="text/javascript" src="/js/jquery.leanModal.min.js"></script>
+
+<!-- Source -->
+<script src="/js/jquery.uls.data.js"></script>
+<script src="/js/jquery.uls.data.utils.js"></script>
+<script src="/js/jquery.uls.lcd.js"></script>
+<script src="/js/jquery.uls.languagefilter.js"></script>
+<script src="/js/jquery.uls.regionfilter.js"></script>
+<script src="/js/jquery.uls.core.js"></script>
+<script type="text/javascript" src="https://cdn.bootcss.com/bootstrap-validator/0.5.2/js/bootstrapValidator.min.js"></script>
+<script src="/js/easyResponsiveTabs.js"></script>
+<script type="text/javascript" src="/assets/myJs/base.js"></script>
+
+<script>
+$(document).ready(function(c) {
+    if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {//手机端
+
+    }else {
+        $('div.hidden-md').hide();
+	}
+    $('.close1').on('click', function(c){
+        var id = this.id;
+        var cross = "cross_" + id;
+        $('#' + cross).fadeOut('slow', function(c){
+            $('#' + cross).remove();
+        });
+    });
+    $('.close1').css("display", "none");
+    $('.value-plus').css("display", "none");
+    $('.value-minus').css("display", "none");
+    $('.value').attr("readonly", true);
+
+    //计数
+    var cartStr='';
+    var total = 0;
+    $('.cross').each(function(){
+        var id = this.id.split('_')[2];
+        var price = $(this).find('span.goodsPrice').text();
+        var num = $(this).find('.value').val();
+        cartStr += id+':'+num+'_';
+        total += parseInt(price)*parseInt(num);
+    });
+    $('.totalPrice').text(total);
+
+    //validator
+    $('#infoForm').bootstrapValidator({
+        message: '输入错误',
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            name: {
+                validators: {
+                    notEmpty: {
+                        message: '请输入姓名'
+                    }
+                }
+            },
+		   	phone: {
+				validators: {
+					notEmpty: {
+						message: '请输入联系电话'
+					},
+					stringlength:{
+                        min:11,
+                        max:11,
+                        message:'请输入11位手机号码'
+                    },
+                    regexp:{
+                        regexp:/^1[0-9]{10}$/,
+                        message:'请输入正确的手机号码'
+                    }
+				}
+			},
+			address: {
+				validators: {
+					notEmpty: {
+						message: '请输入地址'
+					}
+				}
+			}
+		}
+    });
+    $('#infoForm').bootstrapValidator().on('success.form.bv', function(e) {
+        // 阻止默认事件提交
+        e.preventDefault();
+    });
+
+});
+</script>
+<!--quantity-->
+<script>
+    $('.value-plus').on('click', function(){
+//        var divUpd = $(this).parent().find('.value'), newVal = parseInt(divUpd.text(), 10)+1;
+        var divUpd = $(this).parent().find('.value'), newVal = parseInt(divUpd.val(), 10)+1;
+//        divUpd.text(newVal);
+        divUpd.val(newVal);
+    });
+
+    $('.value-minus').on('click', function(){
+//        var divUpd = $(this).parent().find('.value'), newVal = parseInt(divUpd.text(), 10)-1;
+        var divUpd = $(this).parent().find('.value'), newVal = parseInt(divUpd.val(), 10)-1;
+//        if(newVal>=1) divUpd.text(newVal);
+        if(newVal>=1) divUpd.val(newVal);
+    });
+
+    //init
+    var updateFlag = 1;
+    //计数
+    var cartStr={};
+
+    function update() {
+        if(updateFlag == 1) {
+            //编辑状态
+            updateFlag = 2;
+            $('.close1').css("display", "block");
+            $('.value-plus').css("display", "");
+            $('.value-minus').css("display", "");
+            $('input.value').css("border", "dodgerblue solid 1.5px");
+            $('.value').removeAttr("readonly");
+            $('#update').text("完成");
+            $('#updateBtn').removeClass("label-primary");
+            $('#updateBtn').addClass("label-warning");
+        }else if(updateFlag == 2) {
+            //完成状态
+			updateFlag = 1;
+            $('.close1').css("display", "none");
+            $('.value-plus').css("display", "none");
+            $('.value-minus').css("display", "none");
+            $('input.value').css("border", "none");
+            $('.value').attr("readonly", true);
+            $('#update').text("管理");
+            $('#updateBtn').addClass("label-primary");
+            $('#updateBtn').removeClass("label-warning");
+            //计数
+			cartStr={};
+			var total = 0;
+			$('.cross').each(function(){
+			    var id = this.id.split('_')[2];
+			    var price = $(this).find('span.goodsPrice').text();
+                var num = $(this).find('.value').val();
+                cartStr[id] = num;
+                total += parseInt(price)*parseInt(num);
+			});
+            $('.totalPrice').text(total);
+            $.ajax({
+                url: "updateCart",
+                data: {"cartStr": JSON.stringify(cartStr)},
+				type: 'post',
+				async: false,
+                dataType: "json",
+				success: function(result) {
+//                    showSuccessAlert("购物车修改成功!", 2);
+				},
+				error: function (e) {
+                    if(e.responseJSON.msg) {
+                        if(e.responseJSON.msg.indexOf("未登录")>-1) {
+                            showErrorAlert("未登录!", 2);
+                            window.location = "/login?next=/cart";
+                        }  else {
+                            showErrorAlert("修改购物车失败!", 2);
+                        }
+                    }  else {
+                        showErrorAlert("修改购物车失败!", 2);
+                    }
+                }
+            });
+
+		}
+    }
+
+    function finish() {
+        if(updateFlag == 2) {//整理完成
+            update();
+        }else {
+            cartStr={};
+            var total = 0;
+            $('.cross').each(function(){
+                var id = this.id.split('_')[2];
+                var price = $(this).find('span.goodsPrice').text();
+                var num = $(this).find('.value').val();
+                cartStr[id] = num;
+                total += parseInt(price)*parseInt(num);
+            });
+		}
+        if(!cartStr) {
+            return;
+		}
+        if(parseFloat($('.shopPoints').text())<parseFloat($('.totalPrice').text())) {
+            showErrorAlert("购物积分不足，无法购买", 2);
+            return;
+		}
+        $('#infoForm').data('bootstrapValidator').validate();
+        if(!$('#infoForm').data('bootstrapValidator').isValid()){
+            return ;
+        }
+		if(confirm("确定结算购物车么？")) {
+			$.ajax({
+				url: "buyCart",
+				type: "post",
+                dataType: "json",
+				data: {"cartStr": JSON.stringify(cartStr), "totalPrice": $('.totalPrice').text(), "userId": $('input[name=userId]').val(),
+						"name": $('input[name=name]').val(), "address": $('textarea[name=address]').val(), "phone": $('input[name=phone]').val()  },
+				success: function (result) {
+				    if(result.code=="0") {
+                        showSuccessAlert("结算购物车成功!");
+                    }
+                },
+				error: function (e) {
+                    showErrorAlert("结算购物车失败!" + e.responseJSON.msg, 2);
+                }
+			})
+		}
+
+    }
+
+</script>
+<!--quantity-->
+</body>
+
+</html>
